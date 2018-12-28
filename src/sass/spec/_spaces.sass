@@ -1,0 +1,66 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	// vertical space - section
+	// Самый большой отступ. Между логическими эелементами. Секциями
+	// ---------------------------------------------------------------------------
+	#header, #content,
+	.spec-bottom-space-section
+		margin-bottom: $spec-bottom-space-section
+
+		&:last-child
+			margin-bottom: 0
+
+	// vertical space - item
+	// Отступы между крупными элементами внутри секции
+	// ---------------------------------------------------------------------------
+	.spec-bottom-space-item
+		margin-bottom: $spec-bottom-space-item
+
+		+media('<mob-lg')
+			margin-bottom: $spec-bottom-space-item--sm
+
+		&:last-child
+			margin-bottom: 0
+
+	// vertical space - default
+	// Стандартный отступ между элементами
+	// ---------------------------------------------------------------------------
+	h1, h2, h3, h4, h5, h6,
+	p, blockquote,
+	blockquote q,
+	blockquote > p,
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="search"],
+	textarea,
+	.select,
+	select,
+	.wrap,
+	.b-map-section-descr,
+	.search-box,
+	.search-box-in,
+	.mobmenu-header,
+	.search-page form > .row,
+	.spec-bottom-space
+		margin-bottom: $spec-bottom-space
+
+		+media('<mob-lg')
+			margin-bottom: $spec-bottom-space--sm
+
+		&:last-child
+			margin-bottom: 0
+
+	// vertical space - element
+	// Небольшой отступ
+	// ---------------------------------------------------------------------------
+	.ss-item,
+	.b-links-list > a,
+	.spec-bottom-space-element
+		margin-bottom: $spec-bottom-space-element
+
+		&:last-child
+			margin-bottom: 0

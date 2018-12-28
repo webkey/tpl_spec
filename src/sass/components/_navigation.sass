@@ -1,0 +1,318 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+/* === NAVIGATION ===
+// variables
+$nav-is-open-class: 'nav-is-open'
+
+.#{$spec-mod}
+	.nav-box
+		position: relative
+		display: none
+		margin-bottom: 2rem
+
+		+media('<desk-sm')
+			display: block
+
+		+media('<mob-lg')
+			margin-bottom: 1.5rem
+
+	// nav
+	.nav
+		position: relative
+		display: none
+		width: $nav-width
+		max-width: 100%
+
+		&, & *
+			box-sizing: border-box
+
+	/* nav list
+	// общие стили для пунктов навигации
+	.nav__list
+		position: relative
+		border: $spec-border-width solid currentColor
+		border-radius: 6px
+		padding: 0.8em 0 1em
+		margin: 0
+		list-style: none
+		line-height: 1.5
+		//border-radius: 0.5em
+
+		// убрать подсветку при клике на тачскринах
+		.touchevents &
+			user-select: none
+			-webkit-tap-highlight-color: transparent
+
+		li
+			position: relative
+			padding: 0 nth($spec-page-space--md, 2)
+			white-space: nowrap
+			font-weight: bold
+
+			+media('<mob-md')
+				+padding-horizontal(nth($spec-page-space--sm, 2))
+
+			li
+				padding-right: 0
+
+		a
+			display: inline-block
+			vertical-align: middle
+			//display: block
+			position: relative
+			color: currentColor
+			text-decoration: none
+			white-space: normal
+			user-select: none
+			+padding-vertical(5px)
+
+			// убрать подсветку при клике на тачскринах
+			.touchevents &
+				-webkit-tap-highlight-color: transparent
+
+		& ul
+			list-style: none
+			padding: 0
+			margin: 0
+
+	// общие стили для подменю навигации
+	.nav__list ul
+		display: none
+
+		.no-js &
+			display: block
+
+	// стили для пунктов навигации, у которых ЕСТЬ ПОДМЕНЮ
+	.nav__list li.has-drop
+		& > a
+			margin-right: round($nav-arrow-size + 15)
+
+		& > .nav__angle
+			margin-left: -#{round($nav-arrow-size + 4)}
+
+	// стили для пункта навигации ТЕКУЩЕЙ страницы
+	.nav__list li.current
+		//& > .nav__tab a,
+		& > a
+			font-weight: bold
+
+	// Стили для пункта навигации С ОТКРЫТЫМ ПОДМЕНЮ
+	//.nav__list li.is-open
+		...
+		// На подменю нужно добавлять на nav__drop style="display: block", если он по умолчанию открыт
+
+	// СТРЕЛКИ навигации
+	.nav__angle
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		//position: absolute
+		//right: 5px
+		//top: 50%
+		width: $nav-arrow-size
+		//height: calc(100% - 2px * 2)
+		height: $nav-arrow-size
+		//margin-top: calc(-#{$nav-arrow-size} / 2)
+		z-index: 2
+		cursor: pointer
+		+spec-reset-bg-invert
+		border-radius: 0.2em
+
+		&:active
+			transform: translate(0, 2px)
+
+		// убрать подсветку при клике на тачскринах
+		.touchevents &
+			user-select: none
+			-webkit-tap-highlight-color: transparent
+
+		i
+			position: absolute
+			+position(50%, 50%)
+			+size(24px)
+			margin: -12px 0 0 -12px
+			pointer-events: none
+			transition-property: transform
+			transition-duration: $animation-speed
+			//background-color: lightcoral
+			+font(0, 0)
+
+			&::before, &::after
+				+pseudo()
+				+position(50%, 50%)
+				height: 2px
+				width: 11px
+				margin: -1px
+				background-color: currentColor
+				transition-property: transform
+				transition-duration: $animation-speed
+
+			&::before
+				margin-left: -9px
+				transform: rotate(0.125turn)
+
+			&::after
+				margin-left: -2px
+				transform: rotate(0.375turn)
+
+	// активное (подменю открыто)
+	//li.is-open > .nav__tab .nav__angle i
+	li.is-open > .nav__angle i
+		transform: rotate(0.5turn)
+
+	// особые стили для пунктов ПОДМЕНЮ
+	.nav__list ul
+
+		// особые стили для пунктов навигации ВТОРОГО урованя
+		li
+			font-weight: normal
+
+			li
+				&::before
+					content: ""
+					display: block
+					position: absolute
+					left: 0.2em
+					top: calc(0.65em + 5px)
+					border: 1px solid currentColor
+					$size: 0.3em
+					width: $size
+					height: $size
+					border-radius: $size
+
+					+media('<mob-md')
+						left: 0
+
+				li
+					&::before
+						background-color: currentColor
+
+					li
+						&::before
+							border-radius: 0
+							background: none
+
+						li
+							&::before
+								background-color: currentColor
+
+/* nav list end
+// nav opener btn
+.#{$spec-mod}.#{$spec-mod}
+	a.nav-opener
+		$btn-menu-bg: white
+		$btn-menu-size: $header-height--sm
+		$btn-menu-lines-width: 24px
+		$btn-menu-lines-height: 4px
+		$btn-menu-lines-space: 4px
+		$btn-menu-lines-color: currentColor
+		$btn-menu-lines-color--mob: currentColor
+		$btn-menu-animation-speed: $animation-speed
+		$btn-menu-animation-delay: round-float($animation-speed*0.5, 2)
+
+		$user-options-cross-width: $btn-menu-lines-width
+		$user-options-cross-height: $btn-menu-lines-height
+		$user-options-cross-color: $btn-menu-lines-color
+		$user-options-cross-color--mob: $btn-menu-lines-color--mob
+
+		// =====================
+
+		//display: none
+		position: relative
+		padding: 10px 20px 10px 50px
+		font-weight: bold
+
+		//&:active
+			transform: translate(0, 2px)
+
+		//+media('>=tab-lg')
+			display: none
+
+		.touchevents &
+			// убрать подсветку при клике на тачскринах
+			user-select: none
+			-webkit-tap-highlight-color: transparent
+
+		// крест
+		&::before, &::after
+			content: ""
+			display: block
+			position: absolute
+			top: 50%
+			left: 14px
+			+size($user-options-cross-width, $user-options-cross-height)
+			background-color: $user-options-cross-color
+			margin-top: -#{round($user-options-cross-height / 2)}
+			will-change: opacity, transform
+			opacity: 0
+			transition:
+				property: transform, opacity
+				duration: $btn-menu-animation-speed
+				delay: 0s
+				timing-function: cubic-bezier(0.65, 0.05, 0.36, 1)
+
+		// бутерброд
+		& > i
+			position: absolute
+			left: 14px
+			top: 50%
+			+size($btn-menu-lines-width, $btn-menu-lines-height)
+			background-color: $btn-menu-lines-color
+			margin-top: -#{round($btn-menu-lines-height / 2)}
+			backface-visibility: hidden
+			transition:
+				property: opacity
+				duration: $btn-menu-animation-speed
+				delay: $btn-menu-animation-delay
+
+			&::before, &::after
+				content: ''
+				display: block
+				position: absolute
+				+size($btn-menu-lines-width, $btn-menu-lines-height)
+				background-color: $btn-menu-lines-color
+				backface-visibility: hidden
+				transition:
+					property: transform
+					duration: $btn-menu-animation-speed
+					delay: $btn-menu-animation-delay
+
+			//first line menu
+			&::before
+				top: -#{$btn-menu-lines-height + $btn-menu-lines-space}
+
+			//third line menu
+			&::after
+				top: #{$btn-menu-lines-height + $btn-menu-lines-space}
+
+		// active
+		&.nav-is-open
+
+			&::before, &::after
+				transition-delay: $btn-menu-animation-delay
+				opacity: 1
+
+			&::before
+				transform: rotate(45deg) translateZ(0)
+
+			&::after
+				transform: rotate(-45deg) translateZ(0)
+
+			& > i
+				opacity: 0
+				transition-delay: 0s
+
+				&::before, &::after
+					transition-delay: 0s
+
+				&::before
+					transform: translate(0, #{$btn-menu-lines-height + $btn-menu-lines-space}) translateZ(0)
+
+				&::after
+					transform: translate(0, -#{$btn-menu-lines-height + $btn-menu-lines-space}) translateZ(0)
+
+/* navigation end
+
+/* === NAVIGATION end ===

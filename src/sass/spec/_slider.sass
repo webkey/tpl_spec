@@ -1,0 +1,86 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+//.#{$spec-mod}
+	//.slick-slider
+		.slick-list
+			height: auto !important
+			transform: none !important
+			overflow: visible
+
+		&, &.slick-dotted
+			font-size: inherit
+			line-height: inherit
+			letter-spacing: inherit
+			padding: 0
+			margin-bottom: $spec-bottom-space-item
+
+		&.slick-slider
+			user-select: auto !important
+
+		.slick-track
+			opacity: 1 !important
+			left: auto !important
+			width: auto !important
+			-webkit-transform: none !important
+			-ms-transform: none !important
+			transform: none !important
+
+			&::before, &::after
+				content: none
+
+		.slick-slide
+			position: relative !important
+			width: auto !important
+			height: auto !important
+			opacity: 1 !important
+			left: auto !important
+			top: auto !important
+			float: none !important
+			z-index: auto !important
+			margin-bottom: $spec-bottom-space
+
+		.slick-arrow
+			display: none !important
+
+		.slick-dots
+			display: none !important
+
+	// jcarousel
+	//.jcarousel-container
+		position: relative !important
+		display: block !important
+		margin-bottom: $spec-bottom-space-section
+
+		&:last-child
+			margin-bottom: 0
+
+	//.jcarousel-clip
+		overflow: visible !important
+		position: relative !important
+
+	//.jcarousel-list
+		overflow: visible !important
+		position: relative !important
+		top: auto !important
+		left: auto !important
+		margin: 0 !important
+		padding: 0 !important
+		width: auto !important
+
+	//.jcarousel-item
+		float: none !important
+		padding-top: $spec-bottom-space-item
+		margin-bottom: $spec-bottom-space-item
+		border-top: 1px solid currentColor
+
+		&:first-child
+			padding-top: 0
+			border: none
+
+		&:last-child
+			margin-bottom: 0
+
+	//.jcarousel-prev, .jcarousel-next
+		display: none !important

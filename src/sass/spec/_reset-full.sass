@@ -1,0 +1,25 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	blockquote,
+	.reset-full
+		+spec-reset-full
+
+	// reset svg icon color
+	// ------------------------------------------------------------
+	// цвет свг-эелеметов сделать, как у текста родителя
+	polygon,
+	rect,
+	path,
+	circle,
+	.svg-path
+		fill: currentColor
+
+
+	// reset transition
+	// ------------------------------------------------------------
+	// отключить анимирование элементов
+	.no-transition
+		transition: none

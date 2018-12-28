@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>@@title</title>
+
+	<!--Special-->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link href="css/special-prevent.css" rel="stylesheet" media="screen">
+</head>
+
+<body@@if(context.classes){ class="@@classes"}>
+
+<!--Special-->
+@@include('_tpl_spec-panel.html', {"specUrl": "#"})
+
+<!--Special-->
+<div class="logo-spec-wrap">
+	<a href="#" class="logo-spec">
+		<span>{{Logo}}</span>
+	</a>
+</div>
+
+<!--Special-->
+@@include('_tpl_layout_nav.html')
+
+<div id="header">
+	<!--Special-->
+	@@include("_tpl_layout_spec-switcher.html")
+	<div>{{header}}</div>
+</div>

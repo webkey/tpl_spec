@@ -1,0 +1,109 @@
+// @link https://github.com/eduardoboucas/include-media
+@import ../libs/include-media/dist/include-media
+@import utils/special-version-variables
+@import utils/functions
+@import utils/mixins
+@import utils/placeholders
+
+
+/* PREVENT SPECIAL VERSION
+body:not(.#{$spec-mod})
+	.for-spec
+		display: none
+
+.img-alt-spec
+	text-align: left
+
+.spec-panel
+	display: none
+
+	.#{$spec-mod} &
+		display: block
+
+.spec-foot
+	position: relative
+	box-sizing: border-box
+	width: 100%
+
+	.#{$spec-mod} &
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		width: auto
+		margin-bottom: $spec-bottom-space
+		padding-top: $spec-bottom-space
+		border-top: $spec-border-width solid currentColor
+
+/* special version switchers/toggle buttons
+/* ============================================================
+/*button switch special version
+.spec-btn-switcher
+	position: relative
+	display: inline-block
+	vertical-align: top
+	z-index: 5
+	padding: 0.6em 0.8em 0.6em 3em
+	font-family: inherit
+	font-size: 16px
+	line-height: 18px
+	color: inherit
+	letter-spacing: normal
+	cursor: pointer
+	text-decoration: underline
+	border-radius: 0
+	border: 2px outset darkgreen
+
+	.#{$spec-mod} &
+		font-size: 14px
+
+	svg
+		+size(1.4em)
+		position: absolute
+		left: 1em
+		top: 50%
+		transform: translate(0, -50%)
+		box-sizing: border-box
+
+	path
+		fill: currentColor
+		// transition
+		$prop: fill
+		will-change: $prop
+		transition:
+			property: $prop
+			duration: 0.2s
+
+	&:hover
+		text-decoration: none
+
+	body:not(.#{$spec-mod}) &.spec-btn-switcher_normal
+		display: none
+
+	.#{$spec-mod} &:not(.spec-btn-switcher_normal)
+		display: none
+
+	// in header
+	#header &
+		position: relative
+
+	// in footer
+	#footer &
+		position: relative
+
+	.#{$spec-mod} #footer &
+		padding: 10px 18px 10px 3em
+		font-size: inherit
+		line-height: 1.1
+		font-weight: normal
+
+		svg
+			left: 1em
+
+/*button switch special version end
+
+// Скрыть блок, в котором лежит логотип сайта для специальной версии
+.logo-spec-wrap
+	display: none
+
+/* PREVENT SPECIAL VERSION end

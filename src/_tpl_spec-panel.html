@@ -1,0 +1,330 @@
+<div class="spec-panel spec-panel-js">
+	<div class="spec-panel__layout">
+		<div class="spec-panel__holder">
+			<div class="spec-panel__item">
+				<div class="spec-panel__label">Размер<br> шрифта:</div>
+				<div class="spec-panel__btn-group spec-panel__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_size_sm spec-btn-js",
+						"modName": "font-size",
+						"mod": "vspec-mod_font-size_sm",
+						"icon": "includes/svg/icon-text-size--sm.svg",
+						"text": "Маленкий размер шрифта"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_size_md spec-btn-js",
+						"active": "true",
+						"modName": "font-size",
+						"mod": "vspec-mod_font-size_norm",
+						"icon": "includes/svg/icon-text-size.svg",
+						"text": "Средний размер шрифта"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_size_lg spec-btn-js",
+						"modName": "font-size",
+						"mod": "vspec-mod_font-size_lg",
+						"icon": "includes/svg/icon-text-size--lg.svg",
+						"text": "Большой размер шрифта"
+					})
+				</div>
+			</div>
+
+			<div class="spec-panel__item">
+				<div class="spec-panel__label">Цвета<br> сайта:</div>
+				<div class="spec-panel__btn-group spec-panel__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_color_def spec-btn-js",
+						"active": "true",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_def",
+						"icon": "includes/svg/icon-scheme-color.svg",
+						"text": "Черным по белому"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_color_white spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_white",
+						"icon": "includes/svg/icon-scheme-color.svg",
+						"text": "Белым по черному"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_color_blue spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_blue",
+						"icon": "includes/svg/icon-scheme-color.svg",
+						"text": "Темно-синим по голубому"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_color_green spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_green",
+						"icon": "includes/svg/icon-scheme-color.svg",
+						"text": "Зеленым по темно-коричневому"
+					})
+				</div>
+			</div>
+
+			<div class="spec-panel__item">
+				<div class="spec-panel__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_settings spec-btn-settings-js",
+						"icon": "includes/svg/icon-settings.svg",
+						"text": "Настройки",
+						"title": "Дополнительные настройки"
+					})
+				</div>
+			</div>
+
+			<div class="spec-panel__footer">
+				<div class="spec-panel__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"href": "@@specUrl",
+						"classes": "spec-panel__btn spec-panel__btn_switcher spec-btn-switcher-js",
+						"icon": "includes/svg/icon-special-off.svg",
+						"text": "Обычная версия",
+						"title": "Переключить на обычную версию сайта"
+					})
+				</div>
+				<div class="spec-panel__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-panel__btn spec-panel__btn_search",
+						"href": "/ru/search",
+						"icon": "includes/svg/icon-search.svg",
+						"text": "Поиск",
+						"title": "Поиск по сайту"
+					})
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Special Version Full Settings -->
+	<div class="spec-drop spec-settings-js">
+		<div class="spec-drop__layout">
+			<div class="spec-drop__title">Настройки текста:</div>
+
+			<div class="spec-drop__item">
+				<div class="spec-drop__label">Выберите начертание шрифта:</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_sans-serif spec-btn-js",
+						"active": "true",
+						"modName": "font-style",
+						"mod": "vspec-mod_font-style_sans-serif",
+						"text": "Без засечек (sans serif)",
+						"title": "Шрифт без засечек"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_serif spec-btn-js",
+						"modName": "font-style",
+						"mod": "vspec-mod_font-style_serif",
+						"text": "С засечками (serif)",
+						"title": "Шрифт с засечками"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_monospace spec-btn-js spec-hide",
+						"modName": "font-style",
+						"mod": "vspec-mod_font-style_monospace",
+						"text": "Моноширинный (monospace)",
+						"title": "Шрифт моноширинный"
+					})
+				</div>
+			</div>
+
+			<div class="spec-drop__item spec-hide">
+				<div class="spec-drop__label">Размер шрифта:</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_size_sm spec-btn-js",
+						"modName": "font-size",
+						"mod": "vspec-mod_font-size_sm",
+						"text": "Маленький",
+						"title": "Маленький размер шрифта"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_size_md spec-btn-js",
+						"active": "true",
+						"modName": "font-size",
+						"mod": "vspec-mod_font-size_norm",
+						"text": "Средний",
+						"title": "Средний размер шрифта"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_size_lg spec-btn-js",
+						"modName": "font-size",
+						"mod": "vspec-mod_font-size_lg",
+						"text": "Большой",
+						"title": "Большой размер шрифта"
+					})
+				</div>
+			</div>
+
+			<div class="spec-drop__item">
+				<div class="spec-drop__label">Интервал между буквами (Кернинг):</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_spacing_norm spec-btn-js",
+						"active": "true",
+						"modName": "spacing",
+						"mod": "vspec-mod_spacing_norm",
+						"text": "Стандартный",
+						"title": "Стандартный интервал"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_spacing_md spec-btn-js",
+						"modName": "spacing",
+						"mod": "vspec-mod_spacing_md",
+						"text": "Средний",
+						"title": "Средний интервал"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_spacing_lg spec-btn-js",
+						"modName": "spacing",
+						"mod": "vspec-mod_spacing_lg",
+						"text": "Большой",
+						"title": "Большой интервал"
+					})
+				</div>
+			</div>
+
+			<div class="spec-drop__item spec-hide">
+				<div class="spec-drop__label">Интервал между строками:</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_line_sm spec-btn-js",
+						"modName": "line-height",
+						"mod": "vspec-mod_line-height_sm",
+						"text": "Одинарный<br> интервал",
+						"title": "Одинарный интервал"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_line_md spec-btn-js",
+						"active": "true",
+						"modName": "line-height",
+						"mod": "vspec-mod_line-height_md",
+						"text": "Полуторный<br> интервал",
+						"title": "Полуторный интервал"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_line_lg spec-btn-js",
+						"modName": "line-height",
+						"mod": "vspec-mod_line-height_lg",
+						"text": "Двойной<br> интервал",
+						"title": "Двойной интервал"
+					})
+				</div>
+			</div>
+
+			<div class="spec-drop__title spec-hide">Выбор цветовой схемы:</div>
+
+			<div class="spec-drop__item spec-hide">
+				<div class="spec-drop__label">Цвета сайта:</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_color_def spec-btn-js",
+						"active": "true",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_def",
+						"text": "Черным по белому"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_color_white spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_white",
+						"text": "Белым по черному"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_color_blue spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_blue",
+						"text": "Темно-синим по голубому"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_color_brown spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_brown",
+						"text": "Коричневым по бежевому"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_color_green spec-btn-js",
+						"modName": "scheme-color",
+						"mod": "vspec-mod_scheme-color_green",
+						"text": "Зеленым по темно-коричневому"
+					})
+				</div>
+			</div>
+
+			<div class="spec-drop__title">Графика:</div>
+
+			<div class="spec-drop__item">
+				<div class="spec-drop__label">Изображение:</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_img spec-btn-js",
+						"modName": "img",
+						"mod": "vspec-mod_img_on",
+						"text": "Включить",
+						"title": "Включить изображения"
+					})
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_img spec-btn-js",
+						"active": "true",
+						"modName": "img",
+						"mod": "vspec-mod_img_off",
+						"text": "Выключить",
+						"title": "Выключить изображения"
+					})
+				</div>
+				<div class="spec-drop__btn-group spec-drop__btn-group-js hide-no-cssfilters">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_mono spec-btn-js",
+						"active": "true",
+						"modName": "mono",
+						"mod": "vspec-mod_mono",
+						"text": "Монохромные изображения",
+						"titleOn": "Отключить монохромность изображений",
+						"titleOff": "Включить монохромность изображений",
+						"toggle": "true"
+					})
+				</div>
+			</div>
+
+			<div class="spec-drop__footer">
+				<div class="spec-drop__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_settings spec-btn-reset-js",
+						"icon": "includes/svg/icon-reset.svg",
+						"text": "Вернуть стандартные настройки",
+						"title": "Сбросить пользовательские настройки"
+					})
+				</div>
+				<div class="spec-drop__btn-group spec-hide">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"href": "@@specUrl",
+						"classes": "spec-drop__btn spec-drop__btn_switcher",
+						"icon": "includes/svg/icon-special-off.svg",
+						"text": "Обычная версия сайта",
+						"title": "Переключить на обычнаю версию сайта"
+					})
+				</div>
+				<div class="spec-drop__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_content spec-btn-content-js",
+						"icon": "includes/svg/icon-content.svg",
+						"text": "Контент",
+						"title": "Перейти к контенту"
+					})
+				</div>
+				<div class="spec-drop__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"classes": "spec-drop__btn spec-drop__btn_settings spec-btn-settings-js",
+						"icon": "includes/svg/icon-close.svg",
+						"text": "Закрыть",
+						"title": "Закрыть настройки"
+					})
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Special Version Full Settings end -->
+</div>

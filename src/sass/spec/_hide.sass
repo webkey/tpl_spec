@@ -1,0 +1,23 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	// hide element
+	// ---------------------------------------------------------------------------
+	.spec-hide
+		display: none !important
+
+
+	// hide ::before
+	// ---------------------------------------------------------------------------
+	.spec-hide-before
+		&::before
+			display: none !important
+
+
+	// hide ::after
+	// ---------------------------------------------------------------------------
+	.spec-hide-after
+		&::after
+			display: none !important

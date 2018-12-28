@@ -1,0 +1,119 @@
+/* PREVENT SPECIAL VERSION */
+body:not(.vspec) .for-spec {
+	display: none;
+}
+
+.img-alt-spec {
+	text-align: left;
+}
+
+.spec-panel {
+	display: none;
+}
+
+.vspec .spec-panel {
+	display: block;
+}
+
+.spec-foot {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.vspec .spec-foot {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+	-ms-flex-align: center;
+	    align-items: center;
+	width: auto;
+	margin-bottom: 1.2em;
+	padding-top: 1.2em;
+	border-top: 2px solid currentColor;
+}
+
+/* special version switchers/toggle buttons */
+/* ============================================================ */
+/*button switch special version */
+.spec-btn-switcher {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	z-index: 5;
+	padding: 0.6em 0.8em 0.6em 3em;
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 18px;
+	color: inherit;
+	letter-spacing: normal;
+	cursor: pointer;
+	text-decoration: underline;
+	border-radius: 0;
+	border: 2px outset darkgreen;
+}
+
+.vspec .spec-btn-switcher {
+	font-size: 14px;
+}
+
+.spec-btn-switcher svg {
+	width: 1.4em;
+	height: 1.4em;
+	position: absolute;
+	left: 1em;
+	top: 50%;
+	-ms-transform: translate(0, -50%);
+	    transform: translate(0, -50%);
+	box-sizing: border-box;
+}
+
+.spec-btn-switcher path {
+	fill: currentColor;
+	will-change: fill;
+	transition-property: fill;
+	transition-duration: 0.2s;
+}
+
+.spec-btn-switcher:hover {
+	text-decoration: none;
+}
+
+body:not(.vspec) .spec-btn-switcher.spec-btn-switcher_normal {
+	display: none;
+}
+
+.vspec .spec-btn-switcher:not(.spec-btn-switcher_normal) {
+	display: none;
+}
+
+#header .spec-btn-switcher {
+	position: relative;
+}
+
+#footer .spec-btn-switcher {
+	position: relative;
+}
+
+.vspec #footer .spec-btn-switcher {
+	padding: 10px 18px 10px 3em;
+	font-size: inherit;
+	line-height: 1.1;
+	font-weight: normal;
+}
+
+.vspec #footer .spec-btn-switcher svg {
+	left: 1em;
+}
+
+/*button switch special version end */
+.logo-spec-wrap {
+	display: none;
+}
+
+/* PREVENT SPECIAL VERSION end */
+
+/*# sourceMappingURL=special-prevent.css.map */

@@ -1,0 +1,36 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	.#{$spec-mod--mono} &
+		img,
+		iframe,
+		.grayscale
+			//-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"
+			//filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+			//filter: gray; /* IE6-9 */
+			filter: grayscale(1) contrast(1) invert(0)
+
+	.#{$spec-mod--mono}.#{$spec-mod--scheme-green} &
+		.logo
+			filter: grayscale(0) contrast(1) invert(1)
+
+	.#{$spec-mod--mono}.#{$spec-mod--scheme-wb} &
+		.logo
+			filter: grayscale(1) contrast(1) invert(1)
+
+	// Показать/скрыть image, icon, figure
+	// ------------------------------------------------------------
+	html:not(.#{$spec-mod--image-on}) &
+
+		img,
+		.spec-no-img
+			display: none !important
+
+		.show-always
+			display: block !important
+
+		//.captcha-img img
+			display: inline-block !important
+			vertical-align: top

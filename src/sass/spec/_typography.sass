@@ -1,0 +1,290 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	h1, h2, h3, h4, h5, h6
+		font-weight: bold
+		text-align: left
+		padding: 0
+
+		+media('<mob-lg')
+			word-break: break-word
+
+	p, ul, ol
+		padding: 0
+
+		& + h2, & + h3, & + h4, & + h5, & + h6
+			padding: 0
+
+	//h1
+		+spec-font-size--title
+		margin-bottom: 0.8em
+
+	//h2
+		+spec-font-size--section
+
+	//.heading
+		h1, h2
+			+prints-space-bottom-sm
+
+	//h3
+		+spec-font-size--item
+
+	h4, h5, h6
+		font-size: inherit
+		line-height: inherit
+
+	h5, h6
+		font-weight: normal
+		text-transform: uppercase
+
+	a
+		color: currentColor
+		text-decoration: underline
+		transition: none
+
+		&:hover
+			text-decoration: none
+
+	b, strong, th
+		font-weight: bold
+
+	i, em
+		font-style: italic
+
+	i b, i strong,
+	em b, em strong,
+	b i, b em,
+	strong i, strong em
+		font-weight: bold
+		font-style: italic
+
+	hr
+		margin: $spec-bottom-space-item 0 $spec-bottom-space
+		border: none
+		border-top: $spec-border-width solid currentColor
+
+	table, .tbl
+		border-collapse: collapse
+		margin-bottom: $spec-bottom-space
+		font-family: inherit
+		font-size: inherit
+		line-height: inherit
+		+spec-reset-border
+
+		&:last-child
+			margin-bottom: 0
+
+		td, th, thead td, tr:first-child td
+			font:
+				family: inherit
+				weight: inherit
+				style: inherit
+				size: 0.85em
+			line-height: inherit
+			letter-spacing: inherit
+			color: inherit
+			text-align: left
+			text-transform: none
+			text-decoration: none
+			white-space: normal
+			//border: 1px solid currentColor
+			border-color: inherit
+			background: none
+			padding: 0.4em 0.6em
+			vertical-align: top
+
+			td, th
+				font-size: inherit
+
+		tr
+			&:hover
+				background: none
+
+		th
+			font-weight: bold
+
+		caption
+			font-size: $spec-small-text-font-size
+			line-height: $spec-small-text-line-height
+			color: inherit
+			font-style: italic
+
+	.tbl table
+		margin-bottom: 0
+
+	.mark
+		+spec-reset-bg-invert
+
+	.nobr
+		white-space: nowrap
+
+	form
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="search"],
+		textarea,
+		.select select
+			$height: 50px
+			$lh: 24px
+			$bd-width: 2px
+			font:
+				family: inherit
+				weight: normal
+				style: normal
+				size: 18px
+			line-height: $lh
+			height: $height
+			padding: #{round(($height - $lh) / 2 - $bd-width)} 10px
+			letter-spacing: inherit
+			box-shadow: none
+			color: inherit
+			transition: none
+			background: none
+			border-radius: 0
+			border: $bd-width solid currentColor
+			box-sizing: border-box
+
+			.touchevents &
+				appearance: none
+				outline: none
+
+			.#{$spec-mod--font-large} &
+				font-size: 22px
+
+			&.error
+				border-color: currentColor
+				box-shadow: none
+				color: inherit
+
+			&:focus
+				//box-shadow: none
+				box-shadow: 0 0 0 2px currentColor
+				border-color: currentColor
+
+			+placeholder
+				color: currentColor
+				transition: none
+
+		.select:before, .select:after
+			+spec-reset-bg-invert
+
+		textarea
+			resize: vertical
+
+		// checkbox, radio
+		input[type="checkbox"], input[type="radio"]
+			float: none
+			display: inline-block
+			vertical-align: middle
+			margin-right: 0.3em
+
+			& + label
+				display: inline-block
+				vertical-align: middle
+
+				& > span
+					padding: 0
+					z-index: auto
+					display: inline
+					vertical-align: baseline
+
+					&::before, &::after
+						display: none !important
+
+	// select
+	.select
+		background: none
+
+	select
+		font-size: inherit
+		padding: 0.5em
+		height: auto
+		border: $spec-border-width solid currentColor
+
+	// list
+	//ul, ol
+		list-style: none
+		margin: 0
+		padding: 0
+
+	.#{$user-content}, .content_center
+		ul, ol
+			&#{$not-list-classes}
+				li
+					list-style: initial
+					background: none
+					padding: 0
+
+					&::before
+						content: none
+
+		ul
+			&#{$not-list-classes}
+				list-style-type: disc
+				display: block
+				margin-top: 0
+				margin-bottom: $spec-bottom-space
+				padding: 0 0 0 40px
+
+				li
+					display: list-item
+
+
+	//blockquote
+	blockquote
+		max-width: $spec-text-layout
+		padding-left: 2em
+		background: none
+		margin: $spec-bottom-space-section auto
+		border: solid currentColor
+		border-width: 0 0 0 $spec-border-width
+
+		+media('<tab-lg')
+			padding-left: 1.5em
+			margin: $spec-bottom-space-section--sm auto
+			max-width: $spec-text-layout--sm
+
+		q
+			+spec-font-size--item
+			font-style: italic
+			border-color: currentColor
+			padding: 0
+
+			&::before, &::after
+				display: none
+
+		cite
+			font-style: italic
+
+	img
+		max-width: 100%
+		height: auto
+		//display: block
+		width: auto
+
+	table img
+		max-width: none
+
+	//imgc
+	.imgc, .imgr, .imgl
+		padding: 0
+		//margin: 0 auto $spec-bottom-space-item
+
+	.imgr
+		margin-left: 1em
+		max-width: 80%
+
+		+media('<mob-lg')
+			margin-left: auto
+			max-width: none
+
+	.imgl
+		margin-right: 1em
+		max-width: 80%
+
+		+media('<mob-lg')
+			margin-right: auto
+			max-width: none

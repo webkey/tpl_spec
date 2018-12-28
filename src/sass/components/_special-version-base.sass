@@ -1,0 +1,564 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/functions
+@import ../utils/mixins
+@import ../utils/placeholders
+
+//body:not(.#{$spec-mod})
+	.for-spec
+		display: none
+
+	.img-alt-spec
+		display: none
+		text-align: left
+
+/* special version tools panel
+/* ============================================================
+.spec-panel
+	display: none
+	position: relative
+	width: nth($spec-panel-size, 2)
+	//max-width: #{$spec-text-page}
+	max-width: 1200px
+	margin: 0 auto 40px
+	line-height: $spec-line-height--small
+	text-align: left
+	box-sizing: border-box
+	border: 0 solid currentColor
+	border-width: 0 $spec-border-width $spec-border-width
+	//z-index: 995
+	z-index: 145
+	// transition
+	$prop: transform, box-shadow
+	will-change: $prop
+	transition:
+		property: $prop
+		duration: 0.2s
+		timing-function: ease-in-out
+
+	+media('<tab-lg')
+		border-width: 0 0 $spec-border-width
+		margin-bottom: 3rem
+
+	+media('<mob-lg')
+		margin-bottom: 2.4rem
+
+	//+media('<mob-md')
+		margin-bottom: 1rem
+
+	.#{$spec-mod} &
+		display: block
+
+	&.settings-is-open
+		box-shadow: 0 0 0 4px currentColor
+
+		+media('<tab-lg')
+			box-shadow: none
+
+	//.#{$spec-mod} &
+		display: block
+
+.spec-panel__layout
+	overflow: hidden
+	overflow-y: hidden
+	overflow-x: hidden
+	box-sizing: border-box
+	//+spec-reset-bg
+	+spec-bg-gradient
+
+	&:hover,
+	.touchevents &,
+	.no-js &
+		overflow-x: auto
+
+.spec-panel__holder
+	display: flex
+	justify-content: flex-start
+	box-sizing: border-box
+	letter-spacing: normal
+	word-spacing: normal
+	//padding: 0 round($spec-panel-inner-space / 2)
+
+	// for ie 9
+	.no-flexwrap &
+		display: block
+		padding-top: 10px
+
+	+media('<mob-md')
+		//padding: 0 round($spec-panel-inner-space--sm / 2)
+		padding: 0
+
+.spec-panel__layout,
+.spec-panel__holder,
+.spec-panel__item,
+.spec-panel__footer
+	height: nth($spec-panel-size, 1)
+
+	+media('<mob-md')
+		height: nth($spec-panel-size--sm, 1)
+
+.spec-panel__item, .spec-panel__footer
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	padding: 0 round($spec-panel-inner-space / 2)
+
+	// for ie 9
+	.no-flexwrap &
+		display: inline-block
+		vertical-align: top
+
+	+media('<mob-md')
+		padding: 0 round($spec-panel-inner-space--sm / 2)
+
+.spec-panel__footer
+	margin-left: auto
+
+.spec-panel__label
+	// for ie 9
+	display: inline-block
+	// for ie 9
+	vertical-align: top
+	white-space: nowrap
+	padding-right: round($spec-panel-inner-space / 2)
+	//font-family: Arial, Helvetica, sans-serif
+	font-family: inherit
+	font-size: 16px
+	line-height: 18px
+	letter-spacing: normal
+	word-spacing: normal
+	word-break: normal
+
+	+media('<tab-sm')
+		display: none
+
+	//+media('<mob-md')
+		padding-right: round($spec-panel-inner-space--sm / 2)
+
+.spec-panel__btn-group
+	display: flex
+	align-items: center
+	border-color: currentColor
+	margin-right: round($spec-panel-inner-space / 2)
+
+	// for ie 9
+	.no-flexwrap &
+		display: inline-block
+		vertical-align: top
+
+	+media('<mob-md')
+		margin-right: round($spec-panel-inner-space--sm / 2)
+
+	&:last-child
+		margin-right: 0
+
+.spec-panel__btn
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	text-align: center
+	width: $spec-panel__btn-size
+	height: $spec-panel__btn-size
+	margin-right: round($spec-panel-inner-space / 2)
+	padding: 2px 0
+	font-size: 18px
+	line-height: 22px
+	letter-spacing: normal
+	word-spacing: normal
+	border-radius: 4px
+	//border: 1px solid $spec-text-color
+	border: 1px solid currentColor
+	box-sizing: border-box
+	// reset outline
+	outline: none
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important
+	user-select: none !important
+
+	// for ie 9
+	.no-flexwrap &
+		display: inline-block
+		vertical-align: top
+
+	&, .#{$spec-mod} &
+		text-decoration: none
+		color: currentColor
+
+	+media('<mob-md')
+		width: $spec-panel__btn-size--sm
+		height: $spec-panel__btn-size--sm
+		margin-right: round($spec-panel-inner-space--sm / 2)
+
+	&:last-child
+		margin-right: 0
+
+	& > span
+		// for ie 9
+		display: inline-block
+		// for ie 9
+		vertical-align: top
+		display: none
+		text-align: left
+		margin-right: 5px
+
+	& > svg + span
+		margin-right: 0
+		margin-left: 5px
+
+	//svg
+		display: block
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		box-sizing: border-box
+
+	svg
+		display: inline-block
+		// for ie 9
+		vertical-align: top
+		box-sizing: border-box
+
+		+media('<mob-md')
+			//transform: translate(-50%, -50%) scale(0.85)
+			transform: scale(0.85)
+
+	path
+		fill: currentColor
+
+	// states of special buttons
+	+spec-button-states
+
+.spec-panel__btn_color_def
+	&, .#{$spec-mod} &
+		color: $spec-text-color
+		background-color: $spec-bg-color
+
+.spec-panel__btn_color_white
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-wb
+		background-color: $spec-bg-color--scheme-wb
+
+.spec-panel__btn_color_blue
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-blue
+		background-color: $spec-bg-color--scheme-blue
+
+.spec-panel__btn_color_brown
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-brown
+		background-color: $spec-bg-color--scheme-brown
+
+.spec-panel__btn_color_green
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-green
+		background-color: $spec-bg-color--scheme-green
+
+$icon-spacing--size: 16px 2px // h w
+$icon-spacing--space: 3px // h
+.spec-panel__btn_spacing_sm, .spec-panel__btn_spacing_md, .spec-panel__btn_spacing_lg
+	.icon
+		&, &::before, &::after
+			display: block
+			position: absolute
+			left: 50%
+			top: 50%
+			height: nth($icon-spacing--size, 1)
+			width: nth($icon-spacing--size, 2)
+			background-color: currentColor
+
+		&
+			margin: -#{round(nth($icon-spacing--size, 1)/2)} 0 0 -#{round(nth($icon-spacing--size, 2)/2)}
+
+			+media('<mob-md')
+				transform: scale(0.85)
+
+		&::before, &::after
+			content: ""
+			margin-top: -#{round(nth($icon-spacing--size, 1)/2)}
+
+		&::before
+			margin-left: -#{$icon-spacing--space + round(nth($icon-spacing--size, 2)*1.5)}
+
+		&::after
+			margin-left: #{$icon-spacing--space + round(nth($icon-spacing--size, 2)*0.5)}
+
+.spec-panel__btn_spacing_md
+	.icon
+		$icon-spacing--space: 6px // h
+
+		&::before
+			margin-left: -#{$icon-spacing--space + round(nth($icon-spacing--size, 2)*1.5)}
+
+		&::after
+			margin-left: #{$icon-spacing--space + round(nth($icon-spacing--size, 2)*0.5)}
+
+.spec-panel__btn_spacing_lg
+	.icon
+		$icon-spacing--space: 9px // h
+
+		&::before
+			margin-left: -#{$icon-spacing--space + round(nth($icon-spacing--size, 2)*1.5)}
+
+		&::after
+			margin-left: #{$icon-spacing--space + round(nth($icon-spacing--size, 2)*0.5)}
+
+// Setting btn
+.spec-panel__btn_settings, .spec-panel__btn_search, .spec-panel__btn_switcher
+	+media('>=tab-lg')
+		width: auto
+		padding: 2px 0.5em
+		//padding-left: 40px
+		//padding-right: 10px
+
+		//svg
+			left: 5px
+			transform: translate(0, -50%)
+
+		& > span
+			// for ie 9
+			display: inline-block
+			white-space: nowrap
+
+// Special Version Advanced Settings
+.spec-drop
+	+spec-reset-bg
+	overflow: hidden
+	display: none
+
+.spec-drop__layout
+	padding: $spec-panel-inner-space
+	border-top: $spec-border-width solid currentColor
+
+	+media('<mob-lg')
+		padding: $spec-panel-inner-space--sm
+
+.spec-drop__title
+	font-weight: bold
+	word-wrap: break-word
+	margin-bottom: round($spec-panel-inner-space / 2)
+	+spec-font-size--title
+
+	+media('<mob-md')
+		margin-bottom: round($spec-panel-inner-space--sm / 2)
+
+	.spec-drop__item + &
+		margin-top: round($spec-panel-inner-space * 2)
+
+		+media('<mob-md')
+			margin-bottom: round($spec-panel-inner-space--sm * 2)
+
+.spec-drop__item, .spec-drop__footer
+	display: flex
+	flex-wrap: wrap
+	justify-content: flex-start
+	align-items: center
+	margin: round($spec-panel-inner-space / 2) 0 0
+	letter-spacing: normal
+	word-spacing: normal
+
+	// for ie 9
+	.no-flexwrap &
+		display: block
+
+	+media('<mob-md')
+		margin: round($spec-panel-inner-space--sm / 2) 0 0
+
+	.spec-drop__title + &
+		margin-top: 0
+
+.spec-drop__footer
+	margin-top: round($spec-panel-inner-space * 2)
+	//margin-top: $spec-panel-inner-space
+	padding-top: $spec-panel-inner-space
+	border-top: $spec-border-width solid currentColor
+	justify-content: flex-end
+
+	+media('<mob-md')
+		margin-top: round($spec-panel-inner-space--sm * 2)
+		padding-top: $spec-panel-inner-space--sm
+
+.spec-drop__label
+	// for ie 9
+	display: inline-block
+	// for ie 9
+	vertical-align: top
+	margin: round($spec-panel-inner-space / 2)
+	margin-left: 0
+	+spec-font-size--item
+	word-wrap: break-word
+
+	+media('<mob-lg')
+		font-size: round-float(18px / $spec-font-size, 2) * 1em
+
+	+media('<mob-md')
+		margin: round($spec-panel-inner-space--sm / 2)
+		margin-left: 0
+
+.spec-drop__btn-group
+	display: flex
+	flex-wrap: wrap
+	justify-content: flex-start
+	align-items: center
+	align-items: stretch
+	margin-right: round($spec-panel-inner-space / 2)
+
+	// for ie 9
+	.no-flexwrap &
+		display: inline-block
+		vertical-align: top
+
+	+media('<mob-md')
+		margin-right: round($spec-panel-inner-space--sm / 2)
+
+	&:last-child
+		margin-right: 0
+
+.spec-drop__btn
+	position: relative
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	margin: round($spec-panel-inner-space / 2)
+	margin-left: 0
+	padding: 8px 0.5em
+	//+spec-font-size--normal
+	//letter-spacing: normal
+	//word-spacing: normal
+	min-height: 50px
+	border-radius: 4px
+	box-sizing: border-box
+	border: 1px solid currentColor
+	// reset outline
+	outline: none
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important
+	user-select: none !important
+
+	// for ie 9
+	.no-flexwrap &
+		display: inline-block
+		vertical-align: top
+
+	&, .#{$spec-mod} &
+		text-decoration: none
+		color: currentColor
+
+	+media('<mob-md')
+		margin: round($spec-panel-inner-space--sm / 2)
+		margin-left: 0
+
+	span
+		// for ie 9
+		display: inline-block
+		// for ie 9
+		vertical-align: top
+
+	svg
+		display: inline-block
+		// for ie 9
+		vertical-align: top
+		box-sizing: border-box
+		margin-right: 5px
+
+	path
+		fill: currentColor
+
+	.icon
+		display: none
+
+	// states of special buttons
+	+spec-button-states
+
+// Font style
+.spec-drop__btn_sans-serif
+	font-family: $spec-font-style--sans-serif
+
+.spec-drop__btn_serif
+	font-family: $spec-font-style--serif
+
+.spec-drop__btn_monospace
+	font-family: $spec-font-style--monospace
+
+// Font size
+//.spec-drop__btn_size_sm,
+//.spec-drop__btn_size_md,
+//.spec-drop__btn_size_lg
+	letter-spacing: inherit
+	word-spacing: inherit
+
+.spec-drop__btn_size_sm
+	font-size: $spec-font-size--small
+
+.spec-drop__btn_size_md
+	font-size: $spec-font-size--medium
+
+.spec-drop__btn_size_lg
+	font-size: $spec-font-size--large
+
+// Line Height
+//.spec-drop__btn_line_sm,
+//.spec-drop__btn_line_md,
+//.spec-drop__btn_line_lg
+	padding-left: 1em
+	padding-right: 1em
+
+//.spec-drop__btn_line_sm
+	line-height: $spec-line-height--small
+
+//.spec-drop__btn_line_md
+	line-height: $spec-line-height--medium
+
+//.spec-drop__btn_line_lg
+	line-height: $spec-line-height--large
+
+// Letter spacing
+//.spec-drop__btn_spacing_norm,
+//.spec-drop__btn_spacing_md,
+//.spec-drop__btn_spacing_lg
+	font-size: inherit
+
+.spec-drop__btn_spacing_norm
+	letter-spacing: $spec-letter-spacing--normal
+	word-spacing: $spec-letter-spacing--normal
+
+.spec-drop__btn_spacing_md
+	letter-spacing: $spec-letter-spacing--medium
+	word-spacing: $spec-letter-spacing--medium
+
+.spec-drop__btn_spacing_lg
+	letter-spacing: $spec-letter-spacing--large
+	word-spacing: $spec-letter-spacing--large
+
+// color scheme
+.spec-drop__btn_color_def
+	&, .#{$spec-mod} &
+		color: $spec-text-color
+		background-color: $spec-bg-color
+
+.spec-drop__btn_color_white
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-wb
+		background-color: $spec-bg-color--scheme-wb
+
+.spec-drop__btn_color_blue
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-blue
+		background-color: $spec-bg-color--scheme-blue
+
+.spec-drop__btn_color_brown
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-brown
+		background-color: $spec-bg-color--scheme-brown
+
+.spec-drop__btn_color_green
+	&, .#{$spec-mod} &
+		color: $spec-text-color--scheme-green
+		background-color: $spec-bg-color--scheme-green
+
+// Special Version Advanced Settings end
+
+.back-to-top
+	display: none
+
+	.#{$spec-mod} &
+		display: inline-block

@@ -1,0 +1,157 @@
+@import ../utils/variables
+@import ../utils/special-version-variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+@media print
+	*,
+	*::before,
+	*::after
+		background: transparent !important
+		color: black !important
+		box-shadow: none !important
+		text-shadow: none !important
+
+	a, a:visited
+		text-decoration: underline
+
+	a[href^=http]::after
+		content: " <" attr(href) "> "
+
+	a[href]::after
+		content: " (" attr(href) ")"
+
+	abbr[title]::after
+		content: " (" attr(title) ")"
+
+	a[href^="#"]::after, a[href^="javascript:"]::after
+		content: ""
+
+	pre, blockquote
+		border: 1px solid #999
+		page-break-inside: avoid
+
+	thead
+		display: table-header-group
+
+	tr, img
+		page-break-inside: avoid
+
+	img
+		max-width: 100% !important
+
+	p, h2, h3
+		orphans: 3
+		widows: 3
+
+	h2, h3
+		page-break-after: avoid
+
+	hr
+		border-color: black
+
+	body
+		font-family: Arial, Helvetica, sans-serif !important
+		font-size: 10pt !important
+		line-height: 1.5 !important
+		min-width: 1024px !important
+
+	h1, h2, h3, h4, h5, h6,
+	b, strong, th, i, em,
+	blockquote, q, cite,
+	table td, table th, table
+		font-family: Arial, Helvetica, sans-serif !important
+		font-weight: normal !important
+		font-style: normal !important
+
+	h1
+		font-size: 20pt !important
+		line-height: 1.3 !important
+
+	h2
+		font-size: 18pt !important
+		line-height: 1.4 !important
+
+	h3, .main-slider-title__item
+		font-size: 16pt !important
+		line-height: 1.5 !important
+
+	h4, blockquote q
+		font-size: 14pt !important
+		line-height: 1.5 !important
+
+	h5, blockquote cite
+		font-size: 12pt !important
+		line-height: 1.6 !important
+
+	h6
+		font-size: 8pt !important
+		line-height: 1.8 !important
+
+	b, strong, th
+		font-weight: bold !important
+
+	i, em
+		font-style: italic !important
+
+	i b, i strong, em b, em strong,
+	b i, b em, strong i, strong em
+		font-weight: bold !important
+		font-style: italic !important
+
+	table td, table th, table
+		border: 1px solid black !important
+		font-size: 9pt !important
+		color: black !important
+		padding: 3pt !important
+
+		& > *
+			padding: 0!important
+
+	form,
+	#top-block .left-col,
+	#top-menu,
+	.spec-panel,
+	#header,
+	.spec-foot,
+	.spec-btn-switcher,
+	#develop,
+	.class
+		display: none !important
+
+	.main,
+	.class
+		+print-reset
+
+	h1, h2, h3, h4, h5, h6,
+	p, ul, ol, blockquote, q, table,
+	.imgl, .imgr, .imgc,
+	.class
+		+prints-space-bottom-sm
+
+	.header, .blockquote, hr, blockquote,
+	.class
+		+prints-space-bottom-md
+
+	.logo
+		background: none !important
+
+		& > *
+			display: none !important
+
+		& > img
+			display: block !important
+			float: left !important
+
+	blockquote q::before,
+	blockquote q::after
+		padding: 0 !important
+		margin: 0 !important
+		font-size: 18pt !important
+		display: inline-block !important
+
+	table
+		width: 100% !important
+
+	.#{$user-content} img
+		max-width: 8cm !important

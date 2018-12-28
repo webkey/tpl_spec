@@ -1,0 +1,18 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	.max-wrap, #header, #content, #footer
+		box-sizing: border-box
+		max-width: calc(#{$spec-text-page} + #{nth($spec-page-space, 2)} * 2)
+		margin-left: auto
+		margin-right: auto
+		+padding-horizontal(nth($spec-page-space, 2))
+
+		+media('<tab-lg')
+			max-width: none
+			+padding-horizontal(nth($spec-page-space--md, 2))
+
+		+media('<mob-md')
+			+padding-horizontal(nth($spec-page-space--sm, 2))

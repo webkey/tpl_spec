@@ -1,0 +1,114 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+// mixin
+=btn-nav()
+	display: inline-block
+	vertical-align: top
+	width: auto
+	height: auto
+	font:
+		family: inherit
+		weight: normal
+		style: normal
+	line-height: 1.2
+	padding: 0.3em 0.5em 0.3em
+	cursor: pointer
+	letter-spacing: inherit
+	text-transform: none
+	color: inherit
+	transition: none
+	text-decoration: none
+	border: $spec-border-width solid currentColor
+	border-radius: $spec-border-radius
+	+spec-reset-bg
+
+	&::before, &::after
+		display: none
+
+=btn-nav-hover()
+	+spec-reset-bg-invert
+
+=btn-nav-current()
+	font-weight: bold
+	background: none
+
+.#{$spec-mod}
+	// buttons default
+	// ---------------------------------------------------------------------------
+	.btn-default, .btn-default-alt, .nav-opener, .button, .spec-btn-switcher
+		position: relative
+		display: inline-block
+		vertical-align: top
+		width: auto
+		height: auto
+		font:
+			family: inherit
+			weight: normal
+			style: normal
+			size: inherit
+		line-height: round-float(20px / 18px, 1)
+		text-align: center
+		letter-spacing: inherit
+		text-transform: uppercase
+		text-decoration: none
+		padding: 10px 18px
+		border: $spec-border-width solid
+		border-radius: $spec-border-radius
+		box-shadow: none
+		cursor: pointer
+		outline: none
+		// transition
+		$prop: color, background-color, border-color
+		will-change: $prop
+		transition:
+			property: $prop
+			duration: $animation-speed
+			timing-function: ease-in-out
+		+spec-reset-bg-invert
+		// color, background-color, border-color
+
+		&::before, &::after
+			display: none
+
+		// HOVER
+		.no-touchevents &
+			&:hover, &:focus
+				//+spec-reset-bg
+				background: none
+				border-color: inherit
+				color: inherit
+
+		// DISABLED
+		&:disabled
+			opacity: 0.5
+
+	.btn-default-alt
+		border: $spec-border-width solid currentColor
+		color: inherit
+		+spec-reset-bg
+
+		// HOVER
+		.no-touchevents &
+			&:hover, &:focus
+				+spec-reset-bg-invert()
+
+	// buttons navigation
+	// ---------------------------------------------------------------------------
+
+	// селесктор нужно писать в ряд (без переносов)
+	.addNav > ul > li
+		font-family: inherit
+
+		& > a
+			+btn-nav
+
+			&:hover
+				+btn-nav-hover
+
+		&.current > a
+			+btn-nav-current
+
+		&.active > a
+			+btn-nav-hover

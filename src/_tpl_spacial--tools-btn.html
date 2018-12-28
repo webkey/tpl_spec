@@ -1,0 +1,4 @@
+<a@@if(context.href){ href="@@href"}@@if(!context.href){ href="#"} class="@@classes"@@if(context.title){ aria-label="@@title"}@@if(!context.title){ aria-label="@@text"}@@if(context.modName){ data-mod-name="@@modName"}@@if(context.mod){ data-mod-value="@@mod"}@@if(!context.titleOn && !context.title){ title="@@text"}@@if(context.title){ title="@@title"}@@if(context.titleOn){ data-title-on="@@titleOn"}@@if(context.titleOff){ data-title-off="@@titleOff"}@@if(context.toggle){ data-toggle}@@if(context.active){ data-default="true"}>
+	@@if(context.icon) { @@include("@@icon") }@@if(context.iconOff) { @@include("@@iconOff") }@@if(!context.icon) {<i class="icon"></i>}
+	<span>@@text</span>
+</a>

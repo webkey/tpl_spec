@@ -1,0 +1,146 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	// reset font-family
+	// ------------------------------------------------------------
+	//h1, h2, h3, h4, h5, h6
+		font-family: inherit
+
+	// reset text color
+	// ------------------------------------------------------------
+	//h1, h2, h3, h4, h5, h6
+		color: inherit
+
+
+
+	// reset text size, line-height, letter-spacing, font-family etc.
+	// ------------------------------------------------------------
+	h1, h2, h3, h4, h5, h6, p,
+	b, strong, th,
+	i, em,
+	i b, i strong,
+	em b, em strong,
+	b i, b em,
+	strong i, strong em,
+	.breadcrumbs-list,
+	.datetime time,
+	blockquote q,
+	blockquote > p,
+	blockquote cite,
+	.label-holder,
+	label, .label,
+	input[type="checkbox"] + label,
+	input[type="radio"] + label,
+	.font-reset
+		+spec-font-reset
+
+
+
+	// Шрифт по умолчанию, текст статьи, текст внутренней страницы
+	// ---------------------------------------------------------------------------
+	.font-of-text
+		padding: 0
+		margin-bottom: $spec-bottom-space-element
+		+spec-font-reset
+
+		&:last-child
+			margin-bottom: 0
+
+
+
+	// H1, Заголовок страницы
+	// ---------------------------------------------------------------------------
+	h1, .h1,
+	.font-of-title
+		padding: 0
+		margin-bottom: $spec-bottom-space-element
+		font:
+			family: inherit
+			weight: bold
+			style: normal
+		+spec-font-size--title
+		letter-spacing: inherit
+		word-spacing: inherit
+		text-transform: none
+		color: inherit
+		text-align: left
+
+		+media('<mob-lg')
+			word-wrap: break-word
+
+		&:last-child
+			margin-bottom: 0
+
+
+
+	// H2, Заголовки секций
+	// ---------------------------------------------------------------------------
+	h2, .h2,
+	.font-of-section
+		padding: 0
+		margin-bottom: $spec-bottom-space-element
+		font:
+			family: inherit
+			weight: bold
+			style: normal
+		+spec-font-size--section
+		letter-spacing: inherit
+		word-spacing: inherit
+		text-transform: none
+		color: inherit
+		text-align: left
+
+		+media('<mob-lg')
+			word-wrap: break-word
+
+		&:last-child
+			margin-bottom: 0
+
+
+
+	// H3, Заголовки пунктов, Заголовки элементов в списке
+	// ---------------------------------------------------------------------------
+	h3, .h3,
+	.font-of-item
+		padding: 0
+		margin-bottom: $spec-bottom-space-element
+		font:
+			family: inherit
+			weight: bold
+			style: normal
+		+spec-font-size--item
+		letter-spacing: inherit
+		word-spacing: inherit
+		text-transform: none
+		color: inherit
+		text-align: left
+
+		+media('<mob-lg')
+			word-wrap: break-word
+
+		&:last-child
+			margin-bottom: 0
+
+
+
+	// Мелкий текст: сноски, даты и т.д.
+	// ---------------------------------------------------------------------------
+	.datetime time,
+	.font-of-small
+		padding: 0
+		margin-bottom: $spec-bottom-space-element
+		font:
+			family: inherit
+			weight: normal
+			style: italic
+		+spec-font-size--note
+		letter-spacing: inherit
+		word-spacing: inherit
+		text-transform: none
+		color: inherit
+		text-align: left
+
+		&:last-child
+			margin-bottom: 0

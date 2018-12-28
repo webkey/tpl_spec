@@ -1,0 +1,17 @@
+{
+  "minify": true,
+  "options": [
+	"domPrefixes",
+	"prefixed",
+	"testAllProps",
+	"testProp",
+	"html5shiv",
+	"setClasses"
+  ],
+  "feature-detects": [
+	"test/touchevents",
+	"test/css/filters",
+	"test/css/flexbox",
+	"test/css/flexwrap"
+  ]
+}
