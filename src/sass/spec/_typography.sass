@@ -210,20 +210,9 @@
 		margin: 0
 		padding: 0
 
-	.#{$user-content}, .content_center
+	.#{$user-content}
 		ul, ol
 			&#{$not-list-classes}
-				li
-					list-style: initial
-					background: none
-					padding: 0
-
-					&::before
-						content: none
-
-		ul
-			&#{$not-list-classes}
-				list-style-type: disc
 				display: block
 				margin-top: 0
 				margin-bottom: $spec-bottom-space
@@ -231,21 +220,37 @@
 
 				li
 					display: list-item
+					list-style: initial
+					background: none
+					padding: 0
+					margin: 0 0 0.5em
 
+					&:last-child
+						margin-bottom: 0
+
+					&::before
+						content: none
+
+		ul
+			&#{$not-list-classes}
+				list-style-type: disc
 
 	//blockquote
 	blockquote
 		max-width: $spec-text-layout
 		padding-left: 2em
 		background: none
-		margin: $spec-bottom-space-section auto
+		margin: $spec-bottom-space-section 0
 		border: solid currentColor
 		border-width: 0 0 0 $spec-border-width
 
 		+media('<tab-lg')
 			padding-left: 1.5em
-			margin: $spec-bottom-space-section--sm auto
+			margin: $spec-bottom-space-section--sm 0
 			max-width: $spec-text-layout--sm
+
+		+media('<mob-md')
+			padding-left: 1em
 
 		q
 			+spec-font-size--item

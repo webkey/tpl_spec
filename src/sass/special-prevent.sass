@@ -20,21 +20,6 @@ body:not(.#{$spec-mod})
 	.#{$spec-mod} &
 		display: block
 
-.spec-foot
-	position: relative
-	box-sizing: border-box
-	width: 100%
-
-	.#{$spec-mod} &
-		display: flex
-		flex-wrap: wrap
-		justify-content: space-between
-		align-items: center
-		width: auto
-		margin-bottom: $spec-bottom-space
-		padding-top: $spec-bottom-space
-		border-top: $spec-border-width solid currentColor
-
 /* special version switchers/toggle buttons
 /* ============================================================
 /*button switch special version
@@ -53,6 +38,7 @@ body:not(.#{$spec-mod})
 	text-decoration: underline
 	border-radius: 0
 	border: 2px outset darkgreen
+	box-sizing: border-box
 
 	.#{$spec-mod} &
 		font-size: 14px
@@ -101,6 +87,21 @@ body:not(.#{$spec-mod})
 			left: 1em
 
 /*button switch special version end
+
+.spec-foot
+	position: relative
+	box-sizing: border-box
+	width: 100%
+
+	.#{$spec-mod} &
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		width: auto
+		margin-bottom: $spec-bottom-space
+		padding-top: $spec-bottom-space
+		border-top: $spec-border-width solid currentColor
 
 // Скрыть блок, в котором лежит логотип сайта для специальной версии
 .logo-spec-wrap

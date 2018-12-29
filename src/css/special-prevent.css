@@ -15,27 +15,6 @@ body:not(.vspec) .for-spec {
 	display: block;
 }
 
-.spec-foot {
-	position: relative;
-	box-sizing: border-box;
-	width: 100%;
-}
-
-.vspec .spec-foot {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	-ms-flex-pack: justify;
-	    justify-content: space-between;
-	-ms-flex-align: center;
-	    align-items: center;
-	width: auto;
-	margin-bottom: 1.2em;
-	padding-top: 1.2em;
-	border-top: 2px solid currentColor;
-}
-
 /* special version switchers/toggle buttons */
 /* ============================================================ */
 /*button switch special version */
@@ -54,6 +33,7 @@ body:not(.vspec) .for-spec {
 	text-decoration: underline;
 	border-radius: 0;
 	border: 2px outset darkgreen;
+	box-sizing: border-box;
 }
 
 .vspec .spec-btn-switcher {
@@ -110,6 +90,27 @@ body:not(.vspec) .spec-btn-switcher.spec-btn-switcher_normal {
 }
 
 /*button switch special version end */
+.spec-foot {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.vspec .spec-foot {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+	-ms-flex-align: center;
+	    align-items: center;
+	width: auto;
+	margin-bottom: 1.2em;
+	padding-top: 1.2em;
+	border-top: 2px solid currentColor;
+}
+
 .logo-spec-wrap {
 	display: none;
 }

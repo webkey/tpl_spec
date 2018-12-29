@@ -152,7 +152,8 @@ $spec-letter-spacing--medium: 0.2em !default
 $spec-letter-spacing--large: 0.5em !default
 
 
-// Группы текста по размерам
+// >>> Mixin of main font style <<<
+// >>> Миксины для размера и междустрочного интервала <<<
 // ==========================================================================
 
 // Стандартный базовый шрифт
@@ -248,15 +249,36 @@ $spec-form-layout: 32em !default
 // ---------------------------------------------------------------------------
 $spec-bottom-space: 1.2em !default
 $spec-bottom-space--sm: 0.8em !default
-// ------------------
+
+=spec-bottom-space($space: $spec-bottom-space, $space--sm: $spec-bottom-space--sm)
+	margin-bottom: $space
+
+	+media('<mob-lg')
+		margin-bottom: $space--sm
+
+	&:last-child
+		margin-bottom: 0
+
+// ---------------------------------------------------------------------------
 $spec-bottom-space-element: round-float($spec-bottom-space / 2, 1) !default
 $spec-bottom-space-element--sm: round-float($spec-bottom-space--sm / 2, 1) !default
-// ------------------
+
+=spec-bottom-space-element()
+	+spec-bottom-space($spec-bottom-space-element, $spec-bottom-space-element--sm)
+
+// ---------------------------------------------------------------------------
 $spec-bottom-space-item: round-float($spec-bottom-space * 1.5, 1) !default
 $spec-bottom-space-item--sm: round-float($spec-bottom-space--sm * 1.5, 1) !default
-// ------------------
+
+=spec-bottom-space-item()
+	+spec-bottom-space($spec-bottom-space-item, $spec-bottom-space-item--sm)
+
+// ---------------------------------------------------------------------------
 $spec-bottom-space-section: round-float($spec-bottom-space * 2.2, 1) !default
 $spec-bottom-space-section--sm: round-float($spec-bottom-space--sm * 2.2, 1) !default
+
+=spec-bottom-space-section()
+	+spec-bottom-space($spec-bottom-space-section, $spec-bottom-space-section--sm)
 
 
 // Borders
@@ -281,18 +303,23 @@ $spec-border-radius: 6px
 // Reset background
 =spec-reset-bg()
 	background-color: $spec-bg-color
+	color: inherit
 
 	.#{$spec-mod--scheme-wb} &
 		background-color: $spec-bg-color--scheme-wb
+		color: inherit
 
 	.#{$spec-mod--scheme-blue} &
 		background-color: $spec-bg-color--scheme-blue
+		color: inherit
 
 	.#{$spec-mod--scheme-brown} &
 		background-color: $spec-bg-color--scheme-brown
+		color: inherit
 
 	.#{$spec-mod--scheme-green} &
 		background-color: $spec-bg-color--scheme-green
+		color: inherit
 
 // Reset background + invert
 // @example: buttons, table headings, mark elements
