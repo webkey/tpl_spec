@@ -2,7 +2,7 @@
 @import placeholders
 
 
-$user-content: 'user-content' !default
+$user-content: '#content' !default
 
 // ##########################################################################
 
@@ -17,7 +17,7 @@ $spec-mod--sans-serif: 'vspec-mod_font-style_sans-serif' !default
 $spec-mod--serif: 'vspec-mod_font-style_serif' !default
 $spec-mod--monospace: 'vspec-mod_font-style_monospace' !default
 $spec-mod--font-small: 'vspec-mod_font-size_sm' !default
-$spec-mod--font-normal: 'vspec-mod_font-size_norm' !default
+$spec-mod--font-medium: 'vspec-mod_font-size_norm' !default
 $spec-mod--font-large: 'vspec-mod_font-size_lg' !default
 $spec-mod--line-height-small: 'vspec-mod_line-height_sm' !default
 $spec-mod--line-height-medium: 'vspec-mod_line-height_md' !default
@@ -103,37 +103,93 @@ $spec-font-style--monospace: Consolas, Monaco, 'Lucida Console', 'Liberation Mon
 
 // Специальная версия: Размер шрифта - Стандартный базовый шрифт
 // ---------------------------------------------------------------------------
-$spec-font-size: 18px !default // 18px (1em)
-$spec-font-size--mob: 16px !default // 18px (1em)
+$spec-font-size: 18px !default
+$spec-font-size--mob: 16px !default
+
+=spec-font-size($fz: $spec-font-size, $fz--mob: $spec-font-size--mob)
+	font-size: $fz
+	+media('<mob-md')
+		font-size: $fz--mob
+
+// Специальная версия: Размер шрифта - СРЕДНИЙ базовый шрифт
+// ---------------------------------------------------------------------------
 $spec-font-size--medium: $spec-font-size !default
+$spec-font-size--medium--mob: $spec-font-size--mob !default
 
-//$spec-line-height: round-float(30px / $spec-font-size, 2) !default // 30px --> 1.67
+=spec-font-size--medium($fz: $spec-font-size--medium, $fz--mob: $spec-font-size--medium--mob)
+	+spec-font-size($fz, $fz--mob)
 
-// Специальная версия: Размер шрифта - Уменьшенный базовый шрифт
+// Специальная версия: Размер шрифта - УМЕНЬШЕННЫЙ базовый шрифт
 // ---------------------------------------------------------------------------
 $spec-font-size--small: 14px !default
-//$spec-line-height--small: round-float(24px / $spec-font-size--small, 2) !default // 24px --> 1.71
+$spec-font-size--small--mob: 12px !default
 
-// Специальная версия: Размер шрифта - Увеличенный базовый шрифт
+=spec-font-size--small($fz: $spec-font-size--small, $fz--mob: $spec-font-size--small--mob)
+	+spec-font-size($fz, $fz--mob)
+
+// Специальная версия: Размер шрифта - УВЕЛИЧЕННЫЙ базовый шрифт
 // ---------------------------------------------------------------------------
 $spec-font-size--large: 30px !default
-//$spec-line-height--large: round-float(45px / $spec-font-size--large, 2) !default // 45px --> 1.5
+$spec-font-size--large--mob: 24px !default
+
+=spec-font-size--large($fz: $spec-font-size--large, $fz--mob: $spec-font-size--large--mob)
+	+spec-font-size($fz, $fz--mob)
 
 
 // >>> Line Height (Line Spacing) <<<
 // ==========================================================================
 
-// Специальная версия: Междустрочный интервал - Одинарный (нормальный)
+// Специальная версия: Междустрочный интервал - ОДИНАРНЫЙ (нормальный)
 // ---------------------------------------------------------------------------
 $spec-line-height--small: 1.5 !default
+$spec-line-height--small--mob: 1.4 !default
 
-// Специальная версия: Междустрочный интервал - Полуторный
+=spec-line-height($lh:$spec-line-height--small, $lh--mob:$spec-line-height--small--mob)
+	line-height: $lh
+	+media('<mob-md')
+		line-height: $lh--mob
+
+=spec-line-height--small($lh:$spec-line-height--small, $lh--mob:$spec-line-height--small--mob)
+	+spec-line-height($lh, $lh--mob)
+
+// Специальная версия: Междустрочный интервал - ПОЛУТОРНЫЙ
 // ---------------------------------------------------------------------------
 $spec-line-height--medium: 2.0 !default
+$spec-line-height--medium--mob: 1.8 !default
 
-// Специальная версия: Междустрочный интервал - Двойной
+=spec-line-height--medium($lh:$spec-line-height--medium, $lh--mob:$spec-line-height--medium--mob)
+	+spec-line-height($lh, $lh--mob)
+
+// Специальная версия: Междустрочный интервал - ДВОЙНОЙ
 // ---------------------------------------------------------------------------
 $spec-line-height--large: 2.5 !default
+$spec-line-height--large--mob: 2.3 !default
+
+=spec-line-height--large($lh:$spec-line-height--large, $lh--mob:$spec-line-height--large--mob)
+	+spec-line-height($lh, $lh--mob)
+
+
+// >>> Font Size & Line Height <<<
+// >>> Миксины для размера и междустрочного интервала <<<
+// ==========================================================================
+
+// Стандартный базовый шрифт
+// ---------------------------------------------------------------------------
+//=spec-font-size--normal()
+	font-size: $spec-font-size
+	//line-height: $spec-line-height
+
+// Уменьшенный базовый шрифт
+// ---------------------------------------------------------------------------
+//=spec-font-size--small()
+	font-size: $spec-font-size--small
+	//line-height: $spec-line-height--small
+
+// Увеличенный базовый шрифт
+// ---------------------------------------------------------------------------
+//=spec-font-size--large()
+	font-size: $spec-font-size--large
+	//line-height: $spec-line-height--large
 
 
 // >>> Letter Spacing (Kerning) <<<
@@ -152,75 +208,53 @@ $spec-letter-spacing--medium: 0.2em !default
 $spec-letter-spacing--large: 0.5em !default
 
 
-// >>> Mixin of main font style <<<
-// >>> Миксины для размера и междустрочного интервала <<<
-// ==========================================================================
-
-// Стандартный базовый шрифт
-// ---------------------------------------------------------------------------
-=spec-font-size--normal()
-	font-size: $spec-font-size
-	//line-height: $spec-line-height
-
-// Уменьшенный базовый шрифт
-// ---------------------------------------------------------------------------
-=spec-font-size--small()
-	font-size: $spec-font-size--small
-	//line-height: $spec-line-height--small
-
-// Увеличенный базовый шрифт
-// ---------------------------------------------------------------------------
-=spec-font-size--large()
-	font-size: $spec-font-size--large
-	//line-height: $spec-line-height--large
-
-
 // H1, Заголовок страницы
 // ---------------------------------------------------------------------------
-//$spec-title-font-size: 36px !default // В px. Менять размер через панель настроект нет необходимости
-$spec-title-font-size: round-float(32px / $spec-font-size, 1) * 1em !default // 36px --> 2em
-$spec-title-line-height: round-float(48px / 36px, 1) !default // 48px --> 1.33
+$spec-title-font-size: 2em !default
+$spec-title-line-height: 1.5 !default
 
-=spec-font-size--title()
+=spec-font--title()
 	font-size: $spec-title-font-size
 	line-height: $spec-title-line-height
 
 	+media('<tab-lg')
 		font-size: round-float(28px / $spec-font-size, 1) * 1em
+		word-wrap: break-word
 
-	+media('<mob-lg')
-		font-size: round-float(24px / $spec-font-size, 1) * 1em
+	+media('<mob-md')
+		font-size: round-float(24px / $spec-font-size--medium--mob, 1) * 1em
 
 // H2, Заголовки секций
 // ---------------------------------------------------------------------------
-$spec-section-font-size: round-float(26px / $spec-font-size, 1) * 1em !default // 26px --> 1.44em
-$spec-section-line-height: round-float(38px / 26px, 1) !default // 38px --> 1.44
+$spec-section-font-size: 1.5em !default
+$spec-section-line-height: 1.7 !default
 
-=spec-font-size--section()
+=spec-font--section()
 	font-size: $spec-section-font-size
 	line-height: $spec-section-line-height
 
 	+media('<tab-lg')
 		font-size: round-float(24px / $spec-font-size, 1) * 1em
+		word-wrap: break-word
 
-	+media('<mob-lg')
-		font-size: round-float(22px / $spec-font-size, 1) * 1em
+	+media('<mob-md')
+		font-size: round-float(22px / $spec-font-size--medium--mob, 1) * 1em
 
 // H3, Заголовки пунктов
 // ---------------------------------------------------------------------------
-$spec-item-font-size: round-float(22px / $spec-font-size, 1) * 1em !default // 22px --> 1.22em
-$spec-item-line-height: round-float(34px / 22px, 1) !default // 34px --> 1.55
+$spec-item-font-size: 1.17em !default
+$spec-item-line-height: 1.9 !default
 
-=spec-font-size--item()
+=spec-font--item()
 	font-size: $spec-item-font-size
 	line-height: $spec-item-line-height
 
 // Мелкий текст: сноски, даты и т.д.
 // ---------------------------------------------------------------------------
-$spec-small-text-font-size: round-float(16px / $spec-font-size, 1) * 1em !default // 16px --> 0.89em
-$spec-small-text-line-height: round-float(24px / 16px, 1) !default // 28px --> 1.75
+$spec-small-text-font-size: 0.83em !default
+$spec-small-text-line-height: 2.5 !default
 
-=spec-font-size--note()
+=spec-font--note()
 	font-size: $spec-small-text-font-size
 	line-height: $spec-small-text-line-height
 
@@ -247,17 +281,21 @@ $spec-form-layout: 32em !default
 
 // Отступы вертикальные
 // ---------------------------------------------------------------------------
-$spec-bottom-space: 1.2em !default
+$spec-bottom-space: 1em !default
 $spec-bottom-space--sm: 0.8em !default
 
 =spec-bottom-space($space: $spec-bottom-space, $space--sm: $spec-bottom-space--sm)
 	margin-bottom: $space
 
-	+media('<mob-lg')
-		margin-bottom: $space--sm
-
 	&:last-child
 		margin-bottom: 0
+
+$spec-space-h1: 0.67em !default
+$spec-space-h2: 0.83em !default
+$spec-space-h3: 1em !default
+$spec-space-h4: 1em !default
+$spec-space-h5: 1.67em !default
+$spec-space-h6: 2.33em !default
 
 // ---------------------------------------------------------------------------
 $spec-bottom-space-element: round-float($spec-bottom-space / 2, 1) !default
@@ -295,10 +333,11 @@ $spec-border-radius: 6px
 		size: inherit
 	line-height: inherit
 	letter-spacing: inherit
+	word-spacing: inherit
+	text-align: inherit
+	text-transform: inherit
+	white-space: inherit
 	color: inherit
-	text-align: left
-	text-transform: none
-	white-space: normal
 
 // Reset background
 =spec-reset-bg()

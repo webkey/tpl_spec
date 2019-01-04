@@ -3,18 +3,6 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	// reset font-family
-	// ------------------------------------------------------------
-	//h1, h2, h3, h4, h5, h6
-		font-family: inherit
-
-	// reset text color
-	// ------------------------------------------------------------
-	//h1, h2, h3, h4, h5, h6
-		color: inherit
-
-
-
 	// reset text size, line-height, letter-spacing, font-family etc.
 	// ------------------------------------------------------------
 	h1, h2, h3, h4, h5, h6, p,
@@ -37,38 +25,19 @@
 		+spec-font-reset
 
 
-
-	// Шрифт по умолчанию, текст статьи, текст внутренней страницы
-	// ---------------------------------------------------------------------------
-	.font-of-text
-		padding: 0
-		margin-bottom: $spec-bottom-space-element
-		+spec-font-reset
-
-		&:last-child
-			margin-bottom: 0
-
-
-
 	// H1, Заголовок страницы
 	// ---------------------------------------------------------------------------
 	h1, .h1,
 	.font-of-title
 		padding: 0
-		margin-bottom: $spec-bottom-space-element
-		font:
-			family: inherit
-			weight: bold
-			style: normal
-		+spec-font-size--title
-		letter-spacing: inherit
-		word-spacing: inherit
-		text-transform: none
-		color: inherit
-		text-align: left
+		margin-bottom: 0.67em
+		margin-top: round-float(0.67em * 2, 1)
+		+spec-font-reset
+		font-weight: bold
+		+spec-font--title
 
-		+media('<mob-lg')
-			word-wrap: break-word
+		&:first-child
+			margin-top: 0
 
 		&:last-child
 			margin-bottom: 0
@@ -80,12 +49,13 @@
 	h2, .h2,
 	.font-of-section
 		padding: 0
-		margin-bottom: $spec-bottom-space-element
+		margin-bottom: 0.83em
+		margin-top: round-float(0.83em * 2, 1)
 		font:
 			family: inherit
 			weight: bold
 			style: normal
-		+spec-font-size--section
+		+spec-font--section
 		letter-spacing: inherit
 		word-spacing: inherit
 		text-transform: none
@@ -105,12 +75,13 @@
 	h3, .h3,
 	.font-of-item
 		padding: 0
-		margin-bottom: $spec-bottom-space-element
+		margin-bottom: 1em
+		margin-top: round-float(1em * 2, 1)
 		font:
 			family: inherit
 			weight: bold
 			style: normal
-		+spec-font-size--item
+		+spec-font--item
 		letter-spacing: inherit
 		word-spacing: inherit
 		text-transform: none
@@ -127,15 +98,15 @@
 
 	// Мелкий текст: сноски, даты и т.д.
 	// ---------------------------------------------------------------------------
-	.datetime time,
-	.font-of-small
+	time,
+	.font-of-small-text
 		padding: 0
-		margin-bottom: $spec-bottom-space-element
+		margin-bottom: 1.67em
 		font:
 			family: inherit
 			weight: normal
 			style: italic
-		+spec-font-size--note
+		+spec-font--note
 		letter-spacing: inherit
 		word-spacing: inherit
 		text-transform: none

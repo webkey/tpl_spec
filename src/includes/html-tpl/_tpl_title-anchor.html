@@ -1,0 +1,5 @@
+@@if(context.openerId){<input type="checkbox" class="accordionOpener" id="@@openerId"@@if(context.checked){ checked}>}
+<@@if(!context.taTag){h3}@@if(context.taTag){@@taTag}>
+@@if(context.openerId){<label class="mark" for="@@openerId"></label>}
+<a href="#hash-@@taId" id="hash-@@taId" class="hashAnchor"><span class="mark">@@taText</span></a>
+</@@if(!context.taTag){h3}@@if(context.taTag){@@taTag}>

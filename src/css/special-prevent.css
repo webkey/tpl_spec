@@ -106,8 +106,8 @@ body:not(.vspec) .spec-btn-switcher.spec-btn-switcher_normal {
 	-ms-flex-align: center;
 	    align-items: center;
 	width: auto;
-	margin-bottom: 1.2em;
-	padding-top: 1.2em;
+	margin-bottom: 1em;
+	padding-top: 1em;
 	border-top: 2px solid currentColor;
 }
 

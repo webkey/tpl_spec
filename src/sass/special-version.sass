@@ -13,11 +13,16 @@
 .vspec--hide-page
 	display: none !important
 
+html
+	-webkit-text-size-adjust: none
+
 html[class*="vspec"]
 	background: none
 
 body.#{$spec-mod}
 	//+spec-font-size--normal
+	margin: 0
+	padding: 0
 	font-family: $spec-font-style--sans-serif
 	font-weight: normal
 	font-style: normal
@@ -25,6 +30,7 @@ body.#{$spec-mod}
 	line-height: $spec-line-height--small
 	color: $spec-text-color
 	background: $spec-bg-color url(../i/empty.png) no-repeat fixed
+	-webkit-font-smoothing: antialiased
 
 // no css filters
 .no-cssfilters .hide-no-cssfilters
@@ -53,34 +59,34 @@ body.#{$spec-mod}
 	// >>> Font Size <<<
 	// Специальная версия: Стандартный базовый шрифт
 	// ================================================================
-	.#{$spec-mod--font-normal} &
-		font-size: $spec-font-size--medium
+	.#{$spec-mod--font-medium} &
+		+spec-font-size--medium()
 
 	// Специальная версия: Уменьшенный базовый шрифт
 	// ================================================================
 	.#{$spec-mod--font-small} &
-		font-size: $spec-font-size--small
+		+spec-font-size--small()
 
 	// Специальная версия: Увеличенный базовый шрифт
 	// ================================================================
 	.#{$spec-mod--font-large} &
-		font-size: $spec-font-size--large
+		+spec-font-size--large()
 
 	// >>> Line Height <<<
 	// Специальная версия: Междустрочный интервал - Одинарный
 	// ================================================================
 	.#{$spec-mod--line-height-small} &
-		line-height: $spec-line-height--small
+		+spec-line-height--small()
 
 	// Специальная версия: Междустрочный интервал - Полуторный (нормальный)
 	// ================================================================
 	.#{$spec-mod--line-height-medium} &
-		line-height: $spec-line-height--medium
+		+spec-line-height--medium()
 
 	// Специальная версия: Междустрочный интервал - Двойной
 	// ================================================================
 	.#{$spec-mod--line-height-large} &
-		line-height: $spec-line-height--large
+		+spec-line-height--large()
 
 	// >>> Letter Spacing <<<
 	// Специальная версия: Средний межбуквенный интервал

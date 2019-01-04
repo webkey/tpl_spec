@@ -11,33 +11,46 @@
 		+media('<mob-lg')
 			word-break: break-word
 
-	p, ul, ol
+	h4
+		font-size: 1em
+		font-weight: bold
+		margin-bottom: 1.33em
+		margin-top: round-float(1.33em * 2, 1)
+
+		&:first-child
+			margin-top: 0
+
+		&:last-child
+			margin-bottom: 0
+
+	h5
+		font-size: 0.83em
+		font-weight: bold
+		margin-bottom: 1.67em
+		margin-top: round-float(1.67em * 2, 1)
+
+		&:first-child
+			margin-top: 0
+
+		&:last-child
+			margin-bottom: 0
+
+	h6
+		font-size: 0.67em
+		line-height: 2.5
+		font-weight: bold
+		margin-bottom: 2.33em
+		margin-top: round-float(2.33em * 2, 1)
+
+		&:first-child
+			margin-top: 0
+
+		&:last-child
+			margin-bottom: 0
+
+	p
 		padding: 0
-
-		& + h2, & + h3, & + h4, & + h5, & + h6
-			padding: 0
-
-	//h1
-		+spec-font-size--title
-		margin-bottom: 0.8em
-
-	//h2
-		+spec-font-size--section
-
-	//.heading
-		h1, h2
-			+prints-space-bottom-sm
-
-	//h3
-		+spec-font-size--item
-
-	h4, h5, h6
-		font-size: inherit
-		line-height: inherit
-
-	h5, h6
-		font-weight: normal
-		text-transform: uppercase
+		margin-top: 0
 
 	a
 		color: currentColor
@@ -65,9 +78,13 @@
 		border: none
 		border-top: $spec-border-width solid currentColor
 
+	time
+		display: inline-block
+		vertical-align: top
+
 	table, .tbl
 		border-collapse: collapse
-		margin-bottom: $spec-bottom-space
+		+spec-bottom-space-item
 		font-family: inherit
 		font-size: inherit
 		line-height: inherit
@@ -82,7 +99,7 @@
 				weight: inherit
 				style: inherit
 				size: 0.85em
-			line-height: inherit
+			line-height: 1.5
 			letter-spacing: inherit
 			color: inherit
 			text-align: left
@@ -210,30 +227,42 @@
 		margin: 0
 		padding: 0
 
-	.#{$user-content}
-		ul, ol
-			&#{$not-list-classes}
-				display: block
+	//#{$user-content}
+	ul, ol
+		&#{$not-list-classes}
+			display: block
+			margin-top: $spec-bottom-space
+			margin-bottom: $spec-bottom-space
+			padding: 0 0 0 40px
+
+			&:first-child
 				margin-top: 0
-				margin-bottom: $spec-bottom-space
-				padding: 0 0 0 40px
 
-				li
-					display: list-item
-					list-style: initial
-					background: none
-					padding: 0
-					margin: 0 0 0.5em
+			&:last-child
+				margin-bottom: 0
 
-					&:last-child
-						margin-bottom: 0
+			li
+				display: list-item
+				list-style: inherit
+				background: none
+				padding: 0
+				margin: round-float($spec-bottom-space / 2, 2) 0
 
-					&::before
-						content: none
+				&::before
+					content: none
 
-		ul
-			&#{$not-list-classes}
-				list-style-type: disc
+			ul, ol
+				margin: 0
+
+	ul
+		&#{$not-list-classes}
+			list-style-type: disc
+			//list-style-type: auto
+
+	ol
+		&#{$not-list-classes}
+			list-style-type: decimal
+			//list-style-type: auto
 
 	//blockquote
 	blockquote
@@ -253,7 +282,8 @@
 			padding-left: 1em
 
 		q
-			+spec-font-size--item
+			+spec-font-size()
+			line-height: inherit
 			font-style: italic
 			border-color: currentColor
 			padding: 0

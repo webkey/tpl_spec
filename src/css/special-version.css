@@ -5,11 +5,17 @@
 	display: none !important;
 }
 
+html {
+	-webkit-text-size-adjust: none;
+}
+
 html[class*="vspec"] {
 	background: none;
 }
 
 body.vspec {
+	margin: 0;
+	padding: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-weight: normal;
 	font-style: normal;
@@ -17,6 +23,7 @@ body.vspec {
 	line-height: 1.5;
 	color: #000;
 	background: #fff url(../i/empty.png) no-repeat fixed;
+	-webkit-font-smoothing: antialiased;
 }
 
 .no-cssfilters .hide-no-cssfilters {
@@ -41,24 +48,60 @@ body.vspec {
 	font-size: 18px;
 }
 
+@media (max-width: 479px) {
+	.vspec-mod_font-size_norm body.vspec {
+		font-size: 16px;
+	}
+}
+
 .vspec-mod_font-size_sm body.vspec {
 	font-size: 14px;
+}
+
+@media (max-width: 479px) {
+	.vspec-mod_font-size_sm body.vspec {
+		font-size: 12px;
+	}
 }
 
 .vspec-mod_font-size_lg body.vspec {
 	font-size: 30px;
 }
 
+@media (max-width: 479px) {
+	.vspec-mod_font-size_lg body.vspec {
+		font-size: 24px;
+	}
+}
+
 .vspec-mod_line-height_sm body.vspec {
 	line-height: 1.5;
+}
+
+@media (max-width: 479px) {
+	.vspec-mod_line-height_sm body.vspec {
+		line-height: 1.4;
+	}
 }
 
 .vspec-mod_line-height_md body.vspec {
 	line-height: 2;
 }
 
+@media (max-width: 479px) {
+	.vspec-mod_line-height_md body.vspec {
+		line-height: 1.8;
+	}
+}
+
 .vspec-mod_line-height_lg body.vspec {
 	line-height: 2.5;
+}
+
+@media (max-width: 479px) {
+	.vspec-mod_line-height_lg body.vspec {
+		line-height: 2.3;
+	}
 }
 
 .vspec-mod_spacing_md body.vspec {
@@ -566,19 +609,20 @@ body.vspec {
 	font-weight: bold;
 	word-wrap: break-word;
 	margin-bottom: 8px;
-	font-size: 1.8em;
-	line-height: 1.3;
+	font-size: 2em;
+	line-height: 1.5;
 }
 
 @media (max-width: 991px) {
 	.spec-drop__title {
 		font-size: 1.6em;
+		word-wrap: break-word;
 	}
 }
 
-@media (max-width: 639px) {
+@media (max-width: 479px) {
 	.spec-drop__title {
-		font-size: 1.3em;
+		font-size: 1.5em;
 	}
 }
 
@@ -646,8 +690,8 @@ body.vspec {
 	vertical-align: top;
 	margin: 8px;
 	margin-left: 0;
-	font-size: 1.2em;
-	line-height: 1.5;
+	font-size: 1.17em;
+	line-height: 1.9;
 	word-wrap: break-word;
 }
 
@@ -984,66 +1028,52 @@ body.vspec {
 	font-size: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;
+	word-spacing: inherit;
+	text-align: inherit;
+	text-transform: inherit;
+	white-space: inherit;
 	color: inherit;
-	text-align: left;
-	text-transform: none;
-	white-space: normal;
 }
 
-.vspec .font-of-text {
+.vspec h1, .vspec .h1,
+.vspec .font-of-title {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.67em;
+	margin-top: 1.3em;
 	font-family: inherit;
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;
-	color: inherit;
-	text-align: left;
-	text-transform: none;
-	white-space: normal;
-}
-
-.vspec .font-of-text:last-child {
-	margin-bottom: 0;
-}
-
-.vspec h1, .vspec .h1,
-.vspec .font-of-title {
-	padding: 0;
-	margin-bottom: 0.6em;
-	font-family: inherit;
-	font-weight: bold;
-	font-style: normal;
-	font-size: 1.8em;
-	line-height: 1.3;
-	letter-spacing: inherit;
 	word-spacing: inherit;
-	text-transform: none;
+	text-align: inherit;
+	text-transform: inherit;
+	white-space: inherit;
 	color: inherit;
-	text-align: left;
+	font-weight: bold;
+	font-size: 2em;
+	line-height: 1.5;
 }
 
 @media (max-width: 991px) {
 	.vspec h1, .vspec .h1,
 	.vspec .font-of-title {
 		font-size: 1.6em;
-	}
-}
-
-@media (max-width: 639px) {
-	.vspec h1, .vspec .h1,
-	.vspec .font-of-title {
-		font-size: 1.3em;
-	}
-}
-
-@media (max-width: 639px) {
-	.vspec h1, .vspec .h1,
-	.vspec .font-of-title {
 		word-wrap: break-word;
 	}
+}
+
+@media (max-width: 479px) {
+	.vspec h1, .vspec .h1,
+	.vspec .font-of-title {
+		font-size: 1.5em;
+	}
+}
+
+.vspec h1:first-child, .vspec .h1:first-child,
+.vspec .font-of-title:first-child {
+	margin-top: 0;
 }
 
 .vspec h1:last-child, .vspec .h1:last-child,
@@ -1054,12 +1084,13 @@ body.vspec {
 .vspec h2, .vspec .h2,
 .vspec .font-of-section {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.83em;
+	margin-top: 1.7em;
 	font-family: inherit;
 	font-weight: bold;
 	font-style: normal;
-	font-size: 1.4em;
-	line-height: 1.5;
+	font-size: 1.5em;
+	line-height: 1.7;
 	letter-spacing: inherit;
 	word-spacing: inherit;
 	text-transform: none;
@@ -1071,13 +1102,14 @@ body.vspec {
 	.vspec h2, .vspec .h2,
 	.vspec .font-of-section {
 		font-size: 1.3em;
+		word-wrap: break-word;
 	}
 }
 
-@media (max-width: 639px) {
+@media (max-width: 479px) {
 	.vspec h2, .vspec .h2,
 	.vspec .font-of-section {
-		font-size: 1.2em;
+		font-size: 1.4em;
 	}
 }
 
@@ -1096,12 +1128,13 @@ body.vspec {
 .vspec h3, .vspec .h3,
 .vspec .font-of-item {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 1em;
+	margin-top: 2em;
 	font-family: inherit;
 	font-weight: bold;
 	font-style: normal;
-	font-size: 1.2em;
-	line-height: 1.5;
+	font-size: 1.17em;
+	line-height: 1.9;
 	letter-spacing: inherit;
 	word-spacing: inherit;
 	text-transform: none;
@@ -1121,15 +1154,15 @@ body.vspec {
 	margin-bottom: 0;
 }
 
-.vspec .datetime time,
-.vspec .font-of-small {
+.vspec time,
+.vspec .font-of-small-text {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 1.67em;
 	font-family: inherit;
 	font-weight: normal;
 	font-style: italic;
-	font-size: 0.9em;
-	line-height: 1.5;
+	font-size: 0.83em;
+	line-height: 2.5;
 	letter-spacing: inherit;
 	word-spacing: inherit;
 	text-transform: none;
@@ -1137,8 +1170,8 @@ body.vspec {
 	text-align: left;
 }
 
-.vspec .datetime time:last-child,
-.vspec .font-of-small:last-child {
+.vspec time:last-child,
+.vspec .font-of-small-text:last-child {
 	margin-bottom: 0;
 }
 
@@ -1157,15 +1190,7 @@ body.vspec {
 .vspec #header,
 .vspec #content,
 .vspec .spec-bottom-space-section {
-	margin-bottom: 2.6em;
-}
-
-@media (max-width: 639px) {
-	.vspec #header,
-	.vspec #content,
-	.vspec .spec-bottom-space-section {
-		margin-bottom: 1.8em;
-	}
+	margin-bottom: 2.2em;
 }
 
 .vspec #header:last-child,
@@ -1175,13 +1200,7 @@ body.vspec {
 }
 
 .vspec .spec-bottom-space-item {
-	margin-bottom: 1.8em;
-}
-
-@media (max-width: 639px) {
-	.vspec .spec-bottom-space-item {
-		margin-bottom: 1.2em;
-	}
+	margin-bottom: 1.5em;
 }
 
 .vspec .spec-bottom-space-item:last-child {
@@ -1199,23 +1218,7 @@ body.vspec {
 .vspec .select,
 .vspec select,
 .vspec .spec-bottom-space {
-	margin-bottom: 1.2em;
-}
-
-@media (max-width: 639px) {
-	.vspec p, .vspec blockquote,
-	.vspec blockquote q,
-	.vspec blockquote > p,
-	.vspec input[type="text"],
-	.vspec input[type="password"],
-	.vspec input[type="email"],
-	.vspec input[type="search"],
-	.vspec textarea,
-	.vspec .select,
-	.vspec select,
-	.vspec .spec-bottom-space {
-		margin-bottom: 0.8em;
-	}
+	margin-bottom: 1em;
 }
 
 .vspec p:last-child, .vspec blockquote:last-child,
@@ -1233,13 +1236,7 @@ body.vspec {
 }
 
 .vspec .spec-bottom-space-element {
-	margin-bottom: 0.6em;
-}
-
-@media (max-width: 639px) {
-	.vspec .spec-bottom-space-element {
-		margin-bottom: 0.4em;
-	}
+	margin-bottom: 0.5em;
 }
 
 .vspec .spec-bottom-space-element:last-child {
@@ -1549,22 +1546,55 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 	}
 }
 
-.vspec p, .vspec ul, .vspec ol {
+.vspec h4 {
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.33em;
+	margin-top: 2.7em;
+}
+
+.vspec h4:first-child {
+	margin-top: 0;
+}
+
+.vspec h4:last-child {
+	margin-bottom: 0;
+}
+
+.vspec h5 {
+	font-size: 0.83em;
+	font-weight: bold;
+	margin-bottom: 1.67em;
+	margin-top: 3.3em;
+}
+
+.vspec h5:first-child {
+	margin-top: 0;
+}
+
+.vspec h5:last-child {
+	margin-bottom: 0;
+}
+
+.vspec h6 {
+	font-size: 0.67em;
+	line-height: 2.5;
+	font-weight: bold;
+	margin-bottom: 2.33em;
+	margin-top: 4.7em;
+}
+
+.vspec h6:first-child {
+	margin-top: 0;
+}
+
+.vspec h6:last-child {
+	margin-bottom: 0;
+}
+
+.vspec p {
 	padding: 0;
-}
-
-.vspec p + h2, .vspec p + h3, .vspec p + h4, .vspec p + h5, .vspec p + h6, .vspec ul + h2, .vspec ul + h3, .vspec ul + h4, .vspec ul + h5, .vspec ul + h6, .vspec ol + h2, .vspec ol + h3, .vspec ol + h4, .vspec ol + h5, .vspec ol + h6 {
-	padding: 0;
-}
-
-.vspec h4, .vspec h5, .vspec h6 {
-	font-size: inherit;
-	line-height: inherit;
-}
-
-.vspec h5, .vspec h6 {
-	font-weight: normal;
-	text-transform: uppercase;
+	margin-top: 0;
 }
 
 .vspec a {
@@ -1594,18 +1624,27 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 }
 
 .vspec hr {
-	margin: 1.8em 0 1.2em;
+	margin: 1.5em 0 1em;
 	border: none;
 	border-top: 2px solid currentColor;
 }
 
+.vspec time {
+	display: inline-block;
+	vertical-align: top;
+}
+
 .vspec table, .vspec .tbl {
 	border-collapse: collapse;
-	margin-bottom: 1.2em;
+	margin-bottom: 1.5em;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
 	border-color: #000;
+}
+
+.vspec table:last-child, .vspec .tbl:last-child {
+	margin-bottom: 0;
 }
 
 .vspec-mod_scheme-color_white .vspec table, .vspec-mod_scheme-color_white .vspec .tbl {
@@ -1633,7 +1672,7 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: 0.85em;
-	line-height: inherit;
+	line-height: 1.5;
 	letter-spacing: inherit;
 	color: inherit;
 	text-align: left;
@@ -1659,8 +1698,8 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 }
 
 .vspec table caption, .vspec .tbl caption {
-	font-size: 0.9em;
-	line-height: 1.5;
+	font-size: 0.83em;
+	line-height: 2.5;
 	color: inherit;
 	font-style: italic;
 }
@@ -1863,33 +1902,50 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 	border: 2px solid currentColor;
 }
 
-.vspec .user-content ul:not(.reset-list) li, .vspec .user-content ol:not(.reset-list) li, .vspec .content_center ul:not(.reset-list) li, .vspec .content_center ol:not(.reset-list) li {
-	list-style: initial;
-	background: none;
-	padding: 0;
-}
-
-.vspec .user-content ul:not(.reset-list) li::before, .vspec .user-content ol:not(.reset-list) li::before, .vspec .content_center ul:not(.reset-list) li::before, .vspec .content_center ol:not(.reset-list) li::before {
-	content: none;
-}
-
-.vspec .user-content ul:not(.reset-list), .vspec .content_center ul:not(.reset-list) {
-	list-style-type: disc;
+.vspec ul:not(.reset-list), .vspec ol:not(.reset-list) {
 	display: block;
-	margin-top: 0;
-	margin-bottom: 1.2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	padding: 0 0 0 40px;
 }
 
-.vspec .user-content ul:not(.reset-list) li, .vspec .content_center ul:not(.reset-list) li {
+.vspec ul:not(.reset-list):first-child, .vspec ol:not(.reset-list):first-child {
+	margin-top: 0;
+}
+
+.vspec ul:not(.reset-list):last-child, .vspec ol:not(.reset-list):last-child {
+	margin-bottom: 0;
+}
+
+.vspec ul:not(.reset-list) li, .vspec ol:not(.reset-list) li {
 	display: list-item;
+	list-style: inherit;
+	background: none;
+	padding: 0;
+	margin: 0.5em 0;
+}
+
+.vspec ul:not(.reset-list) li::before, .vspec ol:not(.reset-list) li::before {
+	content: none;
+}
+
+.vspec ul:not(.reset-list) ul, .vspec ul:not(.reset-list) ol, .vspec ol:not(.reset-list) ul, .vspec ol:not(.reset-list) ol {
+	margin: 0;
+}
+
+.vspec ul:not(.reset-list) {
+	list-style-type: disc;
+}
+
+.vspec ol:not(.reset-list) {
+	list-style-type: decimal;
 }
 
 .vspec blockquote {
 	max-width: 44em;
 	padding-left: 2em;
 	background: none;
-	margin: 2.6em auto;
+	margin: 2.2em 0;
 	border: solid currentColor;
 	border-width: 0 0 0 2px;
 }
@@ -1897,17 +1953,29 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 @media (max-width: 991px) {
 	.vspec blockquote {
 		padding-left: 1.5em;
-		margin: 1.8em auto;
+		margin: 1.8em 0;
 		max-width: 36em;
 	}
 }
 
+@media (max-width: 479px) {
+	.vspec blockquote {
+		padding-left: 1em;
+	}
+}
+
 .vspec blockquote q {
-	font-size: 1.2em;
-	line-height: 1.5;
+	font-size: 18px;
+	line-height: inherit;
 	font-style: italic;
 	border-color: currentColor;
 	padding: 0;
+}
+
+@media (max-width: 479px) {
+	.vspec blockquote q {
+		font-size: 16px;
+	}
 }
 
 .vspec blockquote q::before, .vspec blockquote q::after {
@@ -1958,24 +2026,33 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 
 /* special version components */
 /* ============================================================ */
+.vspec [style*="font-family"],
+.vspec [style*="FONT-FAMILY"] {
+	font-family: inherit !important;
+}
+
 .vspec [style*="font-size"],
 .vspec [style*="FONT-SIZE"] {
 	font-size: inherit !important;
 }
 
-.vspec [style*="line-height"] {
+.vspec [style*="line-height"],
+.vspec [style*="LINE-HEIGHT"] {
 	line-height: inherit !important;
 }
 
-.vspec [style*="color"] {
+.vspec [style*="color"],
+.vspec [style*="COLOR"] {
 	color: inherit !important;
 }
 
-.vspec [style*="letter-spacing"] {
+.vspec [style*="letter-spacing"],
+.vspec [style*="LETTER-SPACING"] {
 	letter-spacing: inherit !important;
 }
 
-.vspec [style*="background-color"] {
+.vspec [style*="background-color"],
+.vspec [style*="BACKGROUND-COLOR"] {
 	background-color: transparent !important;
 }
 
