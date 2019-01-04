@@ -159,7 +159,8 @@ gulp.task('sassCompilation', function () {
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./src/css'))
 		.pipe(browserSync.reload({
-			stream: true
+			stream: true,
+			open: false
 		}));
 });
 

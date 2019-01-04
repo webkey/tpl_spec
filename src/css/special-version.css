@@ -1187,12 +1187,14 @@ body.vspec {
 	display: none !important;
 }
 
+.vspec .nav-box,
 .vspec #header,
 .vspec #content,
 .vspec .spec-bottom-space-section {
 	margin-bottom: 2.2em;
 }
 
+.vspec .nav-box:last-child,
 .vspec #header:last-child,
 .vspec #content:last-child,
 .vspec .spec-bottom-space-section:last-child {
@@ -1266,7 +1268,14 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 	display: block !important;
 }
 
-.vspec .max-wrap, .vspec #header, .vspec #content, .vspec #footer {
+html:not(.vspec-mod_img_on) .vspec .captcha-img img,
+html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
+	display: inline-block !important;
+	vertical-align: top;
+}
+
+.vspec .max-wrap, .vspec .nav-box, .vspec .global-wrapper,
+.vspec #header, .vspec #content, .vspec #footer {
 	box-sizing: border-box;
 	max-width: calc(50em + 2.22em * 2);
 	margin-left: auto;
@@ -1276,7 +1285,8 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 }
 
 @media (max-width: 991px) {
-	.vspec .max-wrap, .vspec #header, .vspec #content, .vspec #footer {
+	.vspec .max-wrap, .vspec .nav-box, .vspec .global-wrapper,
+	.vspec #header, .vspec #content, .vspec #footer {
 		max-width: none;
 		padding-right: 1.11em;
 		padding-left: 1.11em;
@@ -1284,7 +1294,8 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 }
 
 @media (max-width: 479px) {
-	.vspec .max-wrap, .vspec #header, .vspec #content, .vspec #footer {
+	.vspec .max-wrap, .vspec .nav-box, .vspec .global-wrapper,
+	.vspec #header, .vspec #content, .vspec #footer {
 		padding-right: 0.83em;
 		padding-left: 0.83em;
 	}
@@ -1292,7 +1303,7 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 
 /* special version buttons */
 /* ============================================================ */
-.vspec .btn-default, .vspec .btn-default-alt, .vspec .nav-opener, .vspec .button, .vspec .spec-btn-switcher {
+.vspec .btn-default, .vspec .btn-def, .vspec .btn-default-alt, .vspec .btn-def-alt, .vspec .nav-opener, .vspec .button, .vspec .spec-btn-switcher {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
@@ -1322,41 +1333,41 @@ html:not(.vspec-mod_img_on) .vspec .show-always {
 	border-color: #000;
 }
 
-.vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec .nav-opener, .vspec-mod_scheme-color_white .vspec .button, .vspec-mod_scheme-color_white .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white .vspec .btn-def, .vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec .btn-def-alt, .vspec-mod_scheme-color_white .vspec .nav-opener, .vspec-mod_scheme-color_white .vspec .button, .vspec-mod_scheme-color_white .vspec .spec-btn-switcher {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec .nav-opener, .vspec-mod_scheme-color_blue .vspec .button, .vspec-mod_scheme-color_blue .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue .vspec .btn-def, .vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec .btn-def-alt, .vspec-mod_scheme-color_blue .vspec .nav-opener, .vspec-mod_scheme-color_blue .vspec .button, .vspec-mod_scheme-color_blue .vspec .spec-btn-switcher {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec .nav-opener, .vspec-mod_scheme-color_brown .vspec .button, .vspec-mod_scheme-color_brown .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown .vspec .btn-def, .vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec .btn-def-alt, .vspec-mod_scheme-color_brown .vspec .nav-opener, .vspec-mod_scheme-color_brown .vspec .button, .vspec-mod_scheme-color_brown .vspec .spec-btn-switcher {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec .nav-opener, .vspec-mod_scheme-color_green .vspec .button, .vspec-mod_scheme-color_green .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green .vspec .btn-def, .vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec .btn-def-alt, .vspec-mod_scheme-color_green .vspec .nav-opener, .vspec-mod_scheme-color_green .vspec .button, .vspec-mod_scheme-color_green .vspec .spec-btn-switcher {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
 }
 
-.vspec .btn-default::before, .vspec .btn-default::after, .vspec .btn-default-alt::before, .vspec .btn-default-alt::after, .vspec .nav-opener::before, .vspec .nav-opener::after, .vspec .button::before, .vspec .button::after, .vspec .spec-btn-switcher::before, .vspec .spec-btn-switcher::after {
+.vspec .btn-default::before, .vspec .btn-default::after, .vspec .btn-def::before, .vspec .btn-def::after, .vspec .btn-default-alt::before, .vspec .btn-default-alt::after, .vspec .btn-def-alt::before, .vspec .btn-def-alt::after, .vspec .nav-opener::before, .vspec .nav-opener::after, .vspec .button::before, .vspec .button::after, .vspec .spec-btn-switcher::before, .vspec .spec-btn-switcher::after {
 	display: none;
 }
 
-.vspec .btn-default:hover, .vspec .btn-default:focus, .vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus, .vspec .nav-opener:hover, .vspec .nav-opener:focus, .vspec .button:hover, .vspec .button:focus, .vspec .spec-btn-switcher:hover, .vspec .spec-btn-switcher:focus {
+.vspec .btn-default:hover, .vspec .btn-default:focus, .vspec .btn-def:hover, .vspec .btn-def:focus, .vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus, .vspec .btn-def-alt:hover, .vspec .btn-def-alt:focus, .vspec .nav-opener:hover, .vspec .nav-opener:focus, .vspec .button:hover, .vspec .button:focus, .vspec .spec-btn-switcher:hover, .vspec .spec-btn-switcher:focus {
 	background: none;
 	border-color: inherit;
 	color: inherit;
 }
 
-.vspec .btn-default:disabled, .vspec .btn-default-alt:disabled, .vspec .nav-opener:disabled, .vspec .button:disabled, .vspec .spec-btn-switcher:disabled {
+.vspec .btn-default:disabled, .vspec .btn-def:disabled, .vspec .btn-default-alt:disabled, .vspec .btn-def-alt:disabled, .vspec .nav-opener:disabled, .vspec .button:disabled, .vspec .spec-btn-switcher:disabled {
 	opacity: 0.5;
 }
 

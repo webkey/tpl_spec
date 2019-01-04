@@ -3,7 +3,8 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	.max-wrap, #header, #content, #footer
+	.max-wrap, .nav-box, .global-wrapper,
+	#header, #content, #footer
 		box-sizing: border-box
 		max-width: calc(#{$spec-text-page} + #{nth($spec-page-space, 2)} * 2)
 		margin-left: auto
