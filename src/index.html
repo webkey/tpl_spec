@@ -355,6 +355,7 @@
 		<!--===============h5===============-->
 		<h5><span class="mark">h5</span> Гротеск со шрифтом с засечками, рукописный с модерном. Важно сохранить контраст. Два схожих шрифта рядом выглядят неряшливо.</h5>
 		<p>Она представляет собой систему организации данных, которая устанавливает порядок их важности, что позволяет пользователю найти то, что ему нужно.</p>
+		<hr>
 		<p>То, как будет выглядеть шрифт, зависит от того, как он будет набран. Times New Roman может выглядеть по-настоящему здорово. И главное: пусть лучше текст будет скучным, чем уродливым или нечитабельным.</p>
 		<!--===============h6===============-->
 		<h6><span class="mark">h6</span> Шрифты без засечек имеют простой и четкий внешний вид. Шрифты с засечками, напротив, придают более серьезный и официальный тон.</h6>
@@ -416,63 +417,65 @@
 		<p>Иначе обстоят дела с отображением текста дисплеями различных устройств. Возникает проблема сглаживания и неровности засечек.</p>
 		<p>Поэтому для основного текста лучше подходит шрифт без засечек с несколько увеличенной высотой строчных знаков.</p>
 		<!--===============table===============-->
-		<table border="1">
-			<thead>
-				<tr>
-					<th>При этом</th>
-					<th>Обратите внимание</th>
-					<th>Что в таблице может</th>
-					<th>Отсутствовать <br> шапка</th>
-					<th>Как таковая</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Содержаться</td>
-					<td colspan="2">объединённые ячейки</td>
-					<!--<td></td>-->
-					<td>как в колонках</td>
-					<td>так и в строках</td>
-				</tr>
-				<tr>
-					<td>Например так</td>
-					<td>30%</td>
-					<td>14343</td>
-					<td>Информация</td>
-					<td>в таблицах</td>
-				</tr>
-				<tr>
-					<td>Висячая пунктуация</td>
-					<td>13%</td>
-					<td>23233</td>
-					<td>Отличный способ для <b>выделения</b> самого важного в тексте – использование <a href="#">контрастных</a> шрифтов</td>
-					<td>читабельной</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>30%</td>
-					<td>14343</td>
-					<td>Информация</td>
-					<td>в таблицах</td>
-				</tr>
-				<tr>
-					<td>Вот так</td>
-					<td>13%</td>
-					<td>23233</td>
-					<td>Да</td>
-					<td>Нет</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td>Итого</td>
-					<td>55%</td>
-					<td>23422</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-			</tfoot>
-		</table>
+		<div class="table-auto">
+			<table>
+				<thead>
+					<tr>
+						<th>При этом</th>
+						<th>Обратите внимание</th>
+						<th>Что в таблице может</th>
+						<th>Отсутствовать <br> шапка</th>
+						<th>Как таковая</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Содержаться</td>
+						<td colspan="2">объединённые ячейки</td>
+						<!--<td></td>-->
+						<td>как в колонках</td>
+						<td>так и в строках</td>
+					</tr>
+					<tr>
+						<td>Например так</td>
+						<td>30%</td>
+						<td>14343</td>
+						<td>Информация</td>
+						<td>в таблицах</td>
+					</tr>
+					<tr>
+						<td>Висячая пунктуация</td>
+						<td>13%</td>
+						<td>23233</td>
+						<td>Отличный способ для <b>выделения</b> самого важного в тексте – использование <a href="#">контрастных</a> шрифтов</td>
+						<td>читабельной</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>30%</td>
+						<td>14343</td>
+						<td>Информация</td>
+						<td>в таблицах</td>
+					</tr>
+					<tr>
+						<td>Вот так</td>
+						<td>13%</td>
+						<td>23233</td>
+						<td>Да</td>
+						<td>Нет</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>Итого</td>
+						<td>55%</td>
+						<td>23422</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
 		<p>Вообще, переносов в вебе по возможности следует избегать. Попробуйте перенести слово на новую строку или чуть-чуть измените межбуквенное расстояние.</p>
 		<p>Если знаков переноса слишком много, поменяйте размер шрифта или величину пробелов. А при выключке влево вообще не используйте перенос слов.</p>
 		<!--===============buttons===============-->
@@ -511,6 +514,10 @@
 			<input class="btn-default-alt" type="button" value="Type button">
 			<input class="btn-default-alt" type="reset" value="Type reset">
 		</div>
+		<!--===============image===============-->
+		<h3>
+			<a href="#hash-images" id="hash-images" class="hashAnchor"><span class="mark">Изображения в контенте</span></a>
+		</h3>
 		<p>Когда вы увеличиваете размер шрифта, расстояние между символами тоже увеличивается. Поэтому, если вы устанавливаете в тексте крупный заголовок, советуем пропорционально скорректировать расстояние между символами и словами</p>
 		<figure>
 			<img width="1652" height="1099" src='https://images.unsplash.com/photo-1546345414-16d37d6baa05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80' alt='image description'>
@@ -519,6 +526,33 @@
 		<p>Не отделяйте отступом первый абзац от заголовка. Если вы отбиваете абзацы пустой строкой, не используйте абзацные отступы. Это избыточно и безвкусно. С другой стороны, текст вообще без отступов и отбивок будет сложнее восприниматься. В общем, выберите один из способов: или красную строку, или отбивку — и используйте его на протяжении всего текста.</p>
 		<p>While scrolling down the home page and work page of Andre do Amaral’s portfolio I was blown away by its minimalistic nature and boldness. The case studies are only made up of a big photo, a giant headline, and a year. The juxtaposition between the client’s name and the year it was worked on is brilliant.</p>
 		<p>Not only are the two text different in size, font weight but also in font type; the year is serif while the name is sans serif.</p>
+		<!--===============forms===============-->
+		<h3>
+			<a href="#hash-forms" id="hash-forms" class="hashAnchor"><span class="mark">Элементы форм</span></a>
+		</h3>
+		<form action="#">
+			<label for="form-text">Label text</label>
+			<input type="text" id="form-text">
+			<label for="form-email">Label email</label>
+			<input type="email" id="form-email">
+			<label for="form-pass">Label password</label>
+			<input type="password" id="form-pass">
+			<label for="form-search">Label search</label>
+			<input type="search" id="form-search">
+			<label for="form-select">Label select</label>
+			<select name="" id="form-select">
+				<option value="1">option 1</option>
+				<option value="2">option 2</option>
+				<option value="3">option 3</option>
+				<option value="4">option 4</option>
+				<option value="5">option 5</option>
+			</select>
+			<label for="form-textarea">Label form-textarea</label>
+			<textarea name="textarea" id="form-textarea"></textarea>
+			<button>Send</button>
+			<input type="submit" value="Find">
+			<input type="reset" value="Reset">
+		</form>
 	</div>
 	<div id="footer">
 		<div class="spec-foot">

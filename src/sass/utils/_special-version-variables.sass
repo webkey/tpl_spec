@@ -54,7 +54,7 @@ $spec-panel__btn-shadow-hover: inset 0 0 0 3px
 
 // Специальная версия: Цветовая схема - Черным по белому (стандартная)
 // ---------------------------------------------------------------------------
-$spec-text-color: #000 !default
+$spec-text-color: #131313 !default
 $spec-text-color--scheme-def: $spec-text-color !default
 $spec-bg-color: #fff !default
 $spec-bg-color--scheme-def: $spec-bg-color !default
@@ -62,7 +62,7 @@ $spec-bg-color--scheme-def: $spec-bg-color !default
 // Специальная версия: Цветовая схема - Белым по черному
 // ---------------------------------------------------------------------------
 $spec-text-color--scheme-wb: #fff !default
-$spec-bg-color--scheme-wb: #000 !default
+$spec-bg-color--scheme-wb: #131313 !default
 
 // Специальная версия: Цветовая схема - Синим по голубому
 // ---------------------------------------------------------------------------
@@ -252,7 +252,7 @@ $spec-item-line-height: 1.9 !default
 // Мелкий текст: сноски, даты и т.д.
 // ---------------------------------------------------------------------------
 $spec-small-text-font-size: 0.83em !default
-$spec-small-text-line-height: 2.5 !default
+$spec-small-text-line-height: 2.2 !default
 
 =spec-font--note()
 	font-size: $spec-small-text-font-size
@@ -441,6 +441,7 @@ $spec-border-radius: 6px
 	padding: 0
 	margin: 0
 	transform: none
+	transition: none
 	border: none
 	background: none
 	box-shadow: none
@@ -457,7 +458,8 @@ $spec-border-radius: 6px
 	letter-spacing: inherit
 	word-spacing: inherit
 	color: inherit
-	text-align: left
+	//text-align: left
+	text-align: inherit
 	text-transform: none
 	text-shadow: none
 	box-sizing: border-box

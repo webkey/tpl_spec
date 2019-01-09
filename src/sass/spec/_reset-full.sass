@@ -3,23 +3,10 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	blockquote,
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6,
+	hr, p, blockquote, ul, ol, li,
+	table, .tbl, .table-auto,
+	figure, figcaption,
 	.reset-full
 		+spec-reset-full
-
-	// reset svg icon color
-	// ------------------------------------------------------------
-	// цвет свг-эелеметов сделать, как у текста родителя
-	polygon,
-	rect,
-	path,
-	circle,
-	.svg-path
-		fill: currentColor
-
-
-	// reset transition
-	// ------------------------------------------------------------
-	// отключить анимирование элементов
-	.no-transition
-		transition: none

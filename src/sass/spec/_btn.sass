@@ -37,7 +37,7 @@
 .#{$spec-mod}
 	// buttons default
 	// ---------------------------------------------------------------------------
-	.btn-default, .btn-def, .btn-default-alt, .btn-def-alt, .nav-opener, .button, .spec-btn-switcher
+	.btn-default, .btn-def, input[type="submit"], input[type="reset"], button, .btn-default-alt, .btn-def-alt, .nav-opener, .button, .spec-btn-switcher
 		position: relative
 		display: inline-block
 		vertical-align: top
@@ -84,7 +84,7 @@
 		&:disabled
 			opacity: 0.5
 
-	.btn-default-alt
+	.btn-default-alt, .btn-def-alt, input[type="reset"]
 		border: $spec-border-width solid currentColor
 		color: inherit
 		+spec-reset-bg

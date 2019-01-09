@@ -3,15 +3,14 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	h1, h2, h3, h4, h5, h6
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6
 		font-weight: bold
-		text-align: left
-		padding: 0
 
 		+media('<mob-lg')
 			word-break: break-word
 
-	h4
+	h4, .h4
 		font-size: 1em
 		font-weight: bold
 		margin-bottom: 1.33em
@@ -23,7 +22,7 @@
 		&:last-child
 			margin-bottom: 0
 
-	h5
+	h5, .h5
 		font-size: 0.83em
 		font-weight: bold
 		margin-bottom: 1.67em
@@ -35,7 +34,7 @@
 		&:last-child
 			margin-bottom: 0
 
-	h6
+	h6, .h6
 		font-size: 0.67em
 		line-height: 2.5
 		font-weight: bold
@@ -47,10 +46,6 @@
 
 		&:last-child
 			margin-bottom: 0
-
-	p
-		padding: 0
-		margin-top: 0
 
 	a
 		color: currentColor
@@ -74,21 +69,90 @@
 		font-style: italic
 
 	hr
-		margin: $spec-bottom-space-item 0 $spec-bottom-space
-		border: none
 		border-top: $spec-border-width solid currentColor
 
 	time
 		display: inline-block
 		vertical-align: top
 
+	.mark
+		+spec-reset-bg-invert
+
+	.nobr
+		white-space: nowrap
+
+	// list
+	//ul, ol
+		list-style: none
+		margin: 0
+		padding: 0
+
+	#{$user-content}
+		ul, ol
+			&#{$not-list-classes}
+				padding: 0 0 0 40px
+
+				&:first-child
+					margin-top: 0
+
+				&:last-child
+					margin-bottom: 0
+
+				li
+					display: list-item
+					list-style: inherit
+					margin: 0.5em 0
+
+					&::before
+						content: none
+
+				ul, ol
+					margin: 0
+
+		ul
+			&#{$not-list-classes}
+				list-style-type: disc
+
+		ol
+			&#{$not-list-classes}
+				list-style-type: decimal
+
+	//blockquote
+	blockquote
+		max-width: 90%
+		padding-left: 2em
+		background: none
+		margin: $spec-bottom-space-section 0
+		border: solid currentColor
+		border-width: 0 0 0 $spec-border-width
+
+		+media('<tab-lg')
+			padding-left: 1.5em
+
+		+media('<mob-md')
+			padding-left: 1em
+
+		q
+			+spec-font-size()
+			line-height: inherit
+			font-style: italic
+			border-color: currentColor
+			padding: 0
+
+			&::before, &::after
+				display: none
+
+		cite
+			font-style: italic
+
+	//table
 	table, .tbl
 		border-collapse: collapse
-		+spec-bottom-space-item
 		font-family: inherit
 		font-size: inherit
 		line-height: inherit
 		+spec-reset-border
+		border: 1px solid currentColor
 
 		&:last-child
 			margin-bottom: 0
@@ -106,8 +170,8 @@
 			text-transform: none
 			text-decoration: none
 			white-space: normal
-			//border: 1px solid currentColor
-			border-color: inherit
+			border: 1px solid currentColor
+			//border-color: inherit
 			background: none
 			padding: 0.4em 0.6em
 			vertical-align: top
@@ -128,185 +192,121 @@
 			color: inherit
 			font-style: italic
 
-	.tbl table
-		margin-bottom: 0
+	.tbl
+		table
+			margin-bottom: 0
 
-	.mark
-		+spec-reset-bg-invert
+	.table-auto
+		position: relative
+		overflow: auto
+		max-width: 100%
+		-webkit-overflow-scrolling: touch
 
-	.nobr
-		white-space: nowrap
+		table
+			margin-bottom: 0
+			width: auto
+			min-width: 100%
 
-	form
-		input[type="text"],
-		input[type="password"],
-		input[type="email"],
-		input[type="search"],
-		textarea,
-		.select select
-			$height: 50px
-			$lh: 24px
-			$bd-width: 2px
-			font:
-				family: inherit
-				weight: normal
-				style: normal
-				size: 18px
-			line-height: $lh
-			height: $height
-			padding: #{round(($height - $lh) / 2 - $bd-width)} 10px
-			letter-spacing: inherit
+	//forms
+	label
+		display: block
+
+	$f-height: 50px
+	$f-lh: 24px
+	$f-bd-width: 2px
+	$f-pd-v: round(($f-height - $f-lh) / 2 - $f-bd-width) // vertical padding
+	$f-pd-h: 10px // horizontal padding
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="search"],
+	textarea
+		font:
+			family: inherit
+			weight: normal
+			style: normal
+			size: 18px
+		line-height: $f-lh
+		height: $f-height
+		width: 100%
+		padding: $f-pd-v $f-pd-h
+		letter-spacing: inherit
+		box-shadow: none
+		color: inherit
+		transition: none
+		background: none
+		border-radius: 0
+		border: $f-bd-width solid currentColor
+		box-sizing: border-box
+
+		.touchevents &
+			appearance: none
+			outline: none
+
+		.#{$spec-mod--font-large} &
+			font-size: 22px
+
+		&.error
+			border-color: currentColor
 			box-shadow: none
 			color: inherit
+
+		&:focus
+			//box-shadow: none
+			box-shadow: 0 0 0 2px currentColor
+			border-color: currentColor
+
+		+placeholder
+			color: currentColor
 			transition: none
-			background: none
-			border-radius: 0
-			border: $bd-width solid currentColor
-			box-sizing: border-box
 
-			.touchevents &
-				appearance: none
-				outline: none
-
-			.#{$spec-mod--font-large} &
-				font-size: 22px
-
-			&.error
-				border-color: currentColor
-				box-shadow: none
-				color: inherit
-
-			&:focus
-				//box-shadow: none
-				box-shadow: 0 0 0 2px currentColor
-				border-color: currentColor
-
-			+placeholder
-				color: currentColor
-				transition: none
-
-		.select:before, .select:after
-			+spec-reset-bg-invert
-
-		textarea
-			resize: vertical
-
-		// checkbox, radio
-		input[type="checkbox"], input[type="radio"]
-			float: none
-			display: inline-block
-			vertical-align: middle
-			margin-right: 0.3em
-
-			& + label
-				display: inline-block
-				vertical-align: middle
-
-				& > span
-					padding: 0
-					z-index: auto
-					display: inline
-					vertical-align: baseline
-
-					&::before, &::after
-						display: none !important
-
-	// select
-	.select
-		background: none
+	textarea
+		resize: vertical
+		$line: 5
+		min-height: $line * $f-lh + 2 * $f-pd-v
+		height: $line * $f-lh + 2 * $f-pd-v
 
 	select
 		font-size: inherit
 		padding: 0.5em
 		height: auto
+		width: 100%
 		border: $spec-border-width solid currentColor
 
-	// list
-	//ul, ol
-		list-style: none
-		margin: 0
-		padding: 0
+	// checkbox, radio
+	input[type="checkbox"], input[type="radio"]
+		float: none
+		display: inline-block
+		vertical-align: middle
+		margin-right: 0.3em
 
-	//#{$user-content}
-	ul, ol
-		&#{$not-list-classes}
-			display: block
-			margin-top: $spec-bottom-space
-			margin-bottom: $spec-bottom-space
-			padding: 0 0 0 40px
+		& + label
+			display: inline-block
+			vertical-align: middle
 
-			&:first-child
-				margin-top: 0
-
-			&:last-child
-				margin-bottom: 0
-
-			li
-				display: list-item
-				list-style: inherit
-				background: none
+			& > span
 				padding: 0
-				margin: round-float($spec-bottom-space / 2, 2) 0
+				z-index: auto
+				display: inline
+				vertical-align: baseline
 
-				&::before
-					content: none
+				&::before, &::after
+					display: none !important
 
-			ul, ol
-				margin: 0
-
-	ul
-		&#{$not-list-classes}
-			list-style-type: disc
-			//list-style-type: auto
-
-	ol
-		&#{$not-list-classes}
-			list-style-type: decimal
-			//list-style-type: auto
-
-	//blockquote
-	blockquote
-		max-width: $spec-text-layout
-		padding-left: 2em
-		background: none
-		margin: $spec-bottom-space-section 0
-		border: solid currentColor
-		border-width: 0 0 0 $spec-border-width
-
-		+media('<tab-lg')
-			padding-left: 1.5em
-			margin: $spec-bottom-space-section--sm 0
-			max-width: $spec-text-layout--sm
-
-		+media('<mob-md')
-			padding-left: 1em
-
-		q
-			+spec-font-size()
-			line-height: inherit
-			font-style: italic
-			border-color: currentColor
-			padding: 0
-
-			&::before, &::after
-				display: none
-
-		cite
-			font-style: italic
-
+	//img
 	img
 		max-width: 100%
 		height: auto
 		//display: block
 		width: auto
+		vertical-align: top
 
 	table img
 		max-width: none
 
-	//imgc
 	.imgc, .imgr, .imgl
 		padding: 0
-		//margin: 0 auto $spec-bottom-space-item
+		margin: 0
 
 	.imgr
 		margin-left: 1em
@@ -323,3 +323,12 @@
 		+media('<mob-lg')
 			margin-right: auto
 			max-width: none
+
+	#{$user-content}
+		figure
+			img
+				margin-bottom: 0
+
+		figcaption
+			text-align: center
+			padding: 0.5em 2em 0

@@ -21,7 +21,7 @@ body.vspec {
 	font-style: normal;
 	font-size: 18px;
 	line-height: 1.5;
-	color: #000;
+	color: #131313;
 	background: #fff url(../i/empty.png) no-repeat fixed;
 	-webkit-font-smoothing: antialiased;
 }
@@ -116,7 +116,7 @@ body.vspec {
 
 .vspec-mod_scheme-color_white body.vspec {
 	color: #fff;
-	background-color: #000;
+	background-color: #131313;
 }
 
 .vspec-mod_scheme-color_blue body.vspec {
@@ -179,7 +179,7 @@ body.vspec {
 
 @media (max-width: 991px) {
 	.spec-panel.settings-is-open {
-		box-shadow: none;
+		box-shadow: inset 0 0 0 4px currentColor;
 	}
 }
 
@@ -188,13 +188,13 @@ body.vspec {
 	overflow-y: hidden;
 	overflow-x: hidden;
 	box-sizing: border-box;
-	background: #fcfcfc;
-	background: linear-gradient(180deg, #fcfcfc 0%, #e6e6e6 100%);
+	background: #fdfdfd;
+	background: linear-gradient(180deg, #fdfdfd 0%, #e7e7e7 100%);
 }
 
 .vspec-mod_scheme-color_white .spec-panel__layout {
-	background: gray;
-	background: linear-gradient(180deg, gray 0%, #000 100%);
+	background: #898989;
+	background: linear-gradient(180deg, #898989 0%, #131313 100%);
 }
 
 .vspec-mod_scheme-color_blue .spec-panel__layout {
@@ -424,11 +424,11 @@ body.vspec {
 
 .spec-panel__btn:hover, .spec-panel__btn:focus {
 	outline: none;
-	box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 5px #131313;
 }
 
 .vspec-mod_scheme-color_white .spec-panel__btn:hover, .vspec-mod_scheme-color_white .spec-panel__btn:focus {
-	box-shadow: 0 0 0 2px #000, 0 0 0 5px #fff;
+	box-shadow: 0 0 0 2px #131313, 0 0 0 5px #fff;
 }
 
 .vspec-mod_scheme-color_blue .spec-panel__btn:hover, .vspec-mod_scheme-color_blue .spec-panel__btn:focus {
@@ -444,11 +444,11 @@ body.vspec {
 }
 
 .spec-panel__btn.active:hover, .spec-panel__btn.active:focus {
-	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #fff, 0 0 0 5px #000;
+	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #fff, 0 0 0 5px #131313;
 }
 
 .vspec-mod_scheme-color_white .spec-panel__btn.active:hover, .vspec-mod_scheme-color_white .spec-panel__btn.active:focus {
-	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #000, 0 0 0 5px #fff;
+	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #131313, 0 0 0 5px #fff;
 }
 
 .vspec-mod_scheme-color_blue .spec-panel__btn.active:hover, .vspec-mod_scheme-color_blue .spec-panel__btn.active:focus {
@@ -482,13 +482,13 @@ body.vspec {
 }
 
 .spec-panel__btn_color_def, .vspec .spec-panel__btn_color_def {
-	color: #000;
+	color: #131313;
 	background-color: #fff;
 }
 
 .spec-panel__btn_color_white, .vspec .spec-panel__btn_color_white {
 	color: #fff;
-	background-color: #000;
+	background-color: #131313;
 }
 
 .spec-panel__btn_color_blue, .vspec .spec-panel__btn_color_blue {
@@ -568,30 +568,8 @@ body.vspec {
 }
 
 .spec-drop {
-	background-color: #fff;
-	color: inherit;
 	overflow: hidden;
 	display: none;
-}
-
-.vspec-mod_scheme-color_white .spec-drop {
-	background-color: #000;
-	color: inherit;
-}
-
-.vspec-mod_scheme-color_blue .spec-drop {
-	background-color: #c8e5ff;
-	color: inherit;
-}
-
-.vspec-mod_scheme-color_brown .spec-drop {
-	background-color: #f7f3d6;
-	color: inherit;
-}
-
-.vspec-mod_scheme-color_green .spec-drop {
-	background-color: #3b2716;
-	color: inherit;
 }
 
 .spec-drop__layout {
@@ -818,11 +796,11 @@ body.vspec {
 
 .spec-drop__btn:hover, .spec-drop__btn:focus {
 	outline: none;
-	box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 5px #131313;
 }
 
 .vspec-mod_scheme-color_white .spec-drop__btn:hover, .vspec-mod_scheme-color_white .spec-drop__btn:focus {
-	box-shadow: 0 0 0 2px #000, 0 0 0 5px #fff;
+	box-shadow: 0 0 0 2px #131313, 0 0 0 5px #fff;
 }
 
 .vspec-mod_scheme-color_blue .spec-drop__btn:hover, .vspec-mod_scheme-color_blue .spec-drop__btn:focus {
@@ -838,11 +816,11 @@ body.vspec {
 }
 
 .spec-drop__btn.active:hover, .spec-drop__btn.active:focus {
-	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #fff, 0 0 0 5px #000;
+	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #fff, 0 0 0 5px #131313;
 }
 
 .vspec-mod_scheme-color_white .spec-drop__btn.active:hover, .vspec-mod_scheme-color_white .spec-drop__btn.active:focus {
-	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #000, 0 0 0 5px #fff;
+	box-shadow: inset 0 0 0 3px currentColor, 0 0 0 2px #131313, 0 0 0 5px #fff;
 }
 
 .vspec-mod_scheme-color_blue .spec-drop__btn.active:hover, .vspec-mod_scheme-color_blue .spec-drop__btn.active:focus {
@@ -915,13 +893,13 @@ body.vspec {
 }
 
 .spec-drop__btn_color_def, .vspec .spec-drop__btn_color_def {
-	color: #000;
+	color: #131313;
 	background-color: #fff;
 }
 
 .spec-drop__btn_color_white, .vspec .spec-drop__btn_color_white {
 	color: #fff;
-	background-color: #000;
+	background-color: #131313;
 }
 
 .spec-drop__btn_color_blue, .vspec .spec-drop__btn_color_blue {
@@ -949,7 +927,11 @@ body.vspec {
 
 /* special version reset */
 /* ============================================================ */
-.vspec blockquote,
+.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6,
+.vspec .h1, .vspec .h2, .vspec .h3, .vspec .h4, .vspec .h5, .vspec .h6,
+.vspec hr, .vspec p, .vspec blockquote, .vspec ul, .vspec ol, .vspec li,
+.vspec table, .vspec .tbl, .vspec .table-auto,
+.vspec figure, .vspec figcaption,
 .vspec .reset-full {
 	display: block;
 	float: none;
@@ -969,6 +951,7 @@ body.vspec {
 	margin: 0;
 	-ms-transform: none;
 	    transform: none;
+	transition: none;
 	border: none;
 	background: none;
 	box-shadow: none;
@@ -984,7 +967,7 @@ body.vspec {
 	letter-spacing: inherit;
 	word-spacing: inherit;
 	color: inherit;
-	text-align: left;
+	text-align: inherit;
 	text-transform: none;
 	text-shadow: none;
 	box-sizing: border-box;
@@ -999,10 +982,6 @@ body.vspec {
 .vspec circle,
 .vspec .svg-path {
 	fill: currentColor;
-}
-
-.vspec .no-transition {
-	transition: none;
 }
 
 .vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6, .vspec p,
@@ -1120,6 +1099,11 @@ body.vspec {
 	}
 }
 
+.vspec h2:first-child, .vspec .h2:first-child,
+.vspec .font-of-section:first-child {
+	margin-top: 0;
+}
+
 .vspec h2:last-child, .vspec .h2:last-child,
 .vspec .font-of-section:last-child {
 	margin-bottom: 0;
@@ -1149,12 +1133,18 @@ body.vspec {
 	}
 }
 
+.vspec h3:first-child, .vspec .h3:first-child,
+.vspec .font-of-item:first-child {
+	margin-top: 0;
+}
+
 .vspec h3:last-child, .vspec .h3:last-child,
 .vspec .font-of-item:last-child {
 	margin-bottom: 0;
 }
 
 .vspec time,
+.vspec figcaption,
 .vspec .font-of-small-text {
 	padding: 0;
 	margin-bottom: 1.67em;
@@ -1162,7 +1152,7 @@ body.vspec {
 	font-weight: normal;
 	font-style: italic;
 	font-size: 0.83em;
-	line-height: 2.5;
+	line-height: 2.2;
 	letter-spacing: inherit;
 	word-spacing: inherit;
 	text-transform: none;
@@ -1171,6 +1161,7 @@ body.vspec {
 }
 
 .vspec time:last-child,
+.vspec figcaption:last-child,
 .vspec .font-of-small-text:last-child {
 	margin-bottom: 0;
 }
@@ -1201,17 +1192,23 @@ body.vspec {
 	margin-bottom: 0;
 }
 
+.vspec table, .vspec .tbl, .vspec .table-auto,
+.vspec figure,
 .vspec .spec-bottom-space-item {
 	margin-bottom: 1.5em;
 }
 
+.vspec table:last-child, .vspec .tbl:last-child, .vspec .table-auto:last-child,
+.vspec figure:last-child,
 .vspec .spec-bottom-space-item:last-child {
 	margin-bottom: 0;
 }
 
-.vspec p, .vspec blockquote,
+.vspec hr, .vspec p, .vspec blockquote,
 .vspec blockquote q,
 .vspec blockquote > p,
+.vspec #content ul,
+.vspec #content ol,
 .vspec input[type="text"],
 .vspec input[type="password"],
 .vspec input[type="email"],
@@ -1219,13 +1216,19 @@ body.vspec {
 .vspec textarea,
 .vspec .select,
 .vspec select,
+.vspec .imgc,
+.vspec .imgr,
+.vspec .imgl,
+.vspec #content img,
 .vspec .spec-bottom-space {
 	margin-bottom: 1em;
 }
 
-.vspec p:last-child, .vspec blockquote:last-child,
+.vspec hr:last-child, .vspec p:last-child, .vspec blockquote:last-child,
 .vspec blockquote q:last-child,
 .vspec blockquote > p:last-child,
+.vspec #content ul:last-child,
+.vspec #content ol:last-child,
 .vspec input[type="text"]:last-child,
 .vspec input[type="password"]:last-child,
 .vspec input[type="email"]:last-child,
@@ -1233,6 +1236,10 @@ body.vspec {
 .vspec textarea:last-child,
 .vspec .select:last-child,
 .vspec select:last-child,
+.vspec .imgc:last-child,
+.vspec .imgr:last-child,
+.vspec .imgl:last-child,
+.vspec #content img:last-child,
 .vspec .spec-bottom-space:last-child {
 	margin-bottom: 0;
 }
@@ -1303,7 +1310,7 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 /* special version buttons */
 /* ============================================================ */
-.vspec .btn-default, .vspec .btn-def, .vspec .btn-default-alt, .vspec .btn-def-alt, .vspec .nav-opener, .vspec .button, .vspec .spec-btn-switcher {
+.vspec .btn-default, .vspec .btn-def, .vspec input[type="submit"], .vspec input[type="reset"], .vspec button, .vspec .btn-default-alt, .vspec .btn-def-alt, .vspec .nav-opener, .vspec .button, .vspec .spec-btn-switcher {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
@@ -1329,100 +1336,100 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	transition-duration: 0.1s;
 	transition-timing-function: ease-in-out;
 	color: #fff;
-	background-color: #000;
-	border-color: #000;
+	background-color: #131313;
+	border-color: #131313;
 }
 
-.vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white .vspec .btn-def, .vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec .btn-def-alt, .vspec-mod_scheme-color_white .vspec .nav-opener, .vspec-mod_scheme-color_white .vspec .button, .vspec-mod_scheme-color_white .vspec .spec-btn-switcher {
-	color: #000;
+.vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white .vspec .btn-def, .vspec-mod_scheme-color_white .vspec input[type="submit"], .vspec-mod_scheme-color_white .vspec input[type="reset"], .vspec-mod_scheme-color_white .vspec button, .vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec .btn-def-alt, .vspec-mod_scheme-color_white .vspec .nav-opener, .vspec-mod_scheme-color_white .vspec .button, .vspec-mod_scheme-color_white .vspec .spec-btn-switcher {
+	color: #131313;
 	background-color: #fff;
 	border-color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue .vspec .btn-def, .vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec .btn-def-alt, .vspec-mod_scheme-color_blue .vspec .nav-opener, .vspec-mod_scheme-color_blue .vspec .button, .vspec-mod_scheme-color_blue .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue .vspec .btn-def, .vspec-mod_scheme-color_blue .vspec input[type="submit"], .vspec-mod_scheme-color_blue .vspec input[type="reset"], .vspec-mod_scheme-color_blue .vspec button, .vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec .btn-def-alt, .vspec-mod_scheme-color_blue .vspec .nav-opener, .vspec-mod_scheme-color_blue .vspec .button, .vspec-mod_scheme-color_blue .vspec .spec-btn-switcher {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown .vspec .btn-def, .vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec .btn-def-alt, .vspec-mod_scheme-color_brown .vspec .nav-opener, .vspec-mod_scheme-color_brown .vspec .button, .vspec-mod_scheme-color_brown .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown .vspec .btn-def, .vspec-mod_scheme-color_brown .vspec input[type="submit"], .vspec-mod_scheme-color_brown .vspec input[type="reset"], .vspec-mod_scheme-color_brown .vspec button, .vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec .btn-def-alt, .vspec-mod_scheme-color_brown .vspec .nav-opener, .vspec-mod_scheme-color_brown .vspec .button, .vspec-mod_scheme-color_brown .vspec .spec-btn-switcher {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green .vspec .btn-def, .vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec .btn-def-alt, .vspec-mod_scheme-color_green .vspec .nav-opener, .vspec-mod_scheme-color_green .vspec .button, .vspec-mod_scheme-color_green .vspec .spec-btn-switcher {
+.vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green .vspec .btn-def, .vspec-mod_scheme-color_green .vspec input[type="submit"], .vspec-mod_scheme-color_green .vspec input[type="reset"], .vspec-mod_scheme-color_green .vspec button, .vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec .btn-def-alt, .vspec-mod_scheme-color_green .vspec .nav-opener, .vspec-mod_scheme-color_green .vspec .button, .vspec-mod_scheme-color_green .vspec .spec-btn-switcher {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
 }
 
-.vspec .btn-default::before, .vspec .btn-default::after, .vspec .btn-def::before, .vspec .btn-def::after, .vspec .btn-default-alt::before, .vspec .btn-default-alt::after, .vspec .btn-def-alt::before, .vspec .btn-def-alt::after, .vspec .nav-opener::before, .vspec .nav-opener::after, .vspec .button::before, .vspec .button::after, .vspec .spec-btn-switcher::before, .vspec .spec-btn-switcher::after {
+.vspec .btn-default::before, .vspec .btn-default::after, .vspec .btn-def::before, .vspec .btn-def::after, .vspec input[type="submit"]::before, .vspec input[type="submit"]::after, .vspec input[type="reset"]::before, .vspec input[type="reset"]::after, .vspec button::before, .vspec button::after, .vspec .btn-default-alt::before, .vspec .btn-default-alt::after, .vspec .btn-def-alt::before, .vspec .btn-def-alt::after, .vspec .nav-opener::before, .vspec .nav-opener::after, .vspec .button::before, .vspec .button::after, .vspec .spec-btn-switcher::before, .vspec .spec-btn-switcher::after {
 	display: none;
 }
 
-.vspec .btn-default:hover, .vspec .btn-default:focus, .vspec .btn-def:hover, .vspec .btn-def:focus, .vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus, .vspec .btn-def-alt:hover, .vspec .btn-def-alt:focus, .vspec .nav-opener:hover, .vspec .nav-opener:focus, .vspec .button:hover, .vspec .button:focus, .vspec .spec-btn-switcher:hover, .vspec .spec-btn-switcher:focus {
+.vspec .btn-default:hover, .vspec .btn-default:focus, .vspec .btn-def:hover, .vspec .btn-def:focus, .vspec input[type="submit"]:hover, .vspec input[type="submit"]:focus, .vspec input[type="reset"]:hover, .vspec input[type="reset"]:focus, .vspec button:hover, .vspec button:focus, .vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus, .vspec .btn-def-alt:hover, .vspec .btn-def-alt:focus, .vspec .nav-opener:hover, .vspec .nav-opener:focus, .vspec .button:hover, .vspec .button:focus, .vspec .spec-btn-switcher:hover, .vspec .spec-btn-switcher:focus {
 	background: none;
 	border-color: inherit;
 	color: inherit;
 }
 
-.vspec .btn-default:disabled, .vspec .btn-def:disabled, .vspec .btn-default-alt:disabled, .vspec .btn-def-alt:disabled, .vspec .nav-opener:disabled, .vspec .button:disabled, .vspec .spec-btn-switcher:disabled {
+.vspec .btn-default:disabled, .vspec .btn-def:disabled, .vspec input[type="submit"]:disabled, .vspec input[type="reset"]:disabled, .vspec button:disabled, .vspec .btn-default-alt:disabled, .vspec .btn-def-alt:disabled, .vspec .nav-opener:disabled, .vspec .button:disabled, .vspec .spec-btn-switcher:disabled {
 	opacity: 0.5;
 }
 
-.vspec .btn-default-alt {
+.vspec .btn-default-alt, .vspec .btn-def-alt, .vspec input[type="reset"] {
 	border: 2px solid currentColor;
 	color: inherit;
 	background-color: #fff;
 	color: inherit;
 }
 
-.vspec-mod_scheme-color_white .vspec .btn-default-alt {
-	background-color: #000;
+.vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec .btn-def-alt, .vspec-mod_scheme-color_white .vspec input[type="reset"] {
+	background-color: #131313;
 	color: inherit;
 }
 
-.vspec-mod_scheme-color_blue .vspec .btn-default-alt {
+.vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec .btn-def-alt, .vspec-mod_scheme-color_blue .vspec input[type="reset"] {
 	background-color: #c8e5ff;
 	color: inherit;
 }
 
-.vspec-mod_scheme-color_brown .vspec .btn-default-alt {
+.vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec .btn-def-alt, .vspec-mod_scheme-color_brown .vspec input[type="reset"] {
 	background-color: #f7f3d6;
 	color: inherit;
 }
 
-.vspec-mod_scheme-color_green .vspec .btn-default-alt {
+.vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec .btn-def-alt, .vspec-mod_scheme-color_green .vspec input[type="reset"] {
 	background-color: #3b2716;
 	color: inherit;
 }
 
-.vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus {
+.vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus, .vspec .btn-def-alt:hover, .vspec .btn-def-alt:focus, .vspec input[type="reset"]:hover, .vspec input[type="reset"]:focus {
 	color: #fff;
-	background-color: #000;
-	border-color: #000;
+	background-color: #131313;
+	border-color: #131313;
 }
 
-.vspec-mod_scheme-color_white .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_white .vspec .btn-default-alt:focus {
-	color: #000;
+.vspec-mod_scheme-color_white .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_white .vspec .btn-default-alt:focus, .vspec-mod_scheme-color_white .vspec .btn-def-alt:hover, .vspec-mod_scheme-color_white .vspec .btn-def-alt:focus, .vspec-mod_scheme-color_white .vspec input[type="reset"]:hover, .vspec-mod_scheme-color_white .vspec input[type="reset"]:focus {
+	color: #131313;
 	background-color: #fff;
 	border-color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_blue .vspec .btn-default-alt:focus {
+.vspec-mod_scheme-color_blue .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_blue .vspec .btn-default-alt:focus, .vspec-mod_scheme-color_blue .vspec .btn-def-alt:hover, .vspec-mod_scheme-color_blue .vspec .btn-def-alt:focus, .vspec-mod_scheme-color_blue .vspec input[type="reset"]:hover, .vspec-mod_scheme-color_blue .vspec input[type="reset"]:focus {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_brown .vspec .btn-default-alt:focus {
+.vspec-mod_scheme-color_brown .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_brown .vspec .btn-default-alt:focus, .vspec-mod_scheme-color_brown .vspec .btn-def-alt:hover, .vspec-mod_scheme-color_brown .vspec .btn-def-alt:focus, .vspec-mod_scheme-color_brown .vspec input[type="reset"]:hover, .vspec-mod_scheme-color_brown .vspec input[type="reset"]:focus {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_green .vspec .btn-default-alt:focus {
+.vspec-mod_scheme-color_green .vspec .btn-default-alt:hover, .vspec-mod_scheme-color_green .vspec .btn-default-alt:focus, .vspec-mod_scheme-color_green .vspec .btn-def-alt:hover, .vspec-mod_scheme-color_green .vspec .btn-def-alt:focus, .vspec-mod_scheme-color_green .vspec input[type="reset"]:hover, .vspec-mod_scheme-color_green .vspec input[type="reset"]:focus {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
@@ -1455,7 +1462,7 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 }
 
 .vspec-mod_scheme-color_white .vspec .addNav > ul > li > a {
-	background-color: #000;
+	background-color: #131313;
 	color: inherit;
 }
 
@@ -1480,12 +1487,12 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 .vspec .addNav > ul > li > a:hover {
 	color: #fff;
-	background-color: #000;
-	border-color: #000;
+	background-color: #131313;
+	border-color: #131313;
 }
 
 .vspec-mod_scheme-color_white .vspec .addNav > ul > li > a:hover {
-	color: #000;
+	color: #131313;
 	background-color: #fff;
 	border-color: #fff;
 }
@@ -1515,12 +1522,12 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 .vspec .addNav > ul > li.active > a {
 	color: #fff;
-	background-color: #000;
-	border-color: #000;
+	background-color: #131313;
+	border-color: #131313;
 }
 
 .vspec-mod_scheme-color_white .vspec .addNav > ul > li.active > a {
-	color: #000;
+	color: #131313;
 	background-color: #fff;
 	border-color: #fff;
 }
@@ -1545,49 +1552,49 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 /* special version typography */
 /* ============================================================ */
-.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6 {
+.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6,
+.vspec .h1, .vspec .h2, .vspec .h3, .vspec .h4, .vspec .h5, .vspec .h6 {
 	font-weight: bold;
-	text-align: left;
-	padding: 0;
 }
 
 @media (max-width: 639px) {
-	.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6 {
+	.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6,
+	.vspec .h1, .vspec .h2, .vspec .h3, .vspec .h4, .vspec .h5, .vspec .h6 {
 		word-break: break-word;
 	}
 }
 
-.vspec h4 {
+.vspec h4, .vspec .h4 {
 	font-size: 1em;
 	font-weight: bold;
 	margin-bottom: 1.33em;
 	margin-top: 2.7em;
 }
 
-.vspec h4:first-child {
+.vspec h4:first-child, .vspec .h4:first-child {
 	margin-top: 0;
 }
 
-.vspec h4:last-child {
+.vspec h4:last-child, .vspec .h4:last-child {
 	margin-bottom: 0;
 }
 
-.vspec h5 {
+.vspec h5, .vspec .h5 {
 	font-size: 0.83em;
 	font-weight: bold;
 	margin-bottom: 1.67em;
 	margin-top: 3.3em;
 }
 
-.vspec h5:first-child {
+.vspec h5:first-child, .vspec .h5:first-child {
 	margin-top: 0;
 }
 
-.vspec h5:last-child {
+.vspec h5:last-child, .vspec .h5:last-child {
 	margin-bottom: 0;
 }
 
-.vspec h6 {
+.vspec h6, .vspec .h6 {
 	font-size: 0.67em;
 	line-height: 2.5;
 	font-weight: bold;
@@ -1595,17 +1602,12 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	margin-top: 4.7em;
 }
 
-.vspec h6:first-child {
+.vspec h6:first-child, .vspec .h6:first-child {
 	margin-top: 0;
 }
 
-.vspec h6:last-child {
+.vspec h6:last-child, .vspec .h6:last-child {
 	margin-bottom: 0;
-}
-
-.vspec p {
-	padding: 0;
-	margin-top: 0;
 }
 
 .vspec a {
@@ -1635,8 +1637,6 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 }
 
 .vspec hr {
-	margin: 1.5em 0 1em;
-	border: none;
 	border-top: 2px solid currentColor;
 }
 
@@ -1645,17 +1645,124 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	vertical-align: top;
 }
 
+.vspec .mark {
+	color: #fff;
+	background-color: #131313;
+	border-color: #131313;
+}
+
+.vspec-mod_scheme-color_white .vspec .mark {
+	color: #131313;
+	background-color: #fff;
+	border-color: #fff;
+}
+
+.vspec-mod_scheme-color_blue .vspec .mark {
+	color: #c8e5ff;
+	background-color: #004c92;
+	border-color: #004c92;
+}
+
+.vspec-mod_scheme-color_brown .vspec .mark {
+	color: #f7f3d6;
+	background-color: #4d4b43;
+	border-color: #4d4b43;
+}
+
+.vspec-mod_scheme-color_green .vspec .mark {
+	color: #3b2716;
+	background-color: #a9e44d;
+	border-color: #a9e44d;
+}
+
+.vspec .nobr {
+	white-space: nowrap;
+}
+
+.vspec #content ul:not(.reset-list), .vspec #content ol:not(.reset-list) {
+	padding: 0 0 0 40px;
+}
+
+.vspec #content ul:not(.reset-list):first-child, .vspec #content ol:not(.reset-list):first-child {
+	margin-top: 0;
+}
+
+.vspec #content ul:not(.reset-list):last-child, .vspec #content ol:not(.reset-list):last-child {
+	margin-bottom: 0;
+}
+
+.vspec #content ul:not(.reset-list) li, .vspec #content ol:not(.reset-list) li {
+	display: list-item;
+	list-style: inherit;
+	margin: 0.5em 0;
+}
+
+.vspec #content ul:not(.reset-list) li::before, .vspec #content ol:not(.reset-list) li::before {
+	content: none;
+}
+
+.vspec #content ul:not(.reset-list) ul, .vspec #content ul:not(.reset-list) ol, .vspec #content ol:not(.reset-list) ul, .vspec #content ol:not(.reset-list) ol {
+	margin: 0;
+}
+
+.vspec #content ul:not(.reset-list) {
+	list-style-type: disc;
+}
+
+.vspec #content ol:not(.reset-list) {
+	list-style-type: decimal;
+}
+
+.vspec blockquote {
+	max-width: 90%;
+	padding-left: 2em;
+	background: none;
+	margin: 2.2em 0;
+	border: solid currentColor;
+	border-width: 0 0 0 2px;
+}
+
+@media (max-width: 991px) {
+	.vspec blockquote {
+		padding-left: 1.5em;
+	}
+}
+
+@media (max-width: 479px) {
+	.vspec blockquote {
+		padding-left: 1em;
+	}
+}
+
+.vspec blockquote q {
+	font-size: 18px;
+	line-height: inherit;
+	font-style: italic;
+	border-color: currentColor;
+	padding: 0;
+}
+
+@media (max-width: 479px) {
+	.vspec blockquote q {
+		font-size: 16px;
+	}
+}
+
+.vspec blockquote q::before, .vspec blockquote q::after {
+	display: none;
+}
+
+.vspec blockquote cite {
+	font-style: italic;
+}
+
 .vspec table, .vspec .tbl {
 	border-collapse: collapse;
-	margin-bottom: 1.5em;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
-	border-color: #000;
-}
-
-.vspec table:last-child, .vspec .tbl:last-child {
-	margin-bottom: 0;
+	border-color: #131313;
+	border: 1px solid currentColor;
 }
 
 .vspec-mod_scheme-color_white .vspec table, .vspec-mod_scheme-color_white .vspec .tbl {
@@ -1690,7 +1797,7 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	text-transform: none;
 	text-decoration: none;
 	white-space: normal;
-	border-color: inherit;
+	border: 1px solid currentColor;
 	background: none;
 	padding: 0.4em 0.6em;
 	vertical-align: top;
@@ -1710,7 +1817,7 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 .vspec table caption, .vspec .tbl caption {
 	font-size: 0.83em;
-	line-height: 2.5;
+	line-height: 2.2;
 	color: inherit;
 	font-style: italic;
 }
@@ -1719,52 +1826,35 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	margin-bottom: 0;
 }
 
-.vspec .mark {
-	color: #fff;
-	background-color: #000;
-	border-color: #000;
+.vspec .table-auto {
+	position: relative;
+	overflow: auto;
+	max-width: 100%;
+	-webkit-overflow-scrolling: touch;
 }
 
-.vspec-mod_scheme-color_white .vspec .mark {
-	color: #000;
-	background-color: #fff;
-	border-color: #fff;
+.vspec .table-auto table {
+	margin-bottom: 0;
+	width: auto;
+	min-width: 100%;
 }
 
-.vspec-mod_scheme-color_blue .vspec .mark {
-	color: #c8e5ff;
-	background-color: #004c92;
-	border-color: #004c92;
+.vspec label {
+	display: block;
 }
 
-.vspec-mod_scheme-color_brown .vspec .mark {
-	color: #f7f3d6;
-	background-color: #4d4b43;
-	border-color: #4d4b43;
-}
-
-.vspec-mod_scheme-color_green .vspec .mark {
-	color: #3b2716;
-	background-color: #a9e44d;
-	border-color: #a9e44d;
-}
-
-.vspec .nobr {
-	white-space: nowrap;
-}
-
-.vspec form input[type="text"],
-.vspec form input[type="password"],
-.vspec form input[type="email"],
-.vspec form input[type="search"],
-.vspec form textarea,
-.vspec form .select select {
+.vspec input[type="text"],
+.vspec input[type="password"],
+.vspec input[type="email"],
+.vspec input[type="search"],
+.vspec textarea {
 	font-family: inherit;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 18px;
 	line-height: 24px;
 	height: 50px;
+	width: 100%;
 	padding: 11px 10px;
 	letter-spacing: inherit;
 	box-shadow: none;
@@ -1776,231 +1866,113 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	box-sizing: border-box;
 }
 
-.touchevents .vspec form input[type="text"], .touchevents
-.vspec form input[type="password"], .touchevents
-.vspec form input[type="email"], .touchevents
-.vspec form input[type="search"], .touchevents
-.vspec form textarea, .touchevents
-.vspec form .select select {
+.touchevents .vspec input[type="text"], .touchevents
+.vspec input[type="password"], .touchevents
+.vspec input[type="email"], .touchevents
+.vspec input[type="search"], .touchevents
+.vspec textarea {
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 	        appearance: none;
 	outline: none;
 }
 
-.vspec-mod_font-size_lg .vspec form input[type="text"], .vspec-mod_font-size_lg
-.vspec form input[type="password"], .vspec-mod_font-size_lg
-.vspec form input[type="email"], .vspec-mod_font-size_lg
-.vspec form input[type="search"], .vspec-mod_font-size_lg
-.vspec form textarea, .vspec-mod_font-size_lg
-.vspec form .select select {
+.vspec-mod_font-size_lg .vspec input[type="text"], .vspec-mod_font-size_lg
+.vspec input[type="password"], .vspec-mod_font-size_lg
+.vspec input[type="email"], .vspec-mod_font-size_lg
+.vspec input[type="search"], .vspec-mod_font-size_lg
+.vspec textarea {
 	font-size: 22px;
 }
 
-.vspec form input[type="text"].error,
-.vspec form input[type="password"].error,
-.vspec form input[type="email"].error,
-.vspec form input[type="search"].error,
-.vspec form textarea.error,
-.vspec form .select select.error {
+.vspec input[type="text"].error,
+.vspec input[type="password"].error,
+.vspec input[type="email"].error,
+.vspec input[type="search"].error,
+.vspec textarea.error {
 	border-color: currentColor;
 	box-shadow: none;
 	color: inherit;
 }
 
-.vspec form input[type="text"]:focus,
-.vspec form input[type="password"]:focus,
-.vspec form input[type="email"]:focus,
-.vspec form input[type="search"]:focus,
-.vspec form textarea:focus,
-.vspec form .select select:focus {
+.vspec input[type="text"]:focus,
+.vspec input[type="password"]:focus,
+.vspec input[type="email"]:focus,
+.vspec input[type="search"]:focus,
+.vspec textarea:focus {
 	box-shadow: 0 0 0 2px currentColor;
 	border-color: currentColor;
 }
 
-.vspec form input[type="text"]::-webkit-input-placeholder, .vspec form input[type="password"]::-webkit-input-placeholder, .vspec form input[type="email"]::-webkit-input-placeholder, .vspec form input[type="search"]::-webkit-input-placeholder, .vspec form textarea::-webkit-input-placeholder, .vspec form .select select::-webkit-input-placeholder {
+.vspec input[type="text"]::-webkit-input-placeholder, .vspec input[type="password"]::-webkit-input-placeholder, .vspec input[type="email"]::-webkit-input-placeholder, .vspec input[type="search"]::-webkit-input-placeholder, .vspec textarea::-webkit-input-placeholder {
 	color: currentColor;
 	transition: none;
 }
 
-.vspec form input[type="text"]:-moz-placeholder, .vspec form input[type="password"]:-moz-placeholder, .vspec form input[type="email"]:-moz-placeholder, .vspec form input[type="search"]:-moz-placeholder, .vspec form textarea:-moz-placeholder, .vspec form .select select:-moz-placeholder {
+.vspec input[type="text"]:-moz-placeholder, .vspec input[type="password"]:-moz-placeholder, .vspec input[type="email"]:-moz-placeholder, .vspec input[type="search"]:-moz-placeholder, .vspec textarea:-moz-placeholder {
 	color: currentColor;
 	transition: none;
 }
 
-.vspec form input[type="text"]::-moz-placeholder, .vspec form input[type="password"]::-moz-placeholder, .vspec form input[type="email"]::-moz-placeholder, .vspec form input[type="search"]::-moz-placeholder, .vspec form textarea::-moz-placeholder, .vspec form .select select::-moz-placeholder {
+.vspec input[type="text"]::-moz-placeholder, .vspec input[type="password"]::-moz-placeholder, .vspec input[type="email"]::-moz-placeholder, .vspec input[type="search"]::-moz-placeholder, .vspec textarea::-moz-placeholder {
 	opacity: 1;
 	color: currentColor;
 	transition: none;
 }
 
-.vspec form input[type="text"]:-ms-input-placeholder, .vspec form input[type="password"]:-ms-input-placeholder, .vspec form input[type="email"]:-ms-input-placeholder, .vspec form input[type="search"]:-ms-input-placeholder, .vspec form textarea:-ms-input-placeholder, .vspec form .select select:-ms-input-placeholder {
+.vspec input[type="text"]:-ms-input-placeholder, .vspec input[type="password"]:-ms-input-placeholder, .vspec input[type="email"]:-ms-input-placeholder, .vspec input[type="search"]:-ms-input-placeholder, .vspec textarea:-ms-input-placeholder {
 	opacity: 1;
 	color: currentColor;
 	transition: none;
 }
 
-.vspec form input[type="text"].placeholder, .vspec form input[type="password"].placeholder, .vspec form input[type="email"].placeholder, .vspec form input[type="search"].placeholder, .vspec form textarea.placeholder, .vspec form .select select.placeholder {
+.vspec input[type="text"].placeholder, .vspec input[type="password"].placeholder, .vspec input[type="email"].placeholder, .vspec input[type="search"].placeholder, .vspec textarea.placeholder {
 	color: currentColor;
 	transition: none;
 }
 
-.vspec form .select:before, .vspec form .select:after {
-	color: #fff;
-	background-color: #000;
-	border-color: #000;
-}
-
-.vspec-mod_scheme-color_white .vspec form .select:before, .vspec-mod_scheme-color_white .vspec form .select:after {
-	color: #000;
-	background-color: #fff;
-	border-color: #fff;
-}
-
-.vspec-mod_scheme-color_blue .vspec form .select:before, .vspec-mod_scheme-color_blue .vspec form .select:after {
-	color: #c8e5ff;
-	background-color: #004c92;
-	border-color: #004c92;
-}
-
-.vspec-mod_scheme-color_brown .vspec form .select:before, .vspec-mod_scheme-color_brown .vspec form .select:after {
-	color: #f7f3d6;
-	background-color: #4d4b43;
-	border-color: #4d4b43;
-}
-
-.vspec-mod_scheme-color_green .vspec form .select:before, .vspec-mod_scheme-color_green .vspec form .select:after {
-	color: #3b2716;
-	background-color: #a9e44d;
-	border-color: #a9e44d;
-}
-
-.vspec form textarea {
+.vspec textarea {
 	resize: vertical;
-}
-
-.vspec form input[type="checkbox"], .vspec form input[type="radio"] {
-	float: none;
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: 0.3em;
-}
-
-.vspec form input[type="checkbox"] + label, .vspec form input[type="radio"] + label {
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.vspec form input[type="checkbox"] + label > span, .vspec form input[type="radio"] + label > span {
-	padding: 0;
-	z-index: auto;
-	display: inline;
-	vertical-align: baseline;
-}
-
-.vspec form input[type="checkbox"] + label > span::before, .vspec form input[type="checkbox"] + label > span::after, .vspec form input[type="radio"] + label > span::before, .vspec form input[type="radio"] + label > span::after {
-	display: none !important;
-}
-
-.vspec .select {
-	background: none;
+	min-height: 142px;
+	height: 142px;
 }
 
 .vspec select {
 	font-size: inherit;
 	padding: 0.5em;
 	height: auto;
+	width: 100%;
 	border: 2px solid currentColor;
 }
 
-.vspec ul:not(.reset-list), .vspec ol:not(.reset-list) {
-	display: block;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding: 0 0 0 40px;
+.vspec input[type="checkbox"], .vspec input[type="radio"] {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.3em;
 }
 
-.vspec ul:not(.reset-list):first-child, .vspec ol:not(.reset-list):first-child {
-	margin-top: 0;
+.vspec input[type="checkbox"] + label, .vspec input[type="radio"] + label {
+	display: inline-block;
+	vertical-align: middle;
 }
 
-.vspec ul:not(.reset-list):last-child, .vspec ol:not(.reset-list):last-child {
-	margin-bottom: 0;
-}
-
-.vspec ul:not(.reset-list) li, .vspec ol:not(.reset-list) li {
-	display: list-item;
-	list-style: inherit;
-	background: none;
+.vspec input[type="checkbox"] + label > span, .vspec input[type="radio"] + label > span {
 	padding: 0;
-	margin: 0.5em 0;
+	z-index: auto;
+	display: inline;
+	vertical-align: baseline;
 }
 
-.vspec ul:not(.reset-list) li::before, .vspec ol:not(.reset-list) li::before {
-	content: none;
-}
-
-.vspec ul:not(.reset-list) ul, .vspec ul:not(.reset-list) ol, .vspec ol:not(.reset-list) ul, .vspec ol:not(.reset-list) ol {
-	margin: 0;
-}
-
-.vspec ul:not(.reset-list) {
-	list-style-type: disc;
-}
-
-.vspec ol:not(.reset-list) {
-	list-style-type: decimal;
-}
-
-.vspec blockquote {
-	max-width: 44em;
-	padding-left: 2em;
-	background: none;
-	margin: 2.2em 0;
-	border: solid currentColor;
-	border-width: 0 0 0 2px;
-}
-
-@media (max-width: 991px) {
-	.vspec blockquote {
-		padding-left: 1.5em;
-		margin: 1.8em 0;
-		max-width: 36em;
-	}
-}
-
-@media (max-width: 479px) {
-	.vspec blockquote {
-		padding-left: 1em;
-	}
-}
-
-.vspec blockquote q {
-	font-size: 18px;
-	line-height: inherit;
-	font-style: italic;
-	border-color: currentColor;
-	padding: 0;
-}
-
-@media (max-width: 479px) {
-	.vspec blockquote q {
-		font-size: 16px;
-	}
-}
-
-.vspec blockquote q::before, .vspec blockquote q::after {
-	display: none;
-}
-
-.vspec blockquote cite {
-	font-style: italic;
+.vspec input[type="checkbox"] + label > span::before, .vspec input[type="checkbox"] + label > span::after, .vspec input[type="radio"] + label > span::before, .vspec input[type="radio"] + label > span::after {
+	display: none !important;
 }
 
 .vspec img {
 	max-width: 100%;
 	height: auto;
 	width: auto;
+	vertical-align: top;
 }
 
 .vspec table img {
@@ -2009,6 +1981,7 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 .vspec .imgc, .vspec .imgr, .vspec .imgl {
 	padding: 0;
+	margin: 0;
 }
 
 .vspec .imgr {
@@ -2033,6 +2006,15 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 		margin-right: auto;
 		max-width: none;
 	}
+}
+
+.vspec #content figure img {
+	margin-bottom: 0;
+}
+
+.vspec #content figcaption {
+	text-align: center;
+	padding: 0.5em 2em 0;
 }
 
 /* special version components */
@@ -2269,13 +2251,13 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 	z-index: 2;
 	cursor: pointer;
 	color: #fff;
-	background-color: #000;
-	border-color: #000;
+	background-color: #131313;
+	border-color: #131313;
 	border-radius: 0.2em;
 }
 
 .vspec-mod_scheme-color_white .vspec .nav__angle {
-	color: #000;
+	color: #131313;
 	background-color: #fff;
 	border-color: #fff;
 }

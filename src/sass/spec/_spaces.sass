@@ -17,6 +17,8 @@
 	// vertical space - item
 	// Отступы между крупными элементами внутри секции
 	// ---------------------------------------------------------------------------
+	table, .tbl, .table-auto,
+	figure,
 	.spec-bottom-space-item
 		+spec-bottom-space-item()
 
@@ -26,9 +28,11 @@
 	// Стандартный отступ между элементами
 	// ---------------------------------------------------------------------------
 
-	p, blockquote,
+	hr, p, blockquote,
 	blockquote q,
 	blockquote > p,
+	#{$user-content} ul,
+	#{$user-content} ol,
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -36,6 +40,10 @@
 	textarea,
 	.select,
 	select,
+	.imgc,
+	.imgr,
+	.imgl,
+	#{$user-content} img,
 	.spec-bottom-space
 		+spec-bottom-space()
 
