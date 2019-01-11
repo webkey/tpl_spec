@@ -26,11 +26,11 @@ body.#{$spec-mod}
 	font-family: $spec-font-style--sans-serif
 	font-weight: normal
 	font-style: normal
-	font-size: $spec-font-size--medium
-	line-height: $spec-line-height--small
 	color: $spec-text-color
 	background: $spec-bg-color url(../i/empty.png) no-repeat fixed
 	-webkit-font-smoothing: antialiased
+	+spec-font-size--medium()
+	+spec-line-height--medium()
 
 // no css filters
 .no-cssfilters .hide-no-cssfilters
@@ -240,8 +240,6 @@ body.#{$spec-mod}
 		padding-bottom: 4em
 
 	.logo-spec-wrap
-		//display: flex
-		//justify-content: flex-start
 		display: block
 		margin-bottom: 1.2em
 		font-size: inherit
@@ -249,9 +247,6 @@ body.#{$spec-mod}
 		text-align: center
 
 		.logo-spec
-			//display: flex
-			//justify-content: flex-start
-			//align-items: center
 			box-sizing: border-box
 			+font(1.2em, 1.3)
 			font-weight: bold
@@ -272,20 +267,6 @@ body.#{$spec-mod}
 				display: block
 				padding-top: 10px
 
-			& > svg
-				display: inline-block
-				vertical-align: top
-				+size(4em)
-				margin-right: 1.2em
-				flex-shrink: 0
-
-				+media('<tab-lg')
-					+size(3.2em)
-					margin-right: 0.8em
-
-				+media('<mob-md')
-					margin-right: 0.5em
-
 			& > span
 				display: inline-block
 				vertical-align: top
@@ -297,6 +278,29 @@ body.#{$spec-mod}
 				& > span
 					text-decoration: underline
 
+		&.has-logotype
+			display: flex
+			justify-content: center
+			text-align: left
+
+			.logo-spec
+				display: flex
+				justify-content: flex-start
+				align-items: center
+
+				svg
+					display: inline-block
+					vertical-align: top
+					+size(3.2em)
+					margin-right: 1em
+					flex-shrink: 0
+
+					+media('<tab-lg')
+						+size(3.2em)
+						margin-right: 0.8em
+
+					+media('<mob-md')
+						margin-right: 0.5em
 
 
 

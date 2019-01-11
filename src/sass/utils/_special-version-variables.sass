@@ -212,33 +212,38 @@ $spec-letter-spacing--large: 0.5em !default
 // ---------------------------------------------------------------------------
 $spec-title-font-size: 2em !default
 $spec-title-line-height: 1.5 !default
+$spec-title-font-size--mob: 1.6em !default
+$spec-title-line-height--mob: 1.7 !default
 
 =spec-font--title()
 	font-size: $spec-title-font-size
 	line-height: $spec-title-line-height
 
 	+media('<tab-lg')
-		font-size: round-float(28px / $spec-font-size, 1) * 1em
 		word-wrap: break-word
 
-	+media('<mob-md')
-		font-size: round-float(24px / $spec-font-size--medium--mob, 1) * 1em
+	+media('<mob-lg')
+		font-size: $spec-title-font-size--mob
+		line-height: $spec-title-line-height--mob
 
 // H2, Заголовки секций
 // ---------------------------------------------------------------------------
 $spec-section-font-size: 1.5em !default
 $spec-section-line-height: 1.7 !default
+$spec-section-font-size--mob: 1.3em !default
+$spec-section-line-height--mob: 1.83 !default
 
 =spec-font--section()
 	font-size: $spec-section-font-size
 	line-height: $spec-section-line-height
 
 	+media('<tab-lg')
-		font-size: round-float(24px / $spec-font-size, 1) * 1em
 		word-wrap: break-word
 
-	+media('<mob-md')
-		font-size: round-float(22px / $spec-font-size--medium--mob, 1) * 1em
+	+media('<mob-lg')
+		font-size: $spec-section-font-size--mob
+		line-height: $spec-section-line-height--mob
+
 
 // H3, Заголовки пунктов
 // ---------------------------------------------------------------------------
@@ -248,6 +253,10 @@ $spec-item-line-height: 1.9 !default
 =spec-font--item()
 	font-size: $spec-item-font-size
 	line-height: $spec-item-line-height
+
+	+media('<tab-lg')
+		word-wrap: break-word
+
 
 // Мелкий текст: сноски, даты и т.д.
 // ---------------------------------------------------------------------------

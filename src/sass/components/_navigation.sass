@@ -9,14 +9,7 @@ $nav-is-open-class: 'nav-is-open'
 .#{$spec-mod}
 	.nav-box
 		position: relative
-		display: none
-		margin-bottom: 2rem
-
-		+media('<desk-sm')
-			display: block
-
-		+media('<mob-lg')
-			margin-bottom: 1.5rem
+		min-height: 1px
 
 	// nav
 	.nav
@@ -28,17 +21,32 @@ $nav-is-open-class: 'nav-is-open'
 		&, & *
 			box-sizing: border-box
 
+	.nav__holder
+		border: $spec-border-width solid currentColor
+		padding: 0.8em 0 1em
+		border-radius: $spec-border-radius
+
+		& > ul
+			padding-left: 1.2em
+			padding-right: 1.2em
+
+	/* nav__thumbs
+	.nav__thumbs
+		padding-bottom: $spec-bottom-space
+		margin-bottom: $spec-bottom-space
+		border-bottom: $spec-border-width solid currentColor
+		font-style: italic
+		font-size: 0.9em
+		+spec-line-height--small()
+
 	/* nav list
 	// общие стили для пунктов навигации
 	.nav__list
 		position: relative
-		border: $spec-border-width solid currentColor
-		border-radius: 6px
-		padding: 0.8em 0 1em
+		padding: 0
 		margin: 0
 		list-style: none
 		line-height: 1.5
-		//border-radius: 0.5em
 
 		// убрать подсветку при клике на тачскринах
 		.touchevents &
@@ -47,12 +55,9 @@ $nav-is-open-class: 'nav-is-open'
 
 		li
 			position: relative
-			padding: 0 nth($spec-page-space--md, 2)
+			padding: 0
 			white-space: nowrap
-			font-weight: bold
-
-			+media('<mob-md')
-				+padding-horizontal(nth($spec-page-space--sm, 2))
+			//font-weight: bold
 
 			li
 				padding-right: 0
@@ -60,10 +65,8 @@ $nav-is-open-class: 'nav-is-open'
 		a
 			display: inline-block
 			vertical-align: middle
-			//display: block
 			position: relative
 			color: currentColor
-			text-decoration: none
 			white-space: normal
 			user-select: none
 			+padding-vertical(5px)
@@ -73,48 +76,35 @@ $nav-is-open-class: 'nav-is-open'
 				-webkit-tap-highlight-color: transparent
 
 		& ul
+			display: none
 			list-style: none
-			padding: 0
+			padding: 0 0 0 1em
 			margin: 0
 
-	// общие стили для подменю навигации
-	.nav__list ul
-		display: none
-
-		.no-js &
-			display: block
+			.no-js &
+				display: block
 
 	// стили для пунктов навигации, у которых ЕСТЬ ПОДМЕНЮ
 	.nav__list li.has-drop
 		& > a
 			margin-right: round($nav-arrow-size + 15)
 
-		& > .nav__angle
+		& > a + .nav__angle
 			margin-left: -#{round($nav-arrow-size + 5)}
 
 	// стили для пункта навигации ТЕКУЩЕЙ страницы
-	.nav__list li.current
+	.nav__list li.here
 		//& > .nav__tab a,
 		& > a
 			font-weight: bold
-
-	// Стили для пункта навигации С ОТКРЫТЫМ ПОДМЕНЮ
-	//.nav__list li.is-open
-		...
-		// На подменю нужно добавлять на nav__drop style="display: block", если он по умолчанию открыт
 
 	// СТРЕЛКИ навигации
 	.nav__angle
 		position: relative
 		display: inline-block
 		vertical-align: middle
-		//position: absolute
-		//right: 5px
-		//top: 50%
 		width: $nav-arrow-size
-		//height: calc(100% - 2px * 2)
 		height: $nav-arrow-size
-		//margin-top: calc(-#{$nav-arrow-size} / 2)
 		z-index: 2
 		cursor: pointer
 		+spec-reset-bg-invert
@@ -158,7 +148,6 @@ $nav-is-open-class: 'nav-is-open'
 				transform: rotate(0.375turn)
 
 	// активное (подменю открыто)
-	//li.is-open > .nav__tab .nav__angle i
 	li.is-open > .nav__angle i
 		transform: rotate(0.5turn)
 
@@ -170,6 +159,8 @@ $nav-is-open-class: 'nav-is-open'
 			font-weight: normal
 
 			li
+				padding-left: 20px
+
 				&::before
 					content: ""
 					display: block
@@ -200,9 +191,8 @@ $nav-is-open-class: 'nav-is-open'
 
 /* nav list end
 // nav opener btn
-.#{$spec-mod}.#{$spec-mod}
+.#{$spec-mod}
 	a.nav-opener
-		$btn-menu-bg: white
 		$btn-menu-size: $header-height--sm
 		$btn-menu-lines-width: 24px
 		$btn-menu-lines-height: 4px
@@ -224,11 +214,8 @@ $nav-is-open-class: 'nav-is-open'
 		padding: 10px 20px 10px 50px
 		font-weight: bold
 
-		//&:active
-			transform: translate(0, 2px)
-
-		//+media('>=tab-lg')
-			display: none
+		&:active
+			transform: translate(0, 1px)
 
 		.touchevents &
 			// убрать подсветку при клике на тачскринах
@@ -314,5 +301,4 @@ $nav-is-open-class: 'nav-is-open'
 					transform: translate(0, -#{$btn-menu-lines-height + $btn-menu-lines-space}) translateZ(0)
 
 /* navigation end
-
 /* === NAVIGATION end ===
