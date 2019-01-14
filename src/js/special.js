@@ -220,12 +220,14 @@
 			 * todo: В идеале, этот этап нужно сделать на php
 			 * */
 
-			// Take saved settings object or create new one
-			var savedSettingsStr = getCookie(cookieName.specVersionSettings),
-				savedSettingsObj = savedSettingsStr ? JSON.parse(savedSettingsStr) : {};
-			// console.log("savedSettingsObj: ", savedSettingsObj);
+			if (getCookie(cookieName.specVersionOn) === 'true') {
+				// Take saved settings object or create new one
+				var savedSettingsStr = getCookie(cookieName.specVersionSettings),
+					savedSettingsObj = savedSettingsStr ? JSON.parse(savedSettingsStr) : {};
+				// console.log("savedSettingsObj: ", savedSettingsObj);
 
-			changeSettings(getDefaultSettingsObj(), savedSettingsObj);
+				changeSettings(getDefaultSettingsObj(), savedSettingsObj);
+			}
 
 		}, selectSetting = function () {
 			/**

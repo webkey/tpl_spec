@@ -5,7 +5,6 @@
 .#{$spec-mod}
 	// reset text size, line-height, letter-spacing, font-family etc.
 	// ------------------------------------------------------------
-	h1, h2, h3, h4, h5, h6, p,
 	b, strong, th,
 	i, em,
 	i b, i strong,
@@ -29,12 +28,13 @@
 	// ---------------------------------------------------------------------------
 	h1, .h1,
 	.font-of-title
+		margin-top: spec-heading('h1', 'margin-top')
+		margin-bottom: spec-heading('h1', 'margin-bottom')
 		padding: 0
-		margin-bottom: 0.67em
-		margin-top: round-float(0.67em * 2, 1)
-		+spec-font-reset
+		+spec-font--title()
+		font-style: normal
 		font-weight: bold
-		+spec-font--title
+		+spec-h-font-reset()
 
 		&:first-child
 			margin-top: 0
@@ -48,19 +48,13 @@
 	// ---------------------------------------------------------------------------
 	h2, .h2,
 	.font-of-section
+		margin-top: spec-heading('h2', 'margin-top')
+		margin-bottom: spec-heading('h2', 'margin-bottom')
 		padding: 0
-		margin-bottom: 0.83em
-		margin-top: round-float(0.83em * 2, 1)
-		font:
-			family: inherit
-			weight: bold
-			style: normal
-		+spec-font--section
-		letter-spacing: inherit
-		word-spacing: inherit
-		text-transform: none
-		color: inherit
-		text-align: left
+		+spec-font--section()
+		font-style: normal
+		font-weight: bold
+		+spec-h-font-reset()
 
 		&:first-child
 			margin-top: 0
@@ -74,19 +68,13 @@
 	// ---------------------------------------------------------------------------
 	h3, .h3,
 	.font-of-item
+		margin-top: spec-heading('h3', 'margin-top')
+		margin-bottom: spec-heading('h3', 'margin-bottom')
 		padding: 0
-		margin-bottom: 1em
-		margin-top: round-float(1em * 2, 1)
-		font:
-			family: inherit
-			weight: bold
-			style: normal
 		+spec-font--item
-		letter-spacing: inherit
-		word-spacing: inherit
-		text-transform: none
-		color: inherit
-		text-align: left
+		font-style: normal
+		font-weight: bold
+		+spec-h-font-reset()
 
 		&:first-child
 			margin-top: 0
@@ -102,17 +90,11 @@
 	figcaption,
 	.font-of-small-text
 		padding: 0
-		margin-bottom: 1.67em
-		font:
-			family: inherit
-			weight: normal
-			style: italic
+		margin-bottom: spec-heading('h5', 'margin-bottom')
 		+spec-font--note
-		letter-spacing: inherit
-		word-spacing: inherit
-		text-transform: none
-		color: inherit
-		text-align: left
+		font-style: italic
+		font-weight: normal
+		+spec-h-font-reset()
 
 		&:last-child
 			margin-bottom: 0

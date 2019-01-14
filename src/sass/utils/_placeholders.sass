@@ -16,6 +16,7 @@
 
 	@return $value
 
+
 // =============================================================================
 // round-float
 // =============================================================================
@@ -31,3 +32,24 @@
 	$value: round($number*$float)/$float
 
 	@return $value
+
+
+
+// =============================================================================
+// get-property-param
+// =============================================================================
+// Получить из "базы" размер, межстрочный интервал заголовка
+// @param $prop - font-size or line-height
+// @param $size - тип заголовка: h1, h2, h3...
+// @return - возваращает искомое значение
+// @example:
+// $map: ('h1':(2em, 1.5), 'h2':(1.5em, 1.7), 'h3':(1.17em, 1.9), 'h4':(1em, 1), 'h5':(0.83em, 1), 'h6':(0.67em, 2.5))
+// heading-size(fz, h2) => 1.5em
+@function get-property-param($map, $size, $prop)
+	$map-of-types: ('font-size': 1, 'line-height': 2, 'margin-top': 3, 'margin-bottom': 4)
+
+	// @steps for example:
+	// @1: map_get($map, 2) => 'h2'
+	// @2: map_get($map-of-types, 'fz') => 1
+	// @3: nth('h2', 1) = 1.5
+	@return nth(map_get($map, $size), map_get($map-of-types, $prop))

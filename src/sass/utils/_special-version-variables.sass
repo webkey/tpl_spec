@@ -208,64 +208,74 @@ $spec-letter-spacing--medium: 0.2em !default
 $spec-letter-spacing--large: 0.5em !default
 
 
+
+// >>> Заголовки <<<
+// ==========================================================================
+
+$h-list--norm: ('h1':(2em, 1.5, 1.34em, 0.67em), 'h2':(1.5em, 1.7, 1.66em, 0.83em), 'h3':(1.17em, 1.9, 2em, 1em), 'h4':(1em, 2, 2.66em, 1.33em), 'h5':(0.83em, 2.2, 3.34em, 1.67em), 'h6':(0.67em, 2.5, 4.66em, 2.33em))
+$h-list--mob: ('h1':(1.6em, 1.7, 1.34em, 0.67em), 'h2':(1.3em, 1.83, 1.66em, 0.83em), 'h3':(1.17em, 1.9, 2em, 1em), 'h4':(1em, 2, 2.66em, 1.33em), 'h5':(0.83em, 2.2, 3.34em, 1.67em), 'h6':(0.67em, 2.5, 4.66em, 2.33em))
+// 'h1':(2em, 1.5, 1.34em, 0.67em)
+// 'h1' - это тип заголовка
+// 2em - это font-size
+// 1.5 - это line-height
+// 1.34em - это margin-top
+// 0.67em - это margin-bottom
+
+// ПОЛУЧИТЬ РАЗМЕРЫ ДЛЯ ДЕСКТОПА
+@function spec-heading($size, $prop)
+	@return get-property-param($h-list--norm, $size, $prop)
+
+// ПОЛУЧИТЬ РАЗМЕРЫ ДЛЯ ДЕВАЙСОВ
+@function spec-heading--mob($size, $prop)
+	@return get-property-param($h-list--mob, $size, $prop)
+
+
 // H1, Заголовок страницы
 // ---------------------------------------------------------------------------
-$spec-title-font-size: 2em !default
-$spec-title-line-height: 1.5 !default
-$spec-title-font-size--mob: 1.6em !default
-$spec-title-line-height--mob: 1.7 !default
-
 =spec-font--title()
-	font-size: $spec-title-font-size
-	line-height: $spec-title-line-height
+	font-size: spec-heading(h1, 'font-size')
+	line-height: spec-heading(h1, 'line-height')
 
 	+media('<tab-lg')
 		word-wrap: break-word
 
 	+media('<mob-lg')
-		font-size: $spec-title-font-size--mob
-		line-height: $spec-title-line-height--mob
+		font-size: spec-heading--mob(h1, 'font-size')
+		line-height: spec-heading--mob(h1, 'line-height')
 
 // H2, Заголовки секций
 // ---------------------------------------------------------------------------
-$spec-section-font-size: 1.5em !default
-$spec-section-line-height: 1.7 !default
-$spec-section-font-size--mob: 1.3em !default
-$spec-section-line-height--mob: 1.83 !default
-
 =spec-font--section()
-	font-size: $spec-section-font-size
-	line-height: $spec-section-line-height
+	font-size: spec-heading(h2, 'font-size')
+	line-height: spec-heading(h2, 'line-height')
 
 	+media('<tab-lg')
 		word-wrap: break-word
 
 	+media('<mob-lg')
-		font-size: $spec-section-font-size--mob
-		line-height: $spec-section-line-height--mob
+		font-size: spec-heading--mob(h2, 'font-size')
+		line-height: spec-heading--mob(h2, 'line-height')
 
 
 // H3, Заголовки пунктов
 // ---------------------------------------------------------------------------
-$spec-item-font-size: 1.17em !default
-$spec-item-line-height: 1.9 !default
-
 =spec-font--item()
-	font-size: $spec-item-font-size
-	line-height: $spec-item-line-height
+	font-size: spec-heading(h3, 'font-size')
+	line-height: spec-heading(h3, 'line-height')
 
 	+media('<tab-lg')
 		word-wrap: break-word
 
+	+media('<mob-lg')
+		font-size: spec-heading--mob(h3, 'font-size')
+		line-height: spec-heading--mob(h3, 'line-height')
+
 
 // Мелкий текст: сноски, даты и т.д.
 // ---------------------------------------------------------------------------
-$spec-small-text-font-size: 0.83em !default
-$spec-small-text-line-height: 2.2 !default
-
 =spec-font--note()
-	font-size: $spec-small-text-font-size
-	line-height: $spec-small-text-line-height
+	font-size: spec-heading(h5, 'font-size')
+	line-height: spec-heading(h5, 'line-height')
 
 
 // Отступы
@@ -299,13 +309,6 @@ $spec-bottom-space--sm: 0.8em !default
 	&:last-child
 		margin-bottom: 0
 
-$spec-space-h1: 0.67em !default
-$spec-space-h2: 0.83em !default
-$spec-space-h3: 1em !default
-$spec-space-h4: 1em !default
-$spec-space-h5: 1.67em !default
-$spec-space-h6: 2.33em !default
-
 // ---------------------------------------------------------------------------
 $spec-bottom-space-element: round-float($spec-bottom-space / 2, 1) !default
 $spec-bottom-space-element--sm: round-float($spec-bottom-space--sm / 2, 1) !default
@@ -328,10 +331,6 @@ $spec-bottom-space-section--sm: round-float($spec-bottom-space--sm * 2.2, 1) !de
 	+spec-bottom-space($spec-bottom-space-section, $spec-bottom-space-section--sm)
 
 
-// Borders
-// ==========================================================================
-$spec-border-width: 2px
-$spec-border-radius: 6px
 
 // Reset font style
 =spec-font-reset()
@@ -347,6 +346,16 @@ $spec-border-radius: 6px
 	text-transform: inherit
 	white-space: inherit
 	color: inherit
+
+// Reset heading font style
+=spec-h-font-reset()
+	font-family: inherit
+	letter-spacing: inherit
+	word-spacing: inherit
+	text-transform: inherit
+	white-space: inherit
+	color: inherit
+	text-align: inherit
 
 // Reset background
 =spec-reset-bg()
@@ -432,9 +441,7 @@ $spec-border-radius: 6px
 // Reset all styles
 =spec-reset-full()
 	display: block
-	//display: initial
 	float: none
-	//position: initial
 	position: static
 	overflow: visible
 	height: auto
@@ -449,14 +456,7 @@ $spec-border-radius: 6px
 	bottom: auto
 	padding: 0
 	margin: 0
-	transform: none
-	transition: none
-	border: none
-	background: none
-	box-shadow: none
-	opacity: 1
-	visibility: visible
-	z-index: auto
+
 	font:
 		family: inherit
 		weight: inherit
@@ -467,14 +467,27 @@ $spec-border-radius: 6px
 	letter-spacing: inherit
 	word-spacing: inherit
 	color: inherit
-	//text-align: left
 	text-align: inherit
-	text-transform: none
+	text-transform: inherit
 	text-shadow: none
+
+	transform: none
+	transition: none
+	border: none
+	background: none
+	box-shadow: none
+	opacity: 1
+	visibility: visible
 	box-sizing: border-box
 	border-radius: 0
 	perspective: none
 	vertical-align: baseline
+	z-index: auto
+
+// Border
+// ==========================================================================
+$spec-border-width: 2px
+$spec-border-radius: 6px
 
 // Список классов-исключений для тегов ul, ol
 // Добавляются к типографическим стилям списков ul, ol, чтобы не применять стили для указанных классов
@@ -482,12 +495,6 @@ $spec-border-radius: 6px
 // Enter: .user-content ul:not(.class1):not(.class1)
 // ==========================================================================
 $not-list-classes: ':not(.reset-list)'
-
-
-// Main Navigation
-// ==========================================================================
-$main-nav-height--spec: 80px
-$main-nav-height--spec--sm: 60px
 
 
 // Button State

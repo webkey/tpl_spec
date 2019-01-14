@@ -195,12 +195,6 @@ body.vspec {
 	box-shadow: 0 0 0 4px currentColor;
 }
 
-@media (max-width: 991px) {
-	.spec-panel.settings-is-open {
-		box-shadow: inset 0 0 0 4px currentColor;
-	}
-}
-
 .spec-panel__layout {
 	overflow: hidden;
 	overflow-y: hidden;
@@ -595,9 +589,9 @@ body.vspec {
 	border-top: 2px solid currentColor;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 991px) {
 	.spec-drop__layout {
-		padding: 12px;
+		padding: 0;
 	}
 }
 
@@ -622,9 +616,37 @@ body.vspec {
 	}
 }
 
-@media (max-width: 479px) {
+@media (max-width: 991px) {
 	.spec-drop__title {
-		margin-bottom: 6px;
+		padding: 7px 12px 8px;
+		margin-bottom: 0;
+		font-size: 1.2rem;
+		line-height: 1.4rem;
+		letter-spacing: 0.08em;
+		word-spacing: normal;
+		font-weight: normal;
+		text-align: center;
+		text-transform: uppercase;
+		border: 0 solid currentColor;
+		border-width: 1px 0;
+		background: #fdfdfd;
+		background: linear-gradient(180deg, #fdfdfd 0%, #e7e7e7 100%);
+	}
+	.vspec-mod_scheme-color_white .spec-drop__title {
+		background: #898989;
+		background: linear-gradient(180deg, #898989 0%, #131313 100%);
+	}
+	.vspec-mod_scheme-color_blue .spec-drop__title {
+		background: #f4faff;
+		background: linear-gradient(180deg, #f4faff 0%, #c8e5ff 100%);
+	}
+	.vspec-mod_scheme-color_brown .spec-drop__title {
+		background: #f9f7e2;
+		background: linear-gradient(180deg, #f9f7e2 0%, #f7f3d6 100%);
+	}
+	.vspec-mod_scheme-color_green .spec-drop__title {
+		background: #76685c;
+		background: linear-gradient(180deg, #76685c 0%, #3b2716 100%);
 	}
 }
 
@@ -632,9 +654,9 @@ body.vspec {
 	margin-top: 32px;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 991px) {
 	.spec-drop__item + .spec-drop__title {
-		margin-bottom: 24px;
+		margin: 0;
 	}
 }
 
@@ -656,9 +678,10 @@ body.vspec {
 	display: block;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 991px) {
 	.spec-drop__item, .spec-drop__footer {
-		margin: 6px 0 0;
+		margin: 0;
+		padding-top: 5px;
 	}
 }
 
@@ -674,10 +697,20 @@ body.vspec {
 	    justify-content: flex-end;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 991px) {
 	.spec-drop__footer {
-		margin-top: 24px;
-		padding-top: 12px;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: start;
+		    justify-content: flex-start;
+		margin-top: 0;
+		padding: 5px 0;
+	}
+}
+
+@media (max-width: 991px) {
+	.spec-drop__footer .spec-drop__btn-group {
+		margin: 0;
 	}
 }
 
@@ -693,20 +726,16 @@ body.vspec {
 
 @media (max-width: 991px) {
 	.spec-drop__label {
-		word-wrap: break-word;
-	}
-}
-
-@media (max-width: 639px) {
-	.spec-drop__label {
-		font-size: 1em;
-	}
-}
-
-@media (max-width: 479px) {
-	.spec-drop__label {
-		margin: 6px;
-		margin-left: 0;
+		display: block;
+		width: 100%;
+		padding: 0 12px;
+		margin: 0;
+		font-size: 13px;
+		line-height: 19px;
+		letter-spacing: 0.05em;
+		word-spacing: normal;
+		text-align: center;
+		text-transform: uppercase;
 	}
 }
 
@@ -729,9 +758,10 @@ body.vspec {
 	vertical-align: top;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 991px) {
 	.spec-drop__btn-group {
-		margin-right: 6px;
+		padding: 0 6px;
+		margin: 0;
 	}
 }
 
@@ -767,16 +797,25 @@ body.vspec {
 	vertical-align: top;
 }
 
-.spec-drop__btn, .vspec .spec-drop__btn {
-	text-decoration: none;
-	color: currentColor;
+@media (max-width: 991px) {
+	.spec-drop__btn {
+		font-size: 16px;
+		line-height: 20px;
+		min-height: 0;
+		border-radius: 10px;
+		padding: 10px;
+	}
 }
 
 @media (max-width: 479px) {
 	.spec-drop__btn {
-		margin: 6px;
-		margin-left: 0;
+		margin: 5px;
 	}
+}
+
+.spec-drop__btn, .vspec .spec-drop__btn {
+	text-decoration: none;
+	color: currentColor;
 }
 
 .spec-drop__btn span {
@@ -789,6 +828,13 @@ body.vspec {
 	vertical-align: top;
 	box-sizing: border-box;
 	margin-right: 5px;
+}
+
+@media (max-width: 991px) {
+	.spec-drop__btn svg {
+		width: 20px;
+		height: 20px;
+	}
 }
 
 .spec-drop__btn path {
@@ -973,15 +1019,6 @@ body.vspec {
 	bottom: auto;
 	padding: 0;
 	margin: 0;
-	-ms-transform: none;
-	    transform: none;
-	transition: none;
-	border: none;
-	background: none;
-	box-shadow: none;
-	opacity: 1;
-	visibility: visible;
-	z-index: auto;
 	font-family: inherit;
 	font-weight: inherit;
 	font-style: inherit;
@@ -992,12 +1029,21 @@ body.vspec {
 	word-spacing: inherit;
 	color: inherit;
 	text-align: inherit;
-	text-transform: none;
+	text-transform: inherit;
 	text-shadow: none;
+	-ms-transform: none;
+	    transform: none;
+	transition: none;
+	border: none;
+	background: none;
+	box-shadow: none;
+	opacity: 1;
+	visibility: visible;
 	box-sizing: border-box;
 	border-radius: 0;
 	perspective: none;
 	vertical-align: baseline;
+	z-index: auto;
 }
 
 .vspec polygon,
@@ -1008,7 +1054,6 @@ body.vspec {
 	fill: currentColor;
 }
 
-.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6, .vspec p,
 .vspec b, .vspec strong, .vspec th,
 .vspec i, .vspec em,
 .vspec i b, .vspec i strong,
@@ -1040,23 +1085,20 @@ body.vspec {
 
 .vspec h1, .vspec .h1,
 .vspec .font-of-title {
-	padding: 0;
+	margin-top: 1.34em;
 	margin-bottom: 0.67em;
-	margin-top: 1.3em;
+	padding: 0;
+	font-size: 2em;
+	line-height: 1.5;
+	font-style: normal;
+	font-weight: bold;
 	font-family: inherit;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: inherit;
-	line-height: inherit;
 	letter-spacing: inherit;
 	word-spacing: inherit;
-	text-align: inherit;
 	text-transform: inherit;
 	white-space: inherit;
 	color: inherit;
-	font-weight: bold;
-	font-size: 2em;
-	line-height: 1.5;
+	text-align: inherit;
 }
 
 @media (max-width: 991px) {
@@ -1086,19 +1128,20 @@ body.vspec {
 
 .vspec h2, .vspec .h2,
 .vspec .font-of-section {
-	padding: 0;
+	margin-top: 1.66em;
 	margin-bottom: 0.83em;
-	margin-top: 1.7em;
-	font-family: inherit;
-	font-weight: bold;
-	font-style: normal;
+	padding: 0;
 	font-size: 1.5em;
 	line-height: 1.7;
+	font-style: normal;
+	font-weight: bold;
+	font-family: inherit;
 	letter-spacing: inherit;
 	word-spacing: inherit;
-	text-transform: none;
+	text-transform: inherit;
+	white-space: inherit;
 	color: inherit;
-	text-align: left;
+	text-align: inherit;
 }
 
 @media (max-width: 991px) {
@@ -1128,25 +1171,34 @@ body.vspec {
 
 .vspec h3, .vspec .h3,
 .vspec .font-of-item {
-	padding: 0;
-	margin-bottom: 1em;
 	margin-top: 2em;
-	font-family: inherit;
-	font-weight: bold;
-	font-style: normal;
+	margin-bottom: 1em;
+	padding: 0;
 	font-size: 1.17em;
 	line-height: 1.9;
+	font-style: normal;
+	font-weight: bold;
+	font-family: inherit;
 	letter-spacing: inherit;
 	word-spacing: inherit;
-	text-transform: none;
+	text-transform: inherit;
+	white-space: inherit;
 	color: inherit;
-	text-align: left;
+	text-align: inherit;
 }
 
 @media (max-width: 991px) {
 	.vspec h3, .vspec .h3,
 	.vspec .font-of-item {
 		word-wrap: break-word;
+	}
+}
+
+@media (max-width: 639px) {
+	.vspec h3, .vspec .h3,
+	.vspec .font-of-item {
+		font-size: 1.17em;
+		line-height: 1.9;
 	}
 }
 
@@ -1165,16 +1217,17 @@ body.vspec {
 .vspec .font-of-small-text {
 	padding: 0;
 	margin-bottom: 1.67em;
-	font-family: inherit;
-	font-weight: normal;
-	font-style: italic;
 	font-size: 0.83em;
 	line-height: 2.2;
+	font-style: italic;
+	font-weight: normal;
+	font-family: inherit;
 	letter-spacing: inherit;
 	word-spacing: inherit;
-	text-transform: none;
+	text-transform: inherit;
+	white-space: inherit;
 	color: inherit;
-	text-align: left;
+	text-align: inherit;
 }
 
 .vspec time:last-child,
@@ -1569,16 +1622,12 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 
 /* special version typography */
 /* ============================================================ */
-.vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6,
-.vspec .h1, .vspec .h2, .vspec .h3, .vspec .h4, .vspec .h5, .vspec .h6 {
-	font-weight: bold;
-}
-
 .vspec h4, .vspec .h4 {
-	font-size: 1em;
-	font-weight: bold;
+	margin-top: 2.66em;
 	margin-bottom: 1.33em;
-	margin-top: 2.7em;
+	font-size: 1em;
+	line-height: 2;
+	font-weight: bold;
 }
 
 .vspec h4:first-child, .vspec .h4:first-child {
@@ -1590,10 +1639,11 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 }
 
 .vspec h5, .vspec .h5 {
-	font-size: 0.83em;
-	font-weight: bold;
+	margin-top: 3.34em;
 	margin-bottom: 1.67em;
-	margin-top: 3.3em;
+	font-size: 0.83em;
+	line-height: 2.2;
+	font-weight: bold;
 }
 
 .vspec h5:first-child, .vspec .h5:first-child {
@@ -1605,11 +1655,11 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 }
 
 .vspec h6, .vspec .h6 {
+	margin-top: 4.66em;
+	margin-bottom: 2.33em;
 	font-size: 0.67em;
 	line-height: 2.5;
 	font-weight: bold;
-	margin-bottom: 2.33em;
-	margin-top: 4.7em;
 }
 
 .vspec h6:first-child, .vspec .h6:first-child {
@@ -1745,17 +1795,11 @@ html:not(.vspec-mod_img_on) .vspec img[src*="captcha"] {
 }
 
 .vspec blockquote q {
-	font-size: 18px;
+	font-size: inherit;
 	line-height: inherit;
 	font-style: italic;
 	border-color: currentColor;
 	padding: 0;
-}
-
-@media (max-width: 479px) {
-	.vspec blockquote q {
-		font-size: 16px;
-	}
 }
 
 .vspec blockquote q::before, .vspec blockquote q::after {

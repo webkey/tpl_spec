@@ -3,15 +3,12 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6
-		font-weight: bold
-
 	h4, .h4
-		font-size: 1em
+		margin-top: spec-heading('h4', 'margin-top')
+		margin-bottom: spec-heading('h4', 'margin-bottom')
+		font-size: spec-heading('h4', 'font-size')
+		line-height: spec-heading('h4', 'line-height')
 		font-weight: bold
-		margin-bottom: 1.33em
-		margin-top: round-float(1.33em * 2, 1)
 
 		&:first-child
 			margin-top: 0
@@ -20,10 +17,11 @@
 			margin-bottom: 0
 
 	h5, .h5
-		font-size: 0.83em
+		margin-top: spec-heading('h5', 'margin-top')
+		margin-bottom: spec-heading('h5', 'margin-bottom')
+		font-size: spec-heading('h5', 'font-size')
+		line-height: spec-heading('h5', 'line-height')
 		font-weight: bold
-		margin-bottom: 1.67em
-		margin-top: round-float(1.67em * 2, 1)
 
 		&:first-child
 			margin-top: 0
@@ -32,11 +30,11 @@
 			margin-bottom: 0
 
 	h6, .h6
-		font-size: 0.67em
-		line-height: 2.5
+		margin-top: spec-heading('h6', 'margin-top')
+		margin-bottom: spec-heading('h6', 'margin-bottom')
+		font-size: spec-heading('h6', 'font-size')
+		line-height: spec-heading('h6', 'line-height')
 		font-weight: bold
-		margin-bottom: 2.33em
-		margin-top: round-float(2.33em * 2, 1)
 
 		&:first-child
 			margin-top: 0
@@ -130,7 +128,7 @@
 			padding-left: 1em
 
 		q
-			+spec-font-size()
+			font-size: inherit
 			line-height: inherit
 			font-style: italic
 			border-color: currentColor
@@ -184,8 +182,7 @@
 			font-weight: bold
 
 		caption
-			font-size: $spec-small-text-font-size
-			line-height: $spec-small-text-line-height
+			+spec-font--note
 			color: inherit
 			font-style: italic
 
