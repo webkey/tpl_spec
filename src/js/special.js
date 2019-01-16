@@ -170,7 +170,7 @@
 			}
 
 		}, changeSettings = function (initialObj, currentObj) {
-			/* метка начала выполнения скрипта */
+			/* время выполнения скрипта (метка начала) */
 			/** var time = performance.now(); */
 
 			/**
@@ -209,7 +209,7 @@
 			// Save settings in cookie
 			setCookieMod(cookieName.specVersionSettings, JSON.stringify(initialObj));
 
-			/* время выполнения скрипта */
+			/* время выполнения скрипта (вывод значения) */
 			/** time -= performance.now(); */
 			/** console.log('Время выполнения = ', -time); */
 
