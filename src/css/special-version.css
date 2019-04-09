@@ -22,6 +22,8 @@ body.vspec {
 	color: #131313;
 	background: #fff url(../i/empty.png) no-repeat fixed;
 	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: none;
 	font-size: 18px;
 	line-height: 2;
 }
