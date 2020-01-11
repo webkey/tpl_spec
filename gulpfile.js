@@ -214,6 +214,7 @@ gulp.task('browserSync', function (done) {
 		server: {
 			baseDir: "./src"
 		},
+		open: false,
 		notify: false
 	});
 	browserSync.watch(['src/*.html', 'src/js/**/*.js', 'src/includes/**/*.json', 'src/includes/**/*.svg']).on("change", browserSync.reload);
